@@ -32,6 +32,8 @@ body {
 
 body.no-scroll { overflow: hidden; }
 
+[hidden] { display: none !important; }
+
 a { color: inherit; }
 img { max-width: 100%; }
 
