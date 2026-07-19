@@ -1,102 +1,189 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Financial Modeling Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Finance portfolio of Sanjay Nair, CFA: valuation, transactions, credit, real estate, project finance and portfolio analysis.">
+  <meta name="theme-color" content="#0b1f33">
+  <meta property="og:title" content="Sanjay Nair, CFA | Finance Portfolio">
+  <meta property="og:description" content="Decision-led finance case studies across valuation, private markets, credit and real assets.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sswnair.github.io/">
+  <title>Sanjay Nair, CFA | Finance Portfolio</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/projects.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
 </head>
-
 <body>
-  <header>
-    <h1>Sanjay Nair</h1>
-    <h2>Financial Modeling Portfolio</h2>
-    <p>
-      MSc Finance TCD | CFA Charterholder | Investment Analysis | Real Estate Finance |
-      Portfolio Analytics | Private Markets
-    </p>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Sanjay Nair home">
+        <span class="brand-mark">SN</span>
+        <span>Sanjay Nair, CFA</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>Menu</button>
+      <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
+        <a href="#work">Selected work</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">Background</a>
+        <a class="nav-contact" href="mailto:sswnair@gmail.com">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>About This Portfolio</h2>
-    <p>
-      This portfolio showcases practical financial models built for valuation, investment analysis,
-      real estate finance, portfolio analytics, private markets, credit analysis, and risk modeling.
-      Each project includes a model summary, Excel workbook, PDF output, screenshots, assumptions,
-      methodology, and key outputs.
-    </p>
-  </section>
+  <main id="main-content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="kicker">CFA charterholder · MSc Finance, Trinity College Dublin · Dublin</p>
+          <h1>Finance work that ends in a decision.</h1>
+          <p class="hero-lead">I build valuation, transaction, credit and real-asset models that make assumptions visible, test the downside and state what I would do.</p>
+          <div class="hero-actions">
+            <a class="button" href="#work">View selected work</a>
+            <a class="button secondary" href="mailto:sswnair@gmail.com?subject=Finance%20portfolio%20discussion">Discuss a model</a>
+          </div>
+        </div>
 
-  <section>
-    <h2>Featured Models</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>Three-Statement Model</h3>
-        <p>Integrated income statement, balance sheet, and cash flow forecast model.</p>
-        <a href="models/01-three-statement-model/">View Project</a>
+        <aside class="deal-sheet" aria-label="Portfolio snapshot">
+          <div class="deal-sheet-top">
+            <div>
+              <strong>Portfolio snapshot</strong>
+              <span>Selected analytical case studies</span>
+            </div>
+            <span class="status-dot">Available in Dublin</span>
+          </div>
+          <div class="deal-sheet-row"><span>Underwriting & private markets</span><strong>3 cases</strong></div>
+          <div class="deal-sheet-row"><span>Valuation & transactions</span><strong>6 cases</strong></div>
+          <div class="deal-sheet-row"><span>Credit & portfolio risk</span><strong>2 cases</strong></div>
+          <div class="deal-sheet-row"><span>Model access</span><strong>Walkthrough only</strong></div>
+          <p class="deal-sheet-note">Excel workbooks are kept private. The portfolio presents selected outputs, sources, conclusions and limitations.</p>
+        </aside>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>DCF Valuation Model</h3>
-        <p>Intrinsic valuation model using free cash flow, WACC, terminal value, and sensitivity analysis.</p>
-        <a href="models/02-dcf-valuation-model/">View Project</a>
+    <section class="proof-strip" aria-label="Portfolio attributes">
+      <div class="container proof-grid">
+        <div class="proof-item"><strong>11</strong><span>complete finance case studies</span></div>
+        <div class="proof-item"><strong>5</strong><span>core analytical disciplines</span></div>
+        <div class="proof-item"><strong>Public</strong><span>source anchors disclosed</span></div>
+        <div class="proof-item"><strong>Private</strong><span>workbooks and formulas</span></div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Real Estate Investment Model</h3>
-        <p>NOI, cap rate, debt financing, IRR, equity multiple, and investment appraisal model.</p>
-        <a href="models/03-real-estate-investment-model/">View Project</a>
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Selected work</p>
+            <h2>Models organised around the question they answer.</h2>
+          </div>
+          <p class="section-intro">Every case includes a decision question, a clear conclusion, the key mechanics, downside tests, public-source anchors and the limits of the analysis.</p>
+        </div>
+
+        <div class="filters" aria-label="Filter projects">
+          <button class="filter-button active" type="button" data-filter="all">All work</button>
+          <button class="filter-button" type="button" data-filter="real-assets">Real assets</button>
+          <button class="filter-button" type="button" data-filter="private-markets">Private markets</button>
+          <button class="filter-button" type="button" data-filter="transactions">Transactions</button>
+          <button class="filter-button" type="button" data-filter="credit">Credit</button>
+          <button class="filter-button" type="button" data-filter="valuation">Valuation</button>
+          <button class="filter-button" type="button" data-filter="portfolio">Portfolio risk</button>
+        </div>
+
+        <div class="projects-grid" data-project-grid aria-live="polite"></div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Portfolio Analytics Model</h3>
-        <p>Portfolio return, volatility, Sharpe ratio, drawdown, allocation, and performance attribution model.</p>
-        <a href="models/04-portfolio-analytics-model/">View Project</a>
+    <section class="section alt" id="approach">
+      <div class="container approach-grid">
+        <div>
+          <p class="section-kicker">How I work</p>
+          <h2>A model is useful only when someone can challenge it.</h2>
+          <p class="section-intro">My preference is a transparent model with visible assumptions, simple formulas, explicit checks and a conclusion that acknowledges what the numbers cannot prove.</p>
+        </div>
+        <div class="principles">
+          <div class="principle">
+            <span class="principle-number">01</span>
+            <div><h3>Start with the decision</h3><p>Define the investment, credit or transaction question before building schedules.</p></div>
+          </div>
+          <div class="principle">
+            <span class="principle-number">02</span>
+            <div><h3>Separate facts from assumptions</h3><p>Trace public-source inputs and keep operating, valuation and financing judgments visible.</p></div>
+          </div>
+          <div class="principle">
+            <span class="principle-number">03</span>
+            <div><h3>Make the downside do real work</h3><p>Test the variables that can break the case rather than adding decorative scenarios.</p></div>
+          </div>
+          <div class="principle">
+            <span class="principle-number">04</span>
+            <div><h3>State the recommendation plainly</h3><p>A pass is a valid answer. The spreadsheet does not have to manufacture a deal.</p></div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>NAV Discount Model</h3>
-        <p>Listed private equity NAV, discount/premium, price return, NAV return, and stress analysis model.</p>
-        <a href="models/05-nav-discount-model/">View Project</a>
+    <section class="section" id="about">
+      <div class="container approach-grid">
+        <div class="profile-panel">
+          <p class="section-kicker" style="color:#c5a363">Background</p>
+          <h2>Sanjay Nair, CFA</h2>
+          <p>I am a CFA charterholder and MSc Finance graduate from Trinity College Dublin. My background spans investment analysis, financial modelling, valuation, portfolio analysis, fund reporting and real-estate underwriting.</p>
+          <p>I am interested in analytical roles where careful cash-flow work, commercial judgment and clear communication matter—across investment management, private markets, corporate finance, credit and real assets.</p>
+          <div class="credentials">
+            <div class="credential"><strong>CFA Charterholder</strong><span>Investment analysis and ethics</span></div>
+            <div class="credential"><strong>MSc Finance</strong><span>Trinity College Dublin</span></div>
+            <div class="credential"><strong>Technical</strong><span>Excel, Python, Power BI, Bloomberg</span></div>
+            <div class="credential"><strong>Location</strong><span>Dublin, Ireland</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="section-kicker">What this portfolio demonstrates</p>
+          <h2>Range without losing the finance fundamentals.</h2>
+          <div class="principles">
+            <div class="principle">
+              <span class="principle-number">A</span>
+              <div><h3>Integrated modelling</h3><p>Operating drivers, statements, debt, cash flow and returns link through auditable schedules.</p></div>
+            </div>
+            <div class="principle">
+              <span class="principle-number">B</span>
+              <div><h3>Valuation judgment</h3><p>DCF, trading comps, precedents and SOTP are used for different questions, not blended mechanically.</p></div>
+            </div>
+            <div class="principle">
+              <span class="principle-number">C</span>
+              <div><h3>Debt and downside thinking</h3><p>Coverage, leverage, covenants, debt capacity and cash-flow resilience sit alongside headline returns.</p></div>
+            </div>
+            <div class="principle">
+              <span class="principle-number">D</span>
+              <div><h3>Investment communication</h3><p>Each model is translated into a concise view that an investment committee or hiring manager can debate.</p></div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h3>Monte Carlo Simulation</h3>
-        <p>Simulation model for valuation ranges, portfolio risk, downside probability, and scenario outcomes.</p>
-        <a href="models/07-monte-carlo-simulation/">View Project</a>
+    <section class="contact-band" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="section-kicker" style="color:#d8c089">Model walkthroughs</p>
+          <h2>Want to challenge an assumption?</h2>
+          <p>I can walk through the full model logic, key formulas, source trail and sensitivity design in an interview. The workbooks are not distributed publicly.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button" href="mailto:sswnair@gmail.com?subject=Finance%20portfolio%20walkthrough">Email Sanjay</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/sanjaynair10/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="button secondary" href="https://github.com/sswnair" target="_blank" rel="noopener noreferrer">GitHub profile</a>
+        </div>
       </div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <span>© <span data-year></span> Sanjay Nair. Independent analytical work.</span>
+      <span><a href="https://www.linkedin.com/in/sanjaynair10/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · Public-data case studies · Not investment advice</span>
     </div>
-  </section>
-
-  <section>
-    <h2>Skills Demonstrated</h2>
-    <ul>
-      <li>Financial statement modeling</li>
-      <li>DCF valuation and comparable company analysis</li>
-      <li>Real estate investment appraisal</li>
-      <li>Portfolio analytics and performance measurement</li>
-      <li>Private equity and NAV discount analysis</li>
-      <li>Scenario analysis and Monte Carlo simulation</li>
-      <li>Excel modeling, documentation, and dashboard design</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p>
-      LinkedIn: https://www.linkedin.com/in/sanjaynair10/<br>
-      Email: sswnair@gmail.com<br>
-      GitHub: https://github.com/sswnair/sswnair.github.io
-    </p>
-  </section>
-
-  <footer>
-    <p>
-      Disclaimer: This portfolio is for educational and professional demonstration purposes only.
-      It does not constitute investment advice.
-    </p>
   </footer>
 </body>
 </html>
