@@ -1,23 +1,10 @@
 (function () {
   const projects = window.portfolioProjects || [];
+  const projectGroups = window.portfolioGroups || [];
   const grid = document.querySelector("[data-project-grid]");
   const filters = document.querySelectorAll("[data-filter]");
   const menuButton = document.querySelector("[data-menu-button]");
   const nav = document.querySelector("[data-site-nav]");
-
-  const groups = {
-    "real-estate-underwriting": "real-assets",
-    "project-finance": "real-assets",
-    "leveraged-buyout": "private-markets",
-    "ma-merger": "transactions",
-    "precedent-transactions": "transactions",
-    "credit-analysis": "credit",
-    "dcf-valuation": "valuation",
-    "three-statement": "valuation",
-    "comparable-companies": "valuation",
-    "sum-of-the-parts": "valuation",
-    "portfolio-management": "portfolio"
-  };
 
   function card(project) {
     const metrics = project.metrics.slice(0, 3).map(([label, value]) => `
@@ -28,7 +15,7 @@
     `).join("");
 
     return `
-      <article class="project-card" data-group="${groups[project.id]}">
+      <article class="project-card" data-group="${project.group}">
         <div class="project-topline">
           <span class="project-category">${project.eyebrow}</span>
           <span class="verdict-pill ${project.verdictTone}">${project.verdict}</span>
@@ -40,8 +27,25 @@
     `;
   }
 
+  function projectGroup(group) {
+    const groupProjects = projects.filter((project) => project.group === group.id);
+    if (!groupProjects.length) return "";
+    return `
+      <section class="project-group" data-project-section="${group.id}">
+        <div class="project-group-head">
+          <div>
+            <p class="section-kicker">${String(projectGroups.indexOf(group) + 1).padStart(2, "0")}</p>
+            <h3>${group.title}</h3>
+          </div>
+          <p>${group.description}</p>
+        </div>
+        <div class="projects-grid">${groupProjects.map(card).join("")}</div>
+      </section>
+    `;
+  }
+
   if (grid) {
-    grid.innerHTML = projects.map(card).join("");
+    grid.innerHTML = projectGroups.map(projectGroup).join("");
   }
 
   filters.forEach((button) => {
@@ -50,6 +54,9 @@
       filters.forEach((item) => item.classList.toggle("active", item === button));
       document.querySelectorAll(".project-card").forEach((item) => {
         item.hidden = selected !== "all" && item.dataset.group !== selected;
+      });
+      document.querySelectorAll("[data-project-section]").forEach((section) => {
+        section.hidden = selected !== "all" && section.dataset.projectSection !== selected;
       });
     });
   });

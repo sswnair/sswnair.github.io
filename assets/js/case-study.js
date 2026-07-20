@@ -54,7 +54,7 @@
   const gallery = project.images.map(([src, label], index) => `
     <button class="gallery-button" type="button" data-lightbox-src="${src}" data-lightbox-alt="${label}">
       <img src="${src}" alt="${label}" loading="${index === 0 ? "eager" : "lazy"}">
-      <span>${String(index + 1).padStart(2, "0")} &nbsp; ${label} — open full size</span>
+      <span>${String(index + 1).padStart(2, "0")} &nbsp; ${label}. View full size</span>
     </button>
   `).join("");
 
@@ -81,7 +81,7 @@
       <div class="container case-layout">
         <article class="case-main">
           <section class="verdict-box">
-            <span class="verdict-label ${project.verdictTone}">Analyst's view · ${project.verdict}</span>
+            <span class="verdict-label ${project.verdictTone}">Project conclusion · ${project.verdict}</span>
             <h2>The conclusion</h2>
             ${project.conclusion.map((paragraph) => `<p>${paragraph}</p>`).join("")}
           </section>
@@ -104,7 +104,7 @@
           <section>
             <p class="section-kicker">Selected outputs</p>
             <h2>Inside the model</h2>
-            <p>The workbook itself remains private. These rendered outputs show the analytical structure and conclusions without distributing formulas or source files.</p>
+            <p>The workbook remains private. These images show selected outputs without distributing formulas or source files.</p>
             <div class="gallery">${gallery}</div>
           </section>
 
@@ -115,7 +115,7 @@
           </section>
 
           <section class="case-actions">
-            <a class="button" href="mailto:sswnair@gmail.com?subject=${encodeURIComponent(project.title + " — model walkthrough")}">Request a walkthrough</a>
+            <a class="button" href="mailto:sswnair@gmail.com?subject=${encodeURIComponent(project.title + " model walkthrough")}">Request a walkthrough</a>
             <a class="button secondary" href="index.html#work">View another case</a>
           </section>
         </article>
@@ -123,7 +123,7 @@
         <aside class="case-sidebar">
           <div class="sidebar-inner">
             <div class="side-card">
-              <h3>Public-source anchors</h3>
+              <h3>Sources</h3>
               <ul class="source-list">${sources}</ul>
             </div>
             <div class="side-card">
@@ -132,7 +132,7 @@
             </div>
             <div class="side-card">
               <h3>Important note</h3>
-              <p>This is an independent analytical case study prepared for professional demonstration. It is not investment advice, a fairness opinion, a credit rating or a lending commitment.</p>
+              <p>The portfolio includes independent work and academic group projects. Group-origin work is identified in its limitations. Nothing on this site is investment advice, a fairness opinion, a credit rating or a lending commitment.</p>
             </div>
           </div>
         </aside>

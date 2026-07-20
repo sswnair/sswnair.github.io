@@ -1,22 +1,20 @@
-# Sanjay Nair — Finance Portfolio
+# Sanjay Nair Finance Portfolio
 
-This repository hosts my finance portfolio and selected case studies across valuation, transactions, private markets, credit, real assets and portfolio risk.
+This repository hosts 20 finance projects across accounting, forecasting, valuation, transactions, credit, treasury, real assets and portfolio risk.
 
-The work is presented as decision-led case studies: the question, model structure, key outputs, conclusion, sensitivities, public-source anchors and limitations. Complete Excel workbooks are maintained privately and are available for live walkthroughs during an interview.
+Each project presents the question, model structure, selected outputs, conclusion, sensitivities, public sources and limitations. Excel workbooks are kept private and are not included in this repository.
 
 ## Portfolio coverage
 
-- Real estate acquisition underwriting
-- Leveraged buyout analysis
-- Corporate credit underwriting
-- Project finance
-- M&A accretion and dilution
-- DCF, comparable-company, precedent-transaction and SOTP valuation
-- Integrated three-statement modelling
-- Portfolio and risk analysis
+- Accounting, forecasting and corporate finance
+- Valuation and public markets
+- Transactions and private capital
+- Credit and treasury
+- Real assets and project finance
+- Portfolio, risk and sustainable investing
 
 View the live portfolio at [sswnair.github.io](https://sswnair.github.io/).
 
 ## Important note
 
-The case studies are independent analytical work prepared for professional demonstration. They are not investment advice, fairness opinions, credit ratings or lending commitments. Company names and trademarks belong to their respective owners.
+The portfolio includes independent work and academic group projects. Group-origin work is identified on the relevant project page. The site is not investment advice, a fairness opinion, a credit rating or a lending commitment. Company names and trademarks belong to their respective owners.
