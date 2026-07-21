@@ -1,32 +1,37 @@
 window.portfolioGroups = [
   {
-    id: "accounting",
-    title: "Accounting, Forecasting and Corporate Finance",
+    id: "corporate-finance",
+    title: "Corporate Finance and Financial Analysis",
     description: "Financial statements, integrated forecasts, budgets and capital-allocation decisions."
   },
   {
-    id: "valuation",
-    title: "Valuation and Public Markets",
-    description: "DCF, trading comps, precedents, segment valuation and option pricing."
+    id: "equity-research",
+    title: "Equity Research, Valuation and Public Markets",
+    description: "DCF, trading comps, segment valuation, option pricing and public-market analysis."
   },
   {
-    id: "transactions",
-    title: "Transactions and Private Capital",
-    description: "M&A, leveraged buyouts, fund cash flows, venture financing and deal screening."
+    id: "investment-banking",
+    title: "Investment Banking and M&A",
+    description: "Merger modelling, transaction valuation and deal screening."
   },
   {
-    id: "credit",
-    title: "Credit and Treasury",
+    id: "private-markets",
+    title: "Private Equity, Venture Capital and Private Markets",
+    description: "LBO returns, fund cash flows, waterfalls, venture financing and ownership."
+  },
+  {
+    id: "credit-treasury",
+    title: "Credit Analysis and Treasury",
     description: "Leverage, coverage, liquidity, refinancing and distribution capacity."
   },
   {
-    id: "real-assets",
-    title: "Real Assets and Project Finance",
-    description: "Property and infrastructure cash flows, debt service and equity returns."
+    id: "real-estate",
+    title: "Real Estate and Private Equity Real Estate",
+    description: "Property cash flows, debt sizing, downside cases and equity returns."
   },
   {
     id: "portfolio-risk",
-    title: "Portfolio, Risk and Sustainable Investing",
+    title: "Portfolio Management, Risk and Sustainable Investing",
     description: "Allocation, drawdown, factor, climate and asset-liability analysis."
   }
 ];
@@ -34,7 +39,7 @@ window.portfolioGroups = [
 window.portfolioProjects = [
   {
     id: "financial-statement-analysis",
-    group: "accounting",
+    group: "corporate-finance",
     title: "NEXT and JD Sports Financial Statement Analysis",
     eyebrow: "Financial statement analysis",
     company: "NEXT plc and JD Sports Fashion plc",
@@ -68,7 +73,7 @@ window.portfolioProjects = [
   },
   {
     id: "three-statement",
-    group: "accounting",
+    group: "corporate-finance",
     title: "Microsoft Three-Statement Model",
     eyebrow: "Integrated financial modelling",
     company: "Microsoft",
@@ -102,7 +107,7 @@ window.portfolioProjects = [
   },
   {
     id: "budgeting-fpa",
-    group: "accounting",
+    group: "corporate-finance",
     title: "Walmart Budget, Variance and Cash Forecast",
     eyebrow: "Budgeting and FP&A",
     company: "Walmart benchmark case",
@@ -138,7 +143,7 @@ window.portfolioProjects = [
   },
   {
     id: "siemens-corporate-finance",
-    group: "accounting",
+    group: "corporate-finance",
     title: "Siemens Corporate Finance and Capital Allocation",
     eyebrow: "Corporate finance",
     company: "Siemens",
@@ -172,7 +177,7 @@ window.portfolioProjects = [
   },
   {
     id: "dcf-valuation",
-    group: "valuation",
+    group: "equity-research",
     title: "Apple DCF Valuation",
     eyebrow: "Equity valuation",
     company: "Apple",
@@ -208,7 +213,7 @@ window.portfolioProjects = [
   },
   {
     id: "comparable-companies",
-    group: "valuation",
+    group: "equity-research",
     title: "Microsoft Comparable Companies",
     eyebrow: "Trading comparables",
     company: "Microsoft peer valuation",
@@ -244,7 +249,7 @@ window.portfolioProjects = [
   },
   {
     id: "precedent-transactions",
-    group: "valuation",
+    group: "investment-banking",
     title: "Software Precedent Transactions",
     eyebrow: "Transaction valuation",
     company: "Software and infrastructure M&A",
@@ -280,7 +285,7 @@ window.portfolioProjects = [
   },
   {
     id: "sum-of-the-parts",
-    group: "valuation",
+    group: "equity-research",
     title: "Alphabet Sum-of-the-Parts",
     eyebrow: "Segment valuation",
     company: "Alphabet",
@@ -315,7 +320,7 @@ window.portfolioProjects = [
   },
   {
     id: "option-pricing",
-    group: "valuation",
+    group: "equity-research",
     title: "Apple Option Pricing and Greeks",
     eyebrow: "Derivatives valuation",
     company: "Apple option case",
@@ -351,7 +356,7 @@ window.portfolioProjects = [
   },
   {
     id: "ma-merger",
-    group: "transactions",
+    group: "investment-banking",
     title: "Cisco and Splunk Merger Analysis",
     eyebrow: "M&A",
     company: "Cisco acquisition of Splunk",
@@ -372,7 +377,7 @@ window.portfolioProjects = [
     ],
     architecture: ["Standalone financials", "Purchase price", "Sources and uses", "Financing mix", "Goodwill and intangibles", "Synergy build", "Pro forma income statement", "Accretion and sensitivity"],
     tested: ["Synergy realisation", "Debt financing", "Interest rate", "Intangible amortisation"],
-    risks: ["Synergy timing and financing mix are analyst assumptions.", "Purchase accounting is simplified.", "Integration costs and dis-synergies are not fully captured.", "The model is not a fairness opinion."],
+    risks: ["Synergy timing and financing mix are analyst assumptions.", "Purchase accounting is simplified.", "Integration costs and dis-synergies are not fully captured."],
     sources: [
       ["Cisco acquisition completion", "https://investor.cisco.com/news/news-details/2024/Cisco-Completes-Acquisition-of-Splunk/default.aspx"],
       ["Splunk FY2024 results", "https://www.splunk.com/en_us/newsroom/press-releases/2024/splunk-announces-fiscal-fourth-quarter-and-full-year-2024-financial-results.html"],
@@ -386,7 +391,7 @@ window.portfolioProjects = [
   },
   {
     id: "leveraged-buyout",
-    group: "transactions",
+    group: "private-markets",
     title: "Academy Sports LBO",
     eyebrow: "Leveraged buyout",
     company: "Academy Sports and Outdoors",
@@ -420,7 +425,7 @@ window.portfolioProjects = [
   },
   {
     id: "private-equity-fund",
-    group: "transactions",
+    group: "private-markets",
     title: "Private Equity Fund Cash Flow and Waterfall",
     eyebrow: "Private equity fund modelling",
     company: "Illustrative $750m fund",
@@ -456,7 +461,7 @@ window.portfolioProjects = [
   },
   {
     id: "startup-venture-capital",
-    group: "transactions",
+    group: "private-markets",
     title: "SaaS Startup Funding and Cap Table",
     eyebrow: "Startup and venture capital",
     company: "Illustrative SaaS company",
@@ -491,7 +496,7 @@ window.portfolioProjects = [
   },
   {
     id: "european-defence-ma",
-    group: "transactions",
+    group: "investment-banking",
     title: "European Defence M&A Screening",
     eyebrow: "M&A screening",
     company: "Thales, Rheinmetall and RENK",
@@ -512,7 +517,7 @@ window.portfolioProjects = [
     ],
     architecture: ["Company forecasts", "DCF", "Public comparables", "Precedent transactions", "Offer premium", "Synergy valuation", "Sources and uses", "Accretion, leverage and decision screen"],
     tested: ["Offer price", "Synergy realisation", "Financing mix", "ROIC and accretion"],
-    risks: ["Offer prices, betas and synergies are case assumptions.", "Company guidance and market inputs require updating.", "Regulatory and national-security review is outside the model.", "The work is a portfolio case, not a fairness opinion or live deal recommendation."],
+    risks: ["Offer prices, betas and synergies are case assumptions.", "Company guidance and market inputs require updating.", "Regulatory and national-security review is outside the model."],
     sources: [
       ["Rheinmetall FY2025 results", "https://www.rheinmetall.com/en/media/news-watch/news/2026/03/2026-03-11-rheinmetall-presents-annual-report-for-2025"],
       ["Thales FY2025 results", "https://www.thalesgroup.com/en/news-centre/press-releases/thales-reports-its-2025-full-year-results"],
@@ -526,7 +531,7 @@ window.portfolioProjects = [
   },
   {
     id: "credit-analysis",
-    group: "credit",
+    group: "credit-treasury",
     title: "Verizon Credit Underwriting",
     eyebrow: "Corporate credit",
     company: "Verizon Communications",
@@ -561,7 +566,7 @@ window.portfolioProjects = [
   },
   {
     id: "rolls-royce-credit-treasury",
-    group: "credit",
+    group: "credit-treasury",
     title: "Rolls-Royce Credit and Treasury Review",
     eyebrow: "Credit and treasury",
     company: "Rolls-Royce Holdings",
@@ -598,7 +603,7 @@ window.portfolioProjects = [
   },
   {
     id: "real-estate-underwriting",
-    group: "real-assets",
+    group: "real-estate",
     title: "Logistics Acquisition Underwriting",
     eyebrow: "Real estate private equity",
     company: "Dallas-Fort Worth logistics asset",
@@ -629,42 +634,6 @@ window.portfolioProjects = [
       ["assets/models/real-estate-underwriting-01.png", "Underwriting summary"],
       ["assets/models/real-estate-underwriting-02.png", "Equity return build"],
       ["assets/models/real-estate-underwriting-03.png", "Return sensitivities"]
-    ]
-  },
-  {
-    id: "project-finance",
-    group: "real-assets",
-    title: "100 MW Solar Project Finance",
-    eyebrow: "Infrastructure and project finance",
-    company: "Lone Star Solar PV, Texas",
-    decision: "Can contracted cash flow support an 18-year senior debt structure and the required equity return?",
-    short: "A 20-year solar cash-flow model covering cost, PPA revenue, CFADS, debt service and equity distributions.",
-    featured: true,
-    verdict: "Financeable on the benchmark case",
-    verdictTone: "positive",
-    conclusion: [
-      "A $110.1m project funded with 65% debt produces a 15.2% equity IRR, minimum DSCR of 1.83x and minimum LLCR of 2.25x. Debt is repaid before maturity.",
-      "The case needs site-specific irradiation, PPA, EPC, interconnection, tax-credit and lender terms before it can support an investment decision."
-    ],
-    metrics: [
-      ["Total project cost", "$110.1m", "100 MWac"],
-      ["Equity IRR", "15.2%", "Twenty-year life"],
-      ["Minimum DSCR", "1.83x", "1.30x threshold"],
-      ["Minimum LLCR", "2.25x", "Debt repaid by maturity"]
-    ],
-    architecture: ["Construction schedule", "Generation and PPA revenue", "Operating costs", "CFADS waterfall", "Senior debt", "Coverage ratios", "Equity distributions", "Sensitivity and checks"],
-    tested: ["PPA price and capacity factor", "Debt percentage and interest rate", "Coverage through tenor", "Degradation and decommissioning"],
-    risks: ["No site-specific irradiation or curtailment study is included.", "Tax equity is not modelled.", "EPC and operating costs use public benchmarks.", "Interconnection, permitting and merchant-tail risk require separate diligence."],
-    sources: [
-      ["EIA capacity-factor data", "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_6_07_b"],
-      ["NREL technology data", "https://data.openei.org/search?q=overnight+capital+cost"],
-      ["DOE solar cost benchmarks", "https://www.energy.gov/cmei/systems/solar-photovoltaic-system-cost-benchmarks"],
-      ["Lazard 2025 LCOE+", "https://www.lazard.com/news-announcements/lazard-releases-2025-levelized-cost-of-energyplus-report-pr/"]
-    ],
-    images: [
-      ["assets/models/project-finance-01.png", "Project finance dashboard"],
-      ["assets/models/project-finance-02.png", "Coverage profile"],
-      ["assets/models/project-finance-03.png", "Financing sensitivities"]
     ]
   },
   {
@@ -726,7 +695,7 @@ window.portfolioProjects = [
     ],
     architecture: ["Euro capital market assumptions", "Correlation and covariance", "Current and recommended portfolios", "Scenario analysis", "Funded-ratio sensitivity", "Climate metrics", "Efficient frontier", "Factor and index comparison"],
     tested: ["Rate-cut scenario", "Stagflation", "Climate stress", "Asset-liability surplus risk"],
-    risks: ["The uploaded workbook was partially damaged, so the public views use only data recovered from readable model XML.", "Climate figures use proxies and illustrative asset-sleeve assumptions.", "The recommended allocation improves financial risk metrics but worsens the selected climate indicators.", "The case is not a fiduciary recommendation or a replacement for manager-level climate data."],
+    risks: ["Climate figures use proxies and illustrative asset-sleeve assumptions.", "The recommended allocation improves financial risk metrics but worsens the selected climate indicators.", "The case is not a fiduciary recommendation or a replacement for manager-level climate data."],
     sources: [
       ["J.P. Morgan long-term capital market assumptions", "https://am.jpmorgan.com/us/en/asset-management/adv/insights/portfolio-insights/ltcma/"],
       ["NGFS climate scenarios", "https://www.ngfs.net/ngfs-scenarios-portal"],

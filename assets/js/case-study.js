@@ -104,7 +104,7 @@
           <section>
             <p class="section-kicker">Selected outputs</p>
             <h2>Inside the model</h2>
-            <p>The workbook remains private. These images show selected outputs without distributing formulas or source files.</p>
+            <p>The workbook remains private. These images show selected outputs.</p>
             <div class="gallery">${gallery}</div>
           </section>
 
@@ -129,10 +129,6 @@
             <div class="side-card">
               <h3>Workbook access</h3>
               <p>The complete Excel model is maintained privately. A live walkthrough can be provided during an interview.</p>
-            </div>
-            <div class="side-card">
-              <h3>Important note</h3>
-              <p>The portfolio includes independent work and academic group projects. Group-origin work is identified in its limitations. Nothing on this site is investment advice, a fairness opinion, a credit rating or a lending commitment.</p>
             </div>
           </div>
         </aside>
