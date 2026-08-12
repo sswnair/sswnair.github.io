@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Sanjay Nair, CFA finance portfolio">
+  <rect width="1200" height="630" fill="#0b1f33"/>
+  <circle cx="1070" cy="110" r="210" fill="none" stroke="#c5a363" stroke-opacity=".28" stroke-width="2"/>
+  <circle cx="1130" cy="570" r="310" fill="none" stroke="#2f7772" stroke-opacity=".32" stroke-width="2"/>
+  <rect x="84" y="76" width="72" height="72" rx="36" fill="#c5a363"/>
+  <text x="120" y="122" fill="#0b1f33" font-family="Georgia, serif" font-size="25" font-weight="700" text-anchor="middle">SN</text>
+  <text x="84" y="248" fill="#f5f3ed" font-family="Georgia, serif" font-size="72">Sanjay Nair, CFA</text>
+  <text x="84" y="330" fill="#f5f3ed" font-family="Georgia, serif" font-size="52">Finance work that ends</text>
+  <text x="84" y="392" fill="#f5f3ed" font-family="Georgia, serif" font-size="52">in a decision.</text>
+  <text x="84" y="480" fill="#b9c5c9" font-family="Arial, sans-serif" font-size="24">22 dated case studies · 7 areas of finance</text>
+  <text x="84" y="525" fill="#d7b56d" font-family="Arial, sans-serif" font-size="20">CFA charterholder · MSc Finance graduate · Dublin, Ireland</text>
+</svg>

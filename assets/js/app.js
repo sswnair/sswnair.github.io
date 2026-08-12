@@ -5,6 +5,7 @@
   const filters = document.querySelectorAll("[data-filter]");
   const menuButton = document.querySelector("[data-menu-button]");
   const nav = document.querySelector("[data-site-nav]");
+  const filterStatus = document.querySelector("[data-filter-status]");
 
   function card(project) {
     const metrics = project.metrics.slice(0, 3).map(([label, value]) => `
@@ -20,9 +21,10 @@
           <span class="project-category">${project.eyebrow}</span>
           <span class="verdict-pill ${project.verdictTone}">${project.verdict}</span>
         </div>
-        <h3><a href="case-study.html?project=${project.id}">${project.title}</a></h3>
+        <h4><a href="cases/${project.id}.html">${project.title}</a></h4>
+        <p class="project-context"><span>${project.basis}</span><span>${project.asOf}</span></p>
         <p class="project-short">${project.short}</p>
-        <div class="card-metrics" aria-label="Selected model outputs">${metrics}</div>
+        <div class="card-metrics" role="group" aria-label="Selected model outputs">${metrics}</div>
       </article>
     `;
   }
@@ -51,13 +53,21 @@
   filters.forEach((button) => {
     button.addEventListener("click", () => {
       const selected = button.dataset.filter;
-      filters.forEach((item) => item.classList.toggle("active", item === button));
+      filters.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
       document.querySelectorAll(".project-card").forEach((item) => {
         item.hidden = selected !== "all" && item.dataset.group !== selected;
       });
       document.querySelectorAll("[data-project-section]").forEach((section) => {
         section.hidden = selected !== "all" && section.dataset.projectSection !== selected;
       });
+      if (filterStatus) {
+        const count = selected === "all" ? projects.length : projects.filter((project) => project.group === selected).length;
+        filterStatus.textContent = `Showing ${count} ${count === 1 ? "case study" : "case studies"}.`;
+      }
     });
   });
 

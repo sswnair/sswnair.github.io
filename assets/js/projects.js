@@ -7,12 +7,12 @@ window.portfolioGroups = [
   {
     id: "equity-research",
     title: "Equity Research, Valuation and Public Markets",
-    description: "DCF, trading comps, segment valuation, option pricing and public-market analysis."
+    description: "DCF, trading comps, option pricing and public-market analysis."
   },
   {
     id: "investment-banking",
     title: "Investment Banking and M&A",
-    description: "Merger modelling, transaction valuation and deal screening."
+    description: "Merger modeling, transaction valuation and deal screening."
   },
   {
     id: "private-markets",
@@ -36,6 +36,174 @@ window.portfolioGroups = [
   }
 ];
 
+const addedRealEstateProjects = [
+  {
+    id: "multifamily-acquisition-the-louisa",
+    group: "real-estate",
+    title: "The Louisa Multifamily Acquisition and Hold Underwriting",
+    eyebrow: "Multifamily acquisition",
+    company: "The Louisa, Portland, Oregon",
+    decision: "Does the operating recovery support the 2024 acquisition basis and modeled exit?",
+    short: "A 242-unit acquisition and hold model linking operations, interest-only debt, exit value and downside returns.",
+    featured: true,
+    verdict: "Operating recovery does not restore the modeled equity basis",
+    verdictTone: "caution",
+    conclusion: [
+      "Occupancy improved from 93.0% at acquisition to 95.4% in Q1 2026, and annualized Q1 NOI supports 1.42x DSCR.",
+      "The base exit produces a 0.82x equity multiple and negative 4.0% XIRR. The model is therefore a downside hold and recovery case, not a successful acquisition recommendation."
+    ],
+    metrics: [
+      ["Total basis", "$86.28m", "2024 acquisition basis"],
+      ["Q1 2026 NOI DSCR", "1.42x", "Annualized quarter"],
+      ["Equity multiple", "0.82x", "Modeled exit"],
+      ["Levered XIRR", "(4.0%)", "Modeled exit"]
+    ],
+    architecture: ["Acquisition capitalization", "Rent roll and occupancy", "Historical operations", "Operating forecast", "Interest-only debt", "Exit valuation", "Levered cash flow", "Sensitivity and reconciliations"],
+    tested: ["Occupancy recovery", "NOI and debt service", "Exit cap rate", "Equity recovery"],
+    risks: ["Q1 2026 revenue and expenses are annualized from one quarter.", "Residential and retail income are split using the acquisition rent mix.", "Growth, exit cap rate, selling costs and capital spending are planning assumptions.", "The model combines the 2024 acquisition basis with later operating results."],
+    sources: [
+      ["SEC final prospectus", "https://www.sec.gov/Archives/edgar/data/2038433/000153949724002197/0001539497-24-002197-index.htm"],
+      ["SEC March 2026 asset report", "https://www.sec.gov/Archives/edgar/data/2038433/000188852426006674/0001888524-26-006674-index.htm"],
+      ["SEC Q1 2026 asset and loan report", "https://www.sec.gov/Archives/edgar/data/2038433/000188852426012409/0001888524-26-012409-index.htm"],
+      ["Guardian project page", "https://www.gres.com/projects/the-louisa/"]
+    ],
+    images: [
+      ["assets/models/multifamily-acquisition-summary.png", "Investment summary and projected return"],
+      ["assets/models/multifamily-acquisition-returns.png", "Valuation and equity return build"],
+      ["assets/models/multifamily-acquisition-sensitivity.png", "Exit cap rate and NOI sensitivity"]
+    ]
+  },
+  {
+    id: "multifamily-refinance-west-palm-gardens",
+    group: "real-estate",
+    title: "West Palm Gardens Debt Refinance and Lender Reporting",
+    eyebrow: "Real estate debt",
+    company: "Five-property West Palm Beach portfolio",
+    decision: "Does the $50.0m loan remain within the model's leverage, coverage and debt-yield screens?",
+    short: "A lender-facing model for 437 units covering NOI, DSCR, debt yield, cash monitoring and refinance capacity.",
+    featured: true,
+    verdict: "The loan remains within the modeled credit screens",
+    verdictTone: "positive",
+    conclusion: [
+      "FY2025 NOI supports 1.66x NOI DSCR, 1.62x NCF DSCR and 10.9% NOI debt yield.",
+      "The 65% LTV screen is binding and implies $54.73m of capacity, or $4.73m of headroom, using the 2024 appraisal. This is a planning screen, not a lender commitment."
+    ],
+    metrics: [
+      ["Loan balance", "$50.0m", "Interest-only loan"],
+      ["NOI DSCR", "1.66x", "FY2025"],
+      ["NOI debt yield", "10.9%", "FY2025"],
+      ["Appraisal-based LTV", "59.4%", "2024 appraisal"]
+    ],
+    architecture: ["Collateral overview", "Unit mix", "Historical operations", "NOI underwriting", "Debt sizing", "Debt schedule", "Credit metrics", "Lender package and reconciliations"],
+    tested: ["LTV sizing", "NOI and NCF DSCR", "Debt yield", "Refinance headroom"],
+    risks: ["LTV and loan capacity use a 2024 appraisal, not a June 2026 valuation.", "Lender thresholds are planning screens, not contractual terms.", "The model does not establish current refinancing pricing or fees.", "No binding loan commitment is implied."],
+    sources: [
+      ["SEC final prospectus", "https://www.sec.gov/Archives/edgar/data/2038433/000153949724002197/0001539497-24-002197-index.htm"],
+      ["SEC FY2025 asset report", "https://www.sec.gov/Archives/edgar/data/2038433/000188852426008598/0001888524-26-008598-index.htm"],
+      ["SEC June 2026 loan-status report", "https://www.sec.gov/Archives/edgar/data/2038433/000188852426012409/0001888524-26-012409-index.htm"]
+    ],
+    images: [
+      ["assets/models/multifamily-refinance-lender-package.png", "Lender package and collateral summary"],
+      ["assets/models/multifamily-refinance-credit-metrics.png", "Coverage, leverage and debt yield"],
+      ["assets/models/multifamily-refinance-debt-sizing.png", "Debt sizing and modeled headroom"]
+    ]
+  },
+  {
+    id: "multifamily-portfolio-nj-asden",
+    group: "real-estate",
+    title: "NJ Asden Multifamily Portfolio Asset Management and Hold/Sell",
+    eyebrow: "Portfolio asset management",
+    company: "Six-property New Jersey portfolio",
+    decision: "Do modeled hold cash flows and refinance capacity justify retaining the 1,011-unit portfolio?",
+    short: "A portfolio model linking property operations, reserves, debt, valuation, refinance capacity and hold/sell economics.",
+    featured: true,
+    verdict: "The portfolio-level screen favors a sale review",
+    verdictTone: "caution",
+    conclusion: [
+      "Latest T12 NOI is $7.76m and NCF DSCR is 1.33x. Modeled 2029 refinance capacity is $89.03m against a $90.0m loan.",
+      "At a 10% discount rate and 6.25% exit cap, present value of hold cash flows is $7.80m below modeled net sale equity. The result supports a portfolio-level sale review, not an asset-level directive."
+    ],
+    metrics: [
+      ["Latest T12 NOI", "$7.76m", "Twelve months to September 2025"],
+      ["NCF DSCR", "1.33x", "Latest T12"],
+      ["Refinance capacity", "$89.03m", "Modeled for 2029"],
+      ["Hold less sell", "($7.80m)", "Portfolio-level screen"]
+    ],
+    architecture: ["Portfolio overview", "Asset summary", "Operating performance", "NOI forecast", "Capital plan", "Debt tracker", "Valuation and refinance", "Hold/sell screen"],
+    tested: ["NOI growth", "Debt coverage", "Refinance capacity", "Hold versus sale value"],
+    risks: ["Asset-level NOI and debt are allocated using proxy shares.", "The $143.4m appraisal is from 2025.", "Individual asset screens are analytical only because partial releases are not permitted.", "Waterfall assumptions are illustrative and are not presented as actual sponsor terms."],
+    sources: [
+      ["SEC refinancing disclosure", "https://www.sec.gov/Archives/edgar/data/2057363/000153949725001207/0001539497-25-001207-index.htm"],
+      ["SEC April 2026 servicing report", "https://www.sec.gov/Archives/edgar/data/2057363/000162829726000353/0001628297-26-000353-index.htm"]
+    ],
+    images: [
+      ["assets/models/multifamily-portfolio-dashboard.png", "Portfolio operating, leverage and value dashboard"],
+      ["assets/models/multifamily-portfolio-refinance.png", "Refinance capacity and sale proceeds"],
+      ["assets/models/multifamily-portfolio-sensitivity.png", "Hold value sensitivity"]
+    ]
+  },
+  {
+    id: "multifamily-value-add-west-palm-gardens",
+    group: "real-estate",
+    title: "West Palm Gardens Value-Add Renovation and Capital Plan",
+    eyebrow: "Value-add real estate",
+    company: "Five-property West Palm Beach portfolio",
+    decision: "Does the remaining renovation plan generate enough NOI uplift to justify the scheduled capital?",
+    short: "A phased renovation model covering unit counts, capital spending, NOI uplift, debt sizing and projected returns.",
+    featured: true,
+    verdict: "Positive modeled yield, subject to a current scope refresh",
+    verdictTone: "neutral",
+    conclusion: [
+      "The illustrative plan schedules $5.19m of remaining capital and $542,000 of annual NOI uplift, producing a 10.4% untrended yield on cost.",
+      "The 252-unit remaining balance is dated August 2024. Renovation progress, achievable rents and construction costs must be refreshed before treating the return as decision-ready."
+    ],
+    metrics: [
+      ["Scheduled capital", "$5.19m", "Illustrative remaining plan"],
+      ["Annual NOI uplift", "$542k", "Modeled"],
+      ["Yield on cost", "10.4%", "Untrended"],
+      ["Levered XIRR", "11.5%", "From 2024 refinance basis"]
+    ],
+    architecture: ["Business plan", "Unit mix", "Renovation schedule", "Capital budget", "NOI forecast", "Debt sizing", "Valuation and returns", "Sensitivity and reconciliations"],
+    tested: ["Renovation pace", "Rent uplift", "Capital cost", "Exit valuation"],
+    risks: ["The remaining-unit count is from August 2024.", "Rent uplift uses observed in-place differences, not a fresh market-rent study.", "Future cost, pace, occupancy and exit assumptions are planning inputs.", "The model does not separately include unit downtime, turnover costs, leasing costs or taxes."],
+    sources: [
+      ["SEC final prospectus", "https://www.sec.gov/Archives/edgar/data/2038433/000153949724002197/0001539497-24-002197-index.htm"],
+      ["SEC FY2025 asset report", "https://www.sec.gov/Archives/edgar/data/2038433/000188852426008598/0001888524-26-008598-index.htm"],
+      ["SEC June 2026 loan-status report", "https://www.sec.gov/Archives/edgar/data/2038433/000188852426012409/0001888524-26-012409-index.htm"]
+    ],
+    images: [
+      ["assets/models/multifamily-value-add-summary.png", "Remaining capital, NOI uplift and projected return"],
+      ["assets/models/multifamily-value-add-returns.png", "Renovation return schedule"],
+      ["assets/models/multifamily-value-add-sensitivity.png", "Renovation yield sensitivity"]
+    ]
+  }
+];
+
+const projectContext = {
+  "financial-statement-analysis": ["Academic group project", "Historical analysis through 2025"],
+  "three-statement": ["Self-directed public-data case study", "Forecast through FY2030E"],
+  "budgeting-fpa": ["Illustrative case using public Walmart anchors", "Annual plan with first-half variance review"],
+  "siemens-corporate-finance": ["Academic group project", "Prepared July 2026"],
+  "dcf-valuation": ["Self-directed public-data case study", "Market-price input: June 26, 2026"],
+  "comparable-companies": ["Self-directed public-data case study", "Target market data: July 27, 2026; peer observation dates are not recorded"],
+  "precedent-transactions": ["Illustrative target using public transaction data", "Transaction set through 2025"],
+  "option-pricing": ["Self-directed public-data case study", "Model date: July 28, 2026; spot price: July 27 close"],
+  "ma-merger": ["Retrospective self-directed case study", "Completed transaction with forecast years FY2026E to FY2028E"],
+  "leveraged-buyout": ["Self-directed public-data case study", "Historical case using 2025E to 2029E assumptions"],
+  "private-equity-fund": ["Illustrative case", "Modeled fund life and cash-flow schedule"],
+  "startup-venture-capital": ["Illustrative case using public SaaS benchmarks", "Forecast through 2031"],
+  "european-defence-ma": ["Academic transaction case study", "Case assumptions based on FY2025 reporting"],
+  "credit-analysis": ["Self-directed public-data case study", "Forecast from 2025A through 2030E"],
+  "rolls-royce-credit-treasury": ["Self-directed public-data case study", "FY2025 base with 2026 scenarios"],
+  "real-estate-underwriting": ["Illustrative case", "Representative seven-year logistics underwriting"],
+  "portfolio-management": ["Self-directed public-data case study", "Monthly data from January 2021 through June 2026"],
+  "sustainable-finance": ["Illustrative case using public capital-market assumptions", "Long-term allocation and ALM scenario case"],
+  "multifamily-acquisition-the-louisa": ["Self-directed public-source case study", "Prepared through Q1 2026"],
+  "multifamily-refinance-west-palm-gardens": ["Self-directed public-source case study", "Prepared through June 2026"],
+  "multifamily-portfolio-nj-asden": ["Self-directed public-source case study", "Prepared through April 2026"],
+  "multifamily-value-add-west-palm-gardens": ["Self-directed public-source case study", "Prepared through June 2026; renovation count dated August 2024"]
+};
+
 window.portfolioProjects = [
   {
     id: "financial-statement-analysis",
@@ -49,7 +217,7 @@ window.portfolioProjects = [
     verdict: "NEXT led on profitability and return on equity",
     verdictTone: "positive",
     conclusion: [
-      "NEXT recorded a 12.03% net margin and 41.96% return on equity in 2025, compared with 4.28% and 16.54% for JD Sports. JD Sports had slightly higher asset turnover, but NEXT converted sales into profit more effectively.",
+      "NEXT recorded a 12.03% net margin and 41.96% return on equity in 2025, compared with 4.28% and 14.53% for JD Sports. NEXT also had slightly higher 2025 asset turnover at 1.26x versus 1.15x.",
       "NEXT also reduced debt to assets from 48.10% in 2023 to 33.22% in 2025. This is a historical academic group project. The portfolio presents selected analysis and does not claim sole authorship."
     ],
     metrics: [
@@ -58,24 +226,24 @@ window.portfolioProjects = [
       ["JD Sports net margin", "4.28%", "2025"],
       ["NEXT debt to equity", "0.92x", "2025"]
     ],
-    architecture: ["Income statement review", "Balance-sheet review", "Cash-flow review", "DuPont analysis", "Liquidity ratios", "Profitability ratios", "Solvency ratios", "Source and QA notes"],
+    architecture: ["Income statement review", "Balance-sheet review", "Cash-flow review", "DuPont analysis", "Liquidity ratios", "Profitability ratios", "Solvency ratios", "Source reconciliation notes"],
     tested: ["Margin conversion", "Asset turnover and leverage", "Liquidity trend", "Debt and interest coverage"],
     risks: ["The original work was completed as an academic group project.", "Company reporting periods and adjusted metrics are not fully aligned.", "Licensed data extracts remain private and are not redistributed.", "The model contains a conditional QA status, so conclusions are presented as historical analysis rather than current advice."],
     sources: [
       ["NEXT reports and presentations", "https://www.nextplc.co.uk/investors/reports-and-presentations/2025-26"],
-      ["JD Sports annual reports", "https://www.jdplc.com/investor-relations/reports-and-presentations/annual-reports/"]
+      ["JD Sports reports and presentations", "https://www.jdplc.com/investors/reports-presentations/"]
     ],
     images: [
-      ["assets/models/financial-statement-analysis-summary.png", "2025 ratio comparison and NEXT solvency trend"],
-      ["assets/models/financial-statement-analysis-02.png", "DuPont analysis for NEXT and JD Sports"],
-      ["assets/models/financial-statement-analysis-03.png", "Liquidity ratio schedule"]
+      ["assets/models/verified-fsa-2025-comparison.svg", "Verified 2025 ratio comparison for NEXT and JD Sports"],
+      ["assets/models/verified-fsa-solvency.svg", "Verified NEXT solvency trend"],
+      ["assets/models/verified-fsa-liquidity.svg", "Verified 2025 liquidity comparison"]
     ]
   },
   {
     id: "three-statement",
     group: "corporate-finance",
     title: "Microsoft Three-Statement Model",
-    eyebrow: "Integrated financial modelling",
+    eyebrow: "Integrated financial modeling",
     company: "Microsoft",
     decision: "How do segment growth, margins, working capital and capital expenditure flow through the three statements?",
     short: "An integrated Microsoft forecast linking segment drivers, statements, debt, cash and free cash flow.",
@@ -83,26 +251,26 @@ window.portfolioProjects = [
     verdict: "Cash generation rises, with capital expenditure as the key watch item",
     verdictTone: "neutral",
     conclusion: [
-      "The base case grows revenue from $281.7bn in FY2025A to $426.4bn in FY2030E. EBITDA margin stays near 58%, while free cash flow reaches $157.3bn by FY2030E.",
+      "The base case grows revenue from $281.7bn in FY2025A to $428.4bn in FY2030E. EBITDA margin reaches 57.8%, while free cash flow reaches $158.0bn by FY2030E.",
       "The main forecast question is whether cloud growth can support continued infrastructure spending. A review should focus on Intelligent Cloud growth, capital expenditure intensity and cash conversion."
     ],
     metrics: [
-      ["FY2030E revenue", "$426.4bn", "From $281.7bn in FY2025A"],
-      ["FY2030E EBITDA", "$246.5bn", "57.8% margin"],
-      ["FY2030E free cash flow", "$157.3bn", "Model output"],
+      ["FY2030E revenue", "$428.4bn", "From $281.7bn in FY2025A"],
+      ["FY2030E EBITDA", "$247.6bn", "57.8% margin"],
+      ["FY2030E free cash flow", "$158.0bn", "Model output"],
       ["Forecast period", "5 years", "FY2026E to FY2030E"]
     ],
     architecture: ["Segment revenue drivers", "Cost and margin drivers", "Income statement", "Working-capital schedule", "Capital expenditure and depreciation", "Debt schedule", "Balance sheet", "Cash-flow statement and checks"],
     tested: ["Cloud growth", "Gross margin", "Capital expenditure intensity", "Statement and cash-flow tie-outs"],
-    risks: ["Long-range demand for cloud services and data-centre capacity is uncertain.", "Capital expenditure may remain elevated for longer than modelled.", "Forecast assumptions are not company guidance.", "The public-data model simplifies some below-the-line and capital-allocation items."],
+    risks: ["Long-range demand for cloud services and data-center capacity is uncertain.", "Capital expenditure may remain elevated for longer than modeled.", "Forecast assumptions are not company guidance.", "The public-data model simplifies some below-the-line and capital-allocation items."],
     sources: [
       ["Microsoft FY2025 annual report", "https://www.microsoft.com/investor/reports/ar25/"],
       ["Microsoft FY2024 annual report", "https://www.microsoft.com/investor/reports/ar24/"]
     ],
     images: [
-      ["assets/models/three-statement-01.png", "Three-statement dashboard"],
-      ["assets/models/three-statement-02.png", "Forecast output"],
-      ["assets/models/three-statement-03.png", "Model checks"]
+      ["assets/models/verified-three-statement-dashboard.png", "Three-statement dashboard"],
+      ["assets/models/verified-three-statement-forecast.png", "Forecast output"],
+      ["assets/models/verified-three-statement-controls.png", "Model checks"]
     ]
   },
   {
@@ -117,28 +285,27 @@ window.portfolioProjects = [
     verdict: "The plan remains funded and ending cash rises",
     verdictTone: "positive",
     conclusion: [
-      "The annual budget produces $702.8bn of revenue, $28.1bn of EBITDA and $9.8bn of free cash flow. Ending cash reaches $19.7bn in the model.",
-      "First-half actual revenue is close to budget, while EBITDA is broadly flat to plan. The key controls are revenue delivery, working capital and monthly capital expenditure."
+      "The illustrative annual budget produces $734.7bn of revenue, $35.4bn of EBITDA and $3.7bn of free cash flow. Modeled ending cash is $13.6bn.",
+      "The workbook compares the first six months with the plan. Revenue delivery, working capital and monthly capital expenditure remain the main controls; none of these estimates is Walmart guidance."
     ],
     metrics: [
-      ["Budget revenue", "$702.8bn", "Annual plan"],
-      ["Budget EBITDA", "$28.1bn", "Annual plan"],
-      ["Free cash flow", "$9.8bn", "Annual plan"],
-      ["Ending cash", "$19.7bn", "January close"]
+      ["Budget revenue", "$734.7bn", "Illustrative annual plan"],
+      ["Budget EBITDA", "$35.4bn", "Illustrative annual plan"],
+      ["Free cash flow", "$3.7bn", "Illustrative annual plan"],
+      ["Ending cash", "$13.6bn", "Modeled close"]
     ],
     architecture: ["Annual operating budget", "Monthly revenue and margin drivers", "Budget versus actual", "Variance analysis", "Working-capital assumptions", "Capital expenditure", "Cash-flow forecast", "Checks and source notes"],
     tested: ["Monthly revenue variance", "EBITDA variance", "Working-capital swings", "Ending liquidity"],
     risks: ["The budget is an illustrative corporate-planning case.", "Actual results cover only the first part of the plan year.", "Working-capital assumptions can move monthly cash materially.", "The model is not company guidance."],
     sources: [
       ["Walmart FY2025 Form 10-K", "https://www.sec.gov/Archives/edgar/data/104169/000010416925000021/wmt-20250131.htm"],
-      ["Walmart SEC filings", "https://stock.walmart.com/financial-information/sec-filings"],
-      ["Walmart annual reports", "https://stock.walmart.com/financials/annual-reports-and-proxies/default.aspx"]
+      ["Walmart SEC filings", "https://stock.walmart.com/sec-filings/all-sec-filings"],
+      ["Walmart annual reports", "https://stock.walmart.com/financial-information/annual-reports"]
     ],
     images: [
-      ["assets/models/budgeting-fpa-01.png", "Budget and ending-cash dashboard"],
-      ["assets/models/budgeting-fpa-02.png", "Budget versus actual results"],
-      ["assets/models/budgeting-fpa-04.png", "Cash-flow forecast, first half"],
-      ["assets/models/budgeting-fpa-05.png", "Cash-flow forecast, second half"]
+      ["assets/models/verified-budgeting-dashboard.png", "Verified budget and ending-cash dashboard"],
+      ["assets/models/verified-budgeting-variance.png", "Budget versus actual results"],
+      ["assets/models/verified-budgeting-cash-flow.png", "Rolling cash-flow forecast"]
     ]
   },
   {
@@ -153,21 +320,21 @@ window.portfolioProjects = [
     verdict: "Base-case cash flow supports investment with payout discipline",
     verdictTone: "positive",
     conclusion: [
-      "The base case estimates FY2026E revenue of €84.4bn and free cash flow of €11.1bn. A 40% distribution rate leaves €6.7bn of retained free cash flow and €3.3bn of strategic investment capacity.",
-      "The severe downside reduces free cash flow to €6.2bn. Payout and acquisition decisions should therefore be tied to scenario cash flow, not the prior year's record result."
+      "The base case estimates FY2026E revenue of €84.4bn and free cash flow of €10.8bn. Distribution and strategic investment capacity are scenario outputs, not company guidance.",
+      "The severe downside reduces free cash flow to €6.0bn. Payout and acquisition decisions should therefore be tied to scenario cash flow, not the prior year's record result."
     ],
     metrics: [
       ["FY2026E revenue", "€84.4bn", "Base case"],
-      ["FY2026E free cash flow", "€11.1bn", "Base case"],
-      ["Retained free cash flow", "€6.7bn", "After 40% distributions"],
-      ["Strategic capacity", "€3.3bn", "Base case"]
+      ["FY2026E free cash flow", "€10.8bn", "Base case"],
+      ["Revenue growth", "6.0%", "Base-case assumption"],
+      ["Guidance range", "6% to 8%", "Company outlook used"]
     ],
     architecture: ["FY2025 reported base", "FY2026 outlook", "Operating scenarios", "Free-cash-flow conversion", "Distribution policy", "Retained cash", "Strategic investment capacity", "Sensitivity and checks"],
     tested: ["Revenue growth", "Industrial Business margin", "Cash conversion", "Distribution rate"],
     risks: ["The original workbook was prepared as academic group work.", "The portfolio does not present the project as sole-authored work.", "Acquisition integration and working-capital pressure can reduce cash conversion.", "Scenario outputs are analyst estimates, not company guidance."],
     sources: [
       ["Siemens FY2025 results", "https://press.siemens.com/global/en/pressrelease/earnings-release-and-financial-results-q4-fy-2025"],
-      ["Siemens Q1 FY2026 results", "https://press.siemens.com/global/en/pressrelease/strong-start-fiscal-2026"]
+      ["Siemens Q2 FY2026 results", "https://press.siemens.com/global/en/pressrelease/earnings-release-and-financial-results-q2-fy-2026"]
     ],
     images: [
       ["assets/models/siemens-corporate-finance-02.png", "Capital-allocation scenarios"],
@@ -192,7 +359,7 @@ window.portfolioProjects = [
     ],
     metrics: [
       ["Implied share price", "$155.55", "Blended terminal methods"],
-      ["Model market price", "$283.78", "Valuation-date input"],
+      ["Model market price", "$283.78", "June 26, 2026 input"],
       ["WACC", "8.9%", "Base case"],
       ["Terminal growth", "2.5%", "Base case"]
     ],
@@ -203,12 +370,12 @@ window.portfolioProjects = [
       ["Apple FY2025 Form 10-K", "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"],
       ["FRED 10-year Treasury", "https://fred.stlouisfed.org/series/DGS10"],
       ["Damodaran data", "https://pages.stern.nyu.edu/~adamodar/"],
-      ["Apple investor relations", "https://investor.apple.com/"]
+      ["Apple stock price history", "https://investor.apple.com/stock-price/"]
     ],
     images: [
-      ["assets/models/dcf-valuation-01.png", "DCF summary and equity-value bridge"],
-      ["assets/models/dcf-valuation-02.png", "DCF sensitivity tables at readable scale"],
-      ["assets/models/dcf-valuation-new-02.png", "Forecast free-cash-flow chart"]
+      ["assets/models/verified-dcf-dashboard.png", "Verified DCF summary and equity-value bridge"],
+      ["assets/models/verified-dcf-sensitivity.png", "DCF sensitivity tables"],
+      ["assets/models/verified-dcf-free-cash-flow.png", "Forecast free-cash-flow build"]
     ]
   },
   {
@@ -223,12 +390,12 @@ window.portfolioProjects = [
     verdict: "Use EV / EBITDA as the primary anchor",
     verdictTone: "neutral",
     conclusion: [
-      "The peer median is 16.2x EV / EBITDA, which implies $361.26 per share. The other methods range from $265.03 on EV / Revenue to $471.40 on EV / EBIT.",
-      "EV / EBITDA is the cleanest primary reference for this peer set. Revenue, P / E and P / B remain cross-checks because the companies have different margins, capital structures and accounting profiles."
+      "The peer median is 16.2x EV / EBITDA, which implies $360.24 per share. The other methods range from $263.79 on EV / Revenue to $470.61 on EV / EBIT.",
+      "EV / EBITDA is the selected primary reference for this model. Revenue, P / E and P / B remain cross-checks because the companies have different margins, capital structures and accounting profiles."
     ],
     metrics: [
       ["Peer EV / EBITDA", "16.2x", "Median"],
-      ["Implied share price", "$361.26", "EV / EBITDA method"],
+      ["Implied share price", "$360.24", "EV / EBITDA method"],
       ["Peer EV / revenue", "6.8x", "Median"],
       ["Peer set", "9", "Excluding target"]
     ],
@@ -242,9 +409,9 @@ window.portfolioProjects = [
       ["Amazon annual reports", "https://ir.aboutamazon.com/annual-reports-proxies-and-shareholder-letters/default.aspx"]
     ],
     images: [
-      ["assets/models/comparable-companies-01.png", "Comparable-company dashboard"],
-      ["assets/models/comparable-companies-02.png", "Valuation summary"],
-      ["assets/models/comparable-companies-03.png", "Trading multiples"]
+      ["assets/models/verified-comps-dashboard.png", "Comparable-company dashboard"],
+      ["assets/models/verified-comps-valuation.png", "Valuation summary"],
+      ["assets/models/verified-comps-multiples.png", "Trading multiples"]
     ]
   },
   {
@@ -259,14 +426,14 @@ window.portfolioProjects = [
     verdict: "EV / EBITDA is the primary control-value reference",
     verdictTone: "neutral",
     conclusion: [
-      "The selected precedent multiple is 16.65x EV / EBITDA, which implies $27.68 per share for the illustrative target. Completed deals show a 35.0% median control premium.",
-      "EV / Revenue is retained as a cross-check. Terminated deals, negative-EBITDA observations and extreme multiples are excluded from the selected statistics."
+      "Four profitable completed deals remain in the selected transaction-multiple set. Their median EV / EBITDA is 25.90x, which implies $43.54 per share for the illustrative target.",
+      "Nine completed deals inform the separate control-premium analysis, where the median is 33.0%. Terminated deals, loss-making observations and outliers are excluded from the selected multiple statistics."
     ],
     metrics: [
-      ["Completed deals", "9", "Strategic and sponsor"],
-      ["Median premium", "35.0%", "Completed deals"],
-      ["Selected EV / EBITDA", "16.65x", "Primary method"],
-      ["Implied share price", "$27.68", "EV / EBITDA method"]
+      ["Selected deals", "4", "Profitable completed deals"],
+      ["Median premium", "33.0%", "Nine completed deals"],
+      ["Selected EV / EBITDA", "25.90x", "Primary method"],
+      ["Implied share price", "$43.54", "EV / EBITDA method"]
     ],
     architecture: ["Transaction universe", "Deal data", "Target financials", "Transaction multiples", "Deal screening", "Control premiums", "Implied valuation", "Sensitivity and sources"],
     tested: ["Strategic and sponsor deals", "Deal status", "EV / Revenue cross-check", "Target-metric sensitivity"],
@@ -278,44 +445,9 @@ window.portfolioProjects = [
       ["Thoma Bravo acquisition of Anaplan", "https://www.thomabravo.com/press-releases/thoma-bravo-completes-acquisition-of-anaplan"]
     ],
     images: [
-      ["assets/models/precedent-transactions-01.png", "Precedent valuation summary"],
-      ["assets/models/precedent-transactions-02.png", "Control-premium analysis"],
-      ["assets/models/precedent-transactions-03.png", "Valuation sensitivities"]
-    ]
-  },
-  {
-    id: "sum-of-the-parts",
-    group: "equity-research",
-    title: "Alphabet Sum-of-the-Parts",
-    eyebrow: "Segment valuation",
-    company: "Alphabet",
-    decision: "What value is supported when Services, Cloud and Other Bets are valued separately?",
-    short: "Segment valuation using separate metrics, corporate-cost adjustments, net cash and a per-share bridge.",
-    featured: false,
-    verdict: "The base SOTP is below the model market price",
-    verdictTone: "caution",
-    conclusion: [
-      "The model produces $264.66 per share versus a $337.39 market price, a 21.6% gap. Google Services contributes 77.9% of gross segment value and Cloud contributes 20.7%.",
-      "The result is driven by segment multiples, computing-infrastructure investment, shared costs and the value assigned to Other Bets. Those inputs should be reviewed separately rather than hidden in one consolidated multiple."
-    ],
-    metrics: [
-      ["SOTP value per share", "$264.66", "Base case"],
-      ["Model market price", "$337.39", "Comparison input"],
-      ["Services value mix", "77.9%", "Gross segment value"],
-      ["Cloud value mix", "20.7%", "Gross segment value"]
-    ],
-    architecture: ["Segment definitions", "Segment financials", "Metric selection", "Segment enterprise values", "Corporate adjustments", "Net cash", "Equity-value bridge", "Scenario and sensitivity"],
-    tested: ["Services multiple", "Cloud valuation", "Other Bets value", "Corporate-cost adjustment"],
-    risks: ["Segment multiples are judgmental.", "Shared costs and computing-infrastructure investment complicate segment economics.", "Other Bets cannot be valued reliably from revenue alone.", "The SOTP should be cross-checked with comps and DCF."],
-    sources: [
-      ["Alphabet 2025 Form 10-K", "https://s206.q4cdn.com/479360582/files/doc_financials/2025/q4/GOOG-10-K-2025.pdf"],
-      ["Alphabet Q4 2025 results", "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000012/googexhibit991q42025.htm"],
-      ["Alphabet investor relations", "https://abc.xyz/investor/"]
-    ],
-    images: [
-      ["assets/models/sum-of-the-parts-01.png", "SOTP dashboard"],
-      ["assets/models/sum-of-the-parts-02.png", "Segment valuation"],
-      ["assets/models/sum-of-the-parts-03.png", "SOTP sensitivities"]
+      ["assets/models/verified-precedent-valuation.png", "Precedent valuation summary"],
+      ["assets/models/verified-precedent-premium.png", "Control-premium analysis"],
+      ["assets/models/verified-precedent-sensitivity.png", "Valuation sensitivities"]
     ]
   },
   {
@@ -330,14 +462,14 @@ window.portfolioProjects = [
     verdict: "The model prices the options consistently and passes parity checks",
     verdictTone: "neutral",
     conclusion: [
-      "At a $283.78 spot price, $285 strike and 27.7% volatility, the model values the call at $23.2 and the put at $19.5. Put-call parity reconciles within rounding.",
-      "Call delta is 0.56. The sensitivity tables show that stock price and volatility dominate the option value over the selected six-month term."
+      "At a $336.91 spot price, $335 strike and 27.68% volatility, the model values the call at $26.47 and the put at $19.82. Put-call parity reconciles within rounding.",
+      "Call delta is 0.58. The pricing volatility is also the closest solver-table value for the reference call premium over the selected term to December 18, 2026."
     ],
     metrics: [
-      ["Call value", "$23.2", "Black-Scholes"],
-      ["Put value", "$19.5", "Black-Scholes"],
-      ["Call delta", "0.56", "Base case"],
-      ["Implied volatility", "40.0%", "Solver table output"]
+      ["Call value", "$26.47", "Black-Scholes"],
+      ["Put value", "$19.82", "Black-Scholes"],
+      ["Call delta", "0.58", "Base case"],
+      ["Implied volatility", "27.68%", "Solver table output"]
     ],
     architecture: ["Market inputs", "Black-Scholes calculation", "Put-call parity", "Call and put values", "Greeks", "Payoff profiles", "Implied-volatility table", "Sensitivity and checks"],
     tested: ["Stock price", "Volatility", "Time decay", "Put-call parity"],
@@ -348,10 +480,9 @@ window.portfolioProjects = [
       ["Nasdaq Apple option chain", "https://www.nasdaq.com/market-activity/stocks/aapl/option-chain"]
     ],
     images: [
-      ["assets/models/option-pricing-01.png", "Option valuation dashboard"],
-      ["assets/models/option-pricing-02.png", "Black-Scholes calculation"],
-      ["assets/models/option-pricing-03.png", "Option Greeks"],
-      ["assets/models/option-pricing-05.png", "Call and put sensitivity tables"]
+      ["assets/models/verified-option-dashboard.png", "Option valuation dashboard"],
+      ["assets/models/verified-option-black-scholes.png", "Black-Scholes calculation and parity check"],
+      ["assets/models/verified-option-volatility.png", "Implied-volatility calibration"]
     ]
   },
   {
@@ -363,20 +494,20 @@ window.portfolioProjects = [
     decision: "How do purchase accounting, financing and synergy delivery affect Cisco's pro forma EPS?",
     short: "A merger model covering purchase price, financing, goodwill, synergies and pro forma earnings.",
     featured: true,
-    verdict: "Accretion depends on synergy delivery",
-    verdictTone: "positive",
+    verdict: "Modeled dilution narrows, but persists through FY2028",
+    verdictTone: "caution",
     conclusion: [
-      "The model is 1.7% accretive in FY2026E, rising to 4.8% in FY2027E and 7.0% in FY2028E as synergies phase in. Pro forma debt / EBITDA rises from 1.67x to 2.17x.",
-      "The main deal variables are synergy timing, financing cost and intangible-asset amortisation. The accretion result weakens if those inputs move against the case."
+      "The retrospective model produces 7.2% dilution in FY2026E, 3.6% in FY2027E and 0.9% in FY2028E as assumed synergies phase in.",
+      "The main deal variables are synergy timing, financing cost and intangible-asset amortization. Under these assumptions, the earnings gap narrows but does not turn accretive within the forecast period."
     ],
     metrics: [
-      ["Purchase equity value", "$28.0bn", "$157 per target share"],
-      ["FY2026 accretion", "1.7%", "First full forecast year"],
-      ["FY2028 accretion", "7.0%", "Synergies mature"],
-      ["Pro forma leverage", "2.17x", "$14.5bn new debt"]
+      ["Purchase equity value", "$27.09bn", "Modeled transaction"],
+      ["FY2026 dilution", "7.2%", "First full forecast year"],
+      ["FY2028 dilution", "0.9%", "Gap narrows"],
+      ["New debt", "$12.97bn", "Modeled financing"]
     ],
     architecture: ["Standalone financials", "Purchase price", "Sources and uses", "Financing mix", "Goodwill and intangibles", "Synergy build", "Pro forma income statement", "Accretion and sensitivity"],
-    tested: ["Synergy realisation", "Debt financing", "Interest rate", "Intangible amortisation"],
+    tested: ["Synergy realization", "Debt financing", "Interest rate", "Intangible amortization"],
     risks: ["Synergy timing and financing mix are analyst assumptions.", "Purchase accounting is simplified.", "Integration costs and dis-synergies are not fully captured."],
     sources: [
       ["Cisco acquisition completion", "https://investor.cisco.com/news/news-details/2024/Cisco-Completes-Acquisition-of-Splunk/default.aspx"],
@@ -384,9 +515,9 @@ window.portfolioProjects = [
       ["Cisco FY2025 results", "https://investor.cisco.com/news/news-details/2025/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2025-EARNINGS/default.aspx"]
     ],
     images: [
-      ["assets/models/ma-merger-01.png", "Transaction dashboard"],
-      ["assets/models/ma-merger-02.png", "Accretion and dilution"],
-      ["assets/models/ma-merger-03.png", "Deal sensitivities"]
+      ["assets/models/verified-ma-dashboard.png", "Transaction dashboard"],
+      ["assets/models/verified-ma-accretion.png", "Accretion and dilution"],
+      ["assets/models/verified-ma-sensitivity.png", "Deal sensitivities"]
     ]
   },
   {
@@ -398,19 +529,19 @@ window.portfolioProjects = [
     decision: "Does a take-private at 8.5x entry EBITDA produce an acceptable sponsor return?",
     short: "A public-data LBO with sources and uses, two debt tranches, cash sweep, checks and sponsor returns.",
     featured: true,
-    verdict: "Pass at the modelled entry price",
+    verdict: "Do not pursue at the modeled entry price",
     verdictTone: "caution",
     conclusion: [
-      "With 5.5x initial debt / EBITDA and an 8.0x exit multiple, the base case produces an 8.6% sponsor IRR and 1.51x MOIC. Total debt falls from $3.68bn in 2025E to $2.59bn in 2029E.",
+      "With 5.5x initial debt / EBITDA and an 8.0x exit multiple, the base case produces a 12.4% sponsor IRR and 1.79x MOIC. The forecast is a historical case built from 2025E inputs.",
       "Debt paydown is not enough to reach a normal buyout return. The case needs a lower entry price, stronger EBITDA growth or a specific operating plan."
     ],
     metrics: [
-      ["Sponsor IRR", "8.6%", "Five-year hold"],
-      ["Sponsor MOIC", "1.51x", "Base case"],
+      ["Sponsor IRR", "12.4%", "Modeled hold"],
+      ["Sponsor MOIC", "1.79x", "Base case"],
       ["Initial leverage", "5.5x", "Debt / EBITDA"],
-      ["2029E debt", "$2.59bn", "Down from $3.68bn"]
+      ["Exit multiple", "8.0x", "Base case"]
     ],
-    architecture: ["Entry valuation", "Sources and uses", "Operating forecast", "Debt tranches", "Amortisation and cash sweep", "Covenant checks", "Exit valuation", "IRR, MOIC and sensitivities"],
+    architecture: ["Entry valuation", "Sources and uses", "Operating forecast", "Debt tranches", "Amortization and cash sweep", "Covenant checks", "Exit valuation", "IRR, MOIC and sensitivities"],
     tested: ["Entry and exit multiple", "Exit multiple and EBITDA growth", "Leverage", "Revenue growth and EBITDA margin"],
     risks: ["Store, inventory and lease detail are simplified.", "Debt terms do not reproduce a negotiated credit agreement.", "Returns remain exposed to multiple compression.", "Public data cannot replace a quality-of-earnings review."],
     sources: [
@@ -418,16 +549,16 @@ window.portfolioProjects = [
       ["Academy investor relations", "https://investors.academy.com/"]
     ],
     images: [
-      ["assets/models/leveraged-buyout-01.png", "LBO summary, sponsor returns and debt paydown"],
-      ["assets/models/leveraged-buyout-02.png", "Four sponsor IRR sensitivity tables"],
-      ["assets/models/leveraged-buyout-new-02.png", "Debt paydown chart"]
+      ["assets/models/verified-lbo-dashboard.png", "LBO summary, sponsor returns and debt paydown"],
+      ["assets/models/verified-lbo-returns.png", "Sponsor returns and debt paydown"],
+      ["assets/models/verified-lbo-sensitivity.png", "Sponsor IRR sensitivity tables"]
     ]
   },
   {
     id: "private-equity-fund",
     group: "private-markets",
     title: "Private Equity Fund Cash Flow and Waterfall",
-    eyebrow: "Private equity fund modelling",
+    eyebrow: "Private equity fund modeling",
     company: "Illustrative $750m fund",
     decision: "Do the call, distribution, fee and carry assumptions produce an acceptable outcome for limited partners?",
     short: "A fund model covering commitments, investments, exits, management fees, carried interest and LP cash flows.",
@@ -435,14 +566,14 @@ window.portfolioProjects = [
     verdict: "Base-case LP returns are modest",
     verdictTone: "caution",
     conclusion: [
-      "The base case calls $641.4m and distributes $1,031.5m to limited partners. Net IRR is 9.6%, with 1.61x TVPI and 1.61x DPI.",
-      "The downside produces a 0.1% net IRR and 1.20x TVPI. Exit multiple and timing drive most of the return range."
+      "The illustrative fund produces a 1.96x gross MOIC and 13.3% gross IRR. After modeled fees and carry, net IRR is 9.6%.",
+      "The workbook's downside and upside scenario outputs are not populated, so the portfolio does not publish scenario returns. Exit multiple and timing remain the central variables for a completed sensitivity analysis."
     ],
     metrics: [
       ["Fund size", "$750m", "Committed capital"],
       ["Net IRR", "9.6%", "Base case"],
-      ["TVPI", "1.61x", "Base case"],
-      ["LP distributions", "$1,031.5m", "Model total"]
+      ["Gross MOIC", "1.96x", "Base case"],
+      ["Gross IRR", "13.3%", "Base case"]
     ],
     architecture: ["Commitment schedule", "Investment pace", "Exit proceeds", "Management fees", "Capital calls", "Distribution waterfall", "LP cash flows", "IRR and TVPI sensitivity"],
     tested: ["Exit timing", "Exit multiple", "Fee drag", "Downside and upside cases"],
@@ -453,10 +584,9 @@ window.portfolioProjects = [
       ["Distribution waterfall reference", "https://www.duanemorris.com/site/static/private_equity_fund_distribution_waterfalls.pdf"]
     ],
     images: [
-      ["assets/models/private-equity-fund-01.png", "Fund dashboard and LP cash flows"],
-      ["assets/models/private-equity-fund-03.png", "Net IRR and TVPI sensitivities"],
-      ["assets/models/private-equity-fund-04.png", "LP cash flows, investment period"],
-      ["assets/models/private-equity-fund-05.png", "LP cash flows, harvest period"]
+      ["assets/models/verified-pe-fund-dashboard.png", "Fund dashboard and LP cash flows"],
+      ["assets/models/verified-pe-fund-metrics.png", "Net IRR and TVPI sensitivities"],
+      ["assets/models/verified-pe-fund-sensitivity.png", "LP cash flow sensitivities"]
     ]
   },
   {
@@ -471,52 +601,52 @@ window.portfolioProjects = [
     verdict: "The growth case needs substantial additional financing",
     verdictTone: "caution",
     conclusion: [
-      "The model reaches $1.70bn of ARR and a 76% gross margin by 2031, but ending cash falls to negative $765m. The funding plan does not cover the growth case.",
-      "Founder ownership declines to 29.3% at exit. Investor return outputs are very high because the model combines early entry prices with a $14.6bn exit value, so the valuation and financing assumptions need strict review."
+      "The model reaches $1.70bn of ARR by 2031. It requires $38.6m of additional financing in 2026, followed by assumed later rounds to keep cash positive.",
+      "Founder ownership declines to 21.7% at exit. Investor returns are exceptionally high under the assumed entry prices and exit value, so this case is presented as funding and dilution mechanics, not as an investment recommendation."
     ],
     metrics: [
       ["Ending ARR", "$1.70bn", "2031"],
-      ["Additional financing", "$765m", "Model shortfall"],
-      ["Founder ownership", "29.3%", "At exit"],
-      ["Exit equity value", "$14.6bn", "Assumption-driven"]
+      ["2026 financing need", "$38.6m", "Before assumed round"],
+      ["Founder ownership", "21.7%", "At exit"],
+      ["Gross margin", "82.0%", "2031 assumption"]
     ],
     architecture: ["Customer and ARR build", "Gross margin", "Operating burn", "Funding rounds", "Pre-money and post-money value", "Cap table", "Cash runway", "Investor MOIC and IRR"],
     tested: ["Revenue growth", "Burn and runway", "Funding size", "Exit valuation"],
-    risks: ["The company is illustrative and uses public SaaS benchmarks.", "Funding rounds are analyst assumptions.", "The base case shows a cash shortfall rather than a fully funded plan.", "Exit-based investor returns are highly sensitive to timing and valuation."],
+    risks: ["The company is illustrative and uses public SaaS benchmarks.", "Funding rounds are analyst assumptions.", "The cash runway remains positive only because the modeled rounds occur as scheduled.", "Exit-based investor returns are highly sensitive to timing and valuation."],
     sources: [
       ["Datadog S-1", "https://www.sec.gov/Archives/edgar/data/1561550/000119312519227783/d745413ds1.htm"],
       ["Datadog FY2019 results", "https://investors.datadoghq.com/news-releases/news-release-details/datadog-announces-fourth-quarter-and-full-year-2019-results/"],
       ["Bessemer Cloud 100 benchmarks", "https://www.bvp.com/atlas/the-cloud-100-benchmarks-report"]
     ],
     images: [
-      ["assets/models/startup-venture-capital-01.png", "Growth, burn, ownership and financing dashboard"],
-      ["assets/models/startup-venture-capital-02.png", "Funding-round assumptions"],
-      ["assets/models/startup-venture-capital-03.png", "Cap-table dilution by round"]
+      ["assets/models/verified-startup-dashboard.png", "Growth, burn, ownership and financing dashboard"],
+      ["assets/models/verified-startup-runway.png", "Cash runway and funding plan"],
+      ["assets/models/verified-startup-cap-table.png", "Cap-table dilution by round"]
     ]
   },
   {
     id: "european-defence-ma",
     group: "investment-banking",
-    title: "European Defence M&A Screening",
+    title: "European Defense M&A Screening",
     eyebrow: "M&A screening",
     company: "Thales, Rheinmetall and RENK",
-    decision: "Do the modelled Rheinmetall or RENK acquisition cases create value for Thales?",
+    decision: "Do the modeled Rheinmetall or RENK acquisition cases create value for Thales?",
     short: "A two-target screen using DCF, public comps, precedents, synergies, financing, leverage and accretion.",
     featured: false,
     verdict: "Reject Rheinmetall terms and reprice RENK",
     verdictTone: "caution",
     conclusion: [
-      "The Rheinmetall case requires a 96.8% premium to blended DCF, produces 95.8% year-one dilution and raises pro forma net debt / EBITDA to 8.4x. The model says not to pursue the case terms.",
-      "The RENK case is less leveraged at 1.6x net debt / EBITDA, but still produces 13.8% year-one dilution and negative ROIC less WACC. The terms need to be repriced or restructured."
+      "The Rheinmetall case requires an 88.3% premium to blended DCF, produces 81.9% year-one dilution and raises pro forma net debt / EBITDA to 8.0x. The model says not to pursue the case terms.",
+      "The RENK case is less leveraged at 1.6x net debt / EBITDA, but still produces 7.7% year-one dilution and ROIC below WACC. The terms need to be repriced or restructured."
     ],
     metrics: [
-      ["Rheinmetall premium", "96.8%", "To blended DCF"],
-      ["Rheinmetall leverage", "8.4x", "Pro forma net debt / EBITDA"],
-      ["RENK dilution", "13.8%", "Year one"],
+      ["Rheinmetall premium", "88.3%", "To blended DCF"],
+      ["Rheinmetall leverage", "8.0x", "Pro forma net debt / EBITDA"],
+      ["RENK dilution", "7.7%", "Year one"],
       ["RENK leverage", "1.6x", "Pro forma net debt / EBITDA"]
     ],
     architecture: ["Company forecasts", "DCF", "Public comparables", "Precedent transactions", "Offer premium", "Synergy valuation", "Sources and uses", "Accretion, leverage and decision screen"],
-    tested: ["Offer price", "Synergy realisation", "Financing mix", "ROIC and accretion"],
+    tested: ["Offer price", "Synergy realization", "Financing mix", "ROIC and accretion"],
     risks: ["Offer prices, betas and synergies are case assumptions.", "Company guidance and market inputs require updating.", "Regulatory and national-security review is outside the model."],
     sources: [
       ["Rheinmetall FY2025 results", "https://www.rheinmetall.com/en/media/news-watch/news/2026/03/2026-03-11-rheinmetall-presents-annual-report-for-2025"],
@@ -526,42 +656,42 @@ window.portfolioProjects = [
     ],
     images: [
       ["assets/models/european-defence-ma-summary.png", "Rheinmetall and RENK transaction comparison"],
-      ["assets/models/european-defence-ma-03.png", "Defence public-company inputs"]
+      ["assets/models/european-defence-ma-03.png", "Defense public-company inputs"]
     ]
   },
   {
     id: "credit-analysis",
     group: "credit-treasury",
-    title: "Verizon Credit Underwriting",
+    title: "Verizon Credit Analysis",
     eyebrow: "Corporate credit",
     company: "Verizon Communications",
     decision: "Does recurring cash generation provide enough capacity to reduce leverage and preserve coverage?",
-    short: "Borrower-level credit work covering cash flow, leverage, coverage, covenants, debt capacity and downside.",
+    short: "A public-data credit case covering cash flow, leverage, coverage, covenants, debt capacity and downside.",
     featured: true,
     verdict: "Base-case credit remains defensible",
     verdictTone: "positive",
     conclusion: [
-      "Net leverage falls from 2.91x in 2025 to 2.62x in 2026E and 1.70x by 2030E. Interest coverage remains above 7.5x, and 2026E DSCR is 1.88x.",
+      "Net leverage falls from 2.91x in 2025 to 2.62x in 2026E and 1.70x by 2030E. The model produces 7.63x interest coverage and 2.97x DSCR for 2026E.",
       "Recurring wireless cash flow supports the case. The main constraints are high absolute debt, capital intensity and shareholder distributions competing with debt reduction."
     ],
     metrics: [
       ["2026E net leverage", "2.62x", "Down from 2.91x"],
-      ["2026E coverage", "7.78x", "EBITDA / cash interest"],
-      ["2026E DSCR", "1.88x", "Base case"],
+      ["2026E coverage", "7.63x", "EBITDA / cash interest"],
+      ["2026E DSCR", "2.97x", "Base case"],
       ["2030E net leverage", "1.70x", "Model path"]
     ],
     architecture: ["Borrower overview", "Historical financials", "Five-year forecast", "Debt roll-forward", "Leverage and coverage", "Covenant headroom", "Debt capacity", "Downside and credit view"],
     tested: ["Debt reduction", "Interest coverage", "Covenant headroom", "Free cash flow after capital expenditure"],
-    risks: ["Forecasts and covenant thresholds are analyst assumptions.", "The model does not reproduce every legal definition in the debt documents.", "Capital intensity can reduce discretionary cash flow.", "The internal view is not an agency rating."],
+    risks: ["Forecasts and covenant thresholds are analyst assumptions.", "The model does not reproduce every legal definition in the debt documents.", "Capital intensity can reduce discretionary cash flow.", "The model credit view is not an agency rating."],
     sources: [
       ["Verizon FY2025 earnings release", "https://www.verizon.com/about/news/verizon-delivers-2025-financial-guidance-highest-quarterly-net-adds"],
       ["Verizon 2025 Form 10-K", "https://www.verizon.com/about/sites/default/files/2025-Annual-Report-on-Form-10k.pdf"],
       ["SEC filing", "https://www.sec.gov/Archives/edgar/data/732712/000073271226000007/vz-20251231.htm"]
     ],
     images: [
-      ["assets/models/credit-analysis-01.png", "Credit dashboard"],
-      ["assets/models/credit-analysis-02.png", "Risk summary"],
-      ["assets/models/credit-analysis-03.png", "Credit sensitivities"]
+      ["assets/models/verified-credit-dashboard.png", "Credit dashboard"],
+      ["assets/models/verified-credit-risk.png", "Credit risk summary"],
+      ["assets/models/verified-credit-sensitivity.png", "Credit sensitivities"]
     ]
   },
   {
@@ -576,14 +706,14 @@ window.portfolioProjects = [
     verdict: "Capital allocation is the main risk",
     verdictTone: "caution",
     conclusion: [
-      "FY2025 free cash flow is £3.27bn and net cash is £1.90bn. Pro forma gross liquidity is £8.57bn, while cash-floor-adjusted sources / uses is 1.40x, below the model's 1.50x guardrail.",
-      "The base 2026 case keeps adjusted debt / EBITDA at 0.83x. In the downside, distributions reach 220% of free cash flow. The treasury action is to cap distributions at 50% of prior-year free cash flow and protect liquidity for the 2027 to 2028 maturities."
+      "FY2025 free cash flow is £3.27bn and net cash is £1.90bn. Pro forma gross liquidity is £8.56bn, while cash-floor-adjusted sources / uses is 1.39x, below the model's 1.50x guardrail.",
+      "The base 2026 case keeps adjusted debt / EBITDA at 0.83x. In the downside, distributions reach 220% of free cash flow. The case recommendation is to cap distributions at 50% of prior-year free cash flow and protect liquidity for the 2027 to 2028 maturities."
     ],
     metrics: [
       ["FY2025 free cash flow", "£3.27bn", "Reported measure"],
       ["FY2025 net cash", "£1.90bn", "Year end"],
-      ["Gross liquidity", "£8.57bn", "Pro forma"],
-      ["Cash-floor coverage", "1.40x", "Below 1.50x guardrail"]
+      ["Gross liquidity", "£8.56bn", "Pro forma"],
+      ["Cash-floor coverage", "1.39x", "Below 1.50x guardrail"]
     ],
     architecture: ["Historical and segment analysis", "Debt schedule", "Liquidity bridge", "2026 scenarios", "FX and hedge review", "Treasury actions", "Peer and rating framework", "Checks and sources"],
     tested: ["Cash quality", "Debt and liquidity", "Distributions and maturities", "Downside leverage"],
@@ -604,25 +734,25 @@ window.portfolioProjects = [
   {
     id: "real-estate-underwriting",
     group: "real-estate",
-    title: "Logistics Acquisition Underwriting",
+    title: "Illustrative Logistics Acquisition Underwriting",
     eyebrow: "Real estate private equity",
     company: "Dallas-Fort Worth logistics asset",
     decision: "Can a $31.7m acquisition support the proposed debt and equity return requirements?",
     short: "Property underwriting from rent roll and NOI to debt service, exit value and equity returns.",
     featured: true,
-    verdict: "Proceed to diligence, not commitment",
-    verdictTone: "positive",
+    verdict: "The modeled return clears the case hurdle",
+    verdictTone: "neutral",
     conclusion: [
-      "The base case produces a 12.9% levered IRR and 2.19x equity multiple, with minimum DSCR of 1.58x. That supports further work but leaves limited room for loose assumptions.",
-      "The next step is to verify market rent, lease expiries, tenant credit and near-term capital needs against property-level diligence."
+      "The base case produces a 12.9% levered IRR and 2.19x equity multiple, with minimum DSCR of 1.53x. These are illustrative outputs for a representative asset, not an actual marketed opportunity.",
+      "Any real acquisition decision would require verified rent, lease expirations, tenant credit and property-level capital needs."
     ],
     metrics: [
       ["Levered IRR", "12.9%", "Seven-year hold"],
       ["Equity multiple", "2.19x", "$12.7m initial equity"],
-      ["Minimum DSCR", "1.58x", "Model period"],
+      ["Minimum DSCR", "1.53x", "Model period"],
       ["Exit value", "$41.9m", "$168 per square foot"]
     ],
-    architecture: ["Acquisition assumptions", "Tenant rent roll", "Revenue and expenses", "NOI and leasing costs", "Debt amortisation", "Levered cash flow", "Exit analysis", "Sensitivity and checks"],
+    architecture: ["Acquisition assumptions", "Tenant rent roll", "Revenue and expenses", "NOI and leasing costs", "Debt amortization", "Levered cash flow", "Exit analysis", "Sensitivity and checks"],
     tested: ["Exit cap rate and rent growth", "Loan-to-cost", "Debt service coverage", "Rollover and capital reserves"],
     risks: ["The asset is representative rather than a marketed property.", "Executed lease abstracts and broker comps are required.", "Exit value is sensitive to cap-rate expansion.", "Environmental, title and physical diligence are outside the case."],
     sources: [
@@ -631,9 +761,9 @@ window.portfolioProjects = [
       ["Prologis 2025 Form 10-K", "https://ir.prologis.com/financials/sec-filings/content/0001193125-26-051453/pld-20251231.htm"]
     ],
     images: [
-      ["assets/models/real-estate-underwriting-01.png", "Underwriting summary"],
-      ["assets/models/real-estate-underwriting-02.png", "Equity return build"],
-      ["assets/models/real-estate-underwriting-03.png", "Return sensitivities"]
+      ["assets/models/verified-real-estate-dashboard.png", "Property underwriting dashboard"],
+      ["assets/models/verified-real-estate-sensitivity.png", "Return sensitivities"],
+      ["assets/models/verified-real-estate-controls.png", "Underwriting controls"]
     ]
   },
   {
@@ -648,12 +778,12 @@ window.portfolioProjects = [
     verdict: "Diversified in sample, but not benchmark-beating",
     verdictTone: "neutral",
     conclusion: [
-      "The portfolio records 12.8% annualised return, 7.3% volatility, a 1.21 Sharpe ratio and 0.50 beta to SPY. Maximum drawdown in the sample is 4.4%.",
+      "The portfolio records 12.8% annualized return, 7.3% volatility, a 1.21 Sharpe ratio and 0.50 beta to SPY. Maximum drawdown in the sample is 4.4%.",
       "The information ratio is negative 1.42. The allocation reduced market exposure but did not earn enough excess return relative to its tracking error."
     ],
     metrics: [
-      ["Annualised return", "12.8%", "Historical sample"],
-      ["Annualised volatility", "7.3%", "Monthly returns"],
+      ["Annualized return", "12.8%", "Historical sample"],
+      ["Annualized volatility", "7.3%", "Monthly returns"],
       ["Sharpe ratio", "1.21", "Risk-free adjusted"],
       ["Beta to SPY", "0.50", "Information ratio negative 1.42"]
     ],
@@ -667,9 +797,9 @@ window.portfolioProjects = [
       ["Vanguard VNQ", "https://investor.vanguard.com/investment-products/etfs/profile/vnq"]
     ],
     images: [
-      ["assets/models/portfolio-management-01.png", "Portfolio dashboard"],
-      ["assets/models/portfolio-management-02.png", "Risk metrics"],
-      ["assets/models/portfolio-management-03.png", "Allocation screen"]
+      ["assets/models/verified-portfolio-dashboard.png", "Portfolio dashboard"],
+      ["assets/models/verified-portfolio-risk.png", "Risk metrics"],
+      ["assets/models/verified-portfolio-contribution.png", "Allocation and contribution screen"]
     ]
   },
   {
@@ -681,21 +811,21 @@ window.portfolioProjects = [
     decision: "Can the portfolio improve risk-adjusted return and funded-ratio resilience while meeting its climate objectives?",
     short: "An allocation review combining capital market assumptions, portfolio risk, scenarios, climate metrics and ALM surplus analysis.",
     featured: false,
-    verdict: "Risk improves, but climate metrics get worse",
-    verdictTone: "caution",
+    verdict: "Financial risk improves modestly in the modeled allocation",
+    verdictTone: "neutral",
     conclusion: [
-      "The recommended allocation raises expected return from 5.54% to 5.65% and reduces volatility from 7.48% to 7.18%. Modelled 95% VaR falls from 6.77% to 6.16%.",
-      "The trade-off is clear: weighted average carbon intensity rises from 94.0 to 103.1, financed emissions increase and implied temperature rises from 1.95°C to 2.20°C. The allocation needs a separate climate constraint or a different asset mix."
+      "The modeled allocation raises expected return from 5.54% to 5.65% and reduces volatility from 7.48% to 7.18%. Modeled 95% VaR falls from 6.77% to 6.16%.",
+      "Climate sleeve inputs are directional proxies with incomplete coverage, so they are not used as a headline conclusion. A real mandate would require security-level climate data and an explicit constraint."
     ],
     metrics: [
-      ["Expected return", "5.65%", "Recommended portfolio"],
-      ["Volatility", "7.18%", "Recommended portfolio"],
-      ["VaR 95%", "6.16%", "Recommended portfolio loss"],
-      ["WACI", "103.1", "Recommended portfolio"]
+      ["Expected return", "5.65%", "Modeled allocation"],
+      ["Volatility", "7.18%", "Modeled allocation"],
+      ["VaR 95%", "6.16%", "Modeled allocation loss"],
+      ["Surplus volatility", "7.86%", "Modeled allocation"]
     ],
     architecture: ["Euro capital market assumptions", "Correlation and covariance", "Current and recommended portfolios", "Scenario analysis", "Funded-ratio sensitivity", "Climate metrics", "Efficient frontier", "Factor and index comparison"],
     tested: ["Rate-cut scenario", "Stagflation", "Climate stress", "Asset-liability surplus risk"],
-    risks: ["Climate figures use proxies and illustrative asset-sleeve assumptions.", "The recommended allocation improves financial risk metrics but worsens the selected climate indicators.", "The case is not a fiduciary recommendation or a replacement for manager-level climate data."],
+    risks: ["Climate figures use proxies and illustrative asset-sleeve assumptions.", "The workbook does not provide complete security-level climate coverage.", "The case is not a fiduciary recommendation or a replacement for manager-level climate data."],
     sources: [
       ["J.P. Morgan long-term capital market assumptions", "https://am.jpmorgan.com/us/en/asset-management/adv/insights/portfolio-insights/ltcma/"],
       ["NGFS climate scenarios", "https://www.ngfs.net/ngfs-scenarios-portal"],
@@ -703,8 +833,17 @@ window.portfolioProjects = [
       ["EU emissions trading system", "https://climate.ec.europa.eu/eu-action/carbon-markets/eu-emissions-trading-system-eu-ets_en"]
     ],
     images: [
-      ["assets/models/sustainable-finance-01.png", "Allocation and portfolio-risk comparison"],
-      ["assets/models/sustainable-finance-02.png", "Scenario, climate and funded-ratio stress tests"]
+      ["assets/models/verified-sustainable-portfolios.png", "Allocation and portfolio-risk comparison"],
+      ["assets/models/verified-sustainable-scenarios.png", "Scenario analysis"],
+      ["assets/models/verified-sustainable-alm.png", "Asset-liability surplus analysis"]
     ]
   }
 ];
+
+window.portfolioProjects.push(...addedRealEstateProjects);
+
+window.portfolioProjects.forEach((project) => {
+  const [basis, asOf] = projectContext[project.id] || ["Portfolio case study", "Model date disclosed in the workbook"];
+  project.basis = basis;
+  project.asOf = asOf;
+});

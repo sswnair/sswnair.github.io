@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fund model covering commitments, investments, exits, management fees, carried interest and LP cash flows.">
+  <meta name="theme-color" content="#0b1f33">
+  <meta property="og:title" content="Private Equity Fund Cash Flow and Waterfall | Sanjay Nair, CFA">
+  <meta property="og:description" content="A fund model covering commitments, investments, exits, management fees, carried interest and LP cash flows.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sswnair.github.io/cases/private-equity-fund.html">
+  <meta property="og:image" content="https://sswnair.github.io/assets/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sanjay Nair, CFA finance portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Private Equity Fund Cash Flow and Waterfall | Sanjay Nair, CFA">
+  <meta name="twitter:description" content="A fund model covering commitments, investments, exits, management fees, carried interest and LP cash flows.">
+  <meta name="twitter:image" content="https://sswnair.github.io/assets/social-card.png">
+  <title>Private Equity Fund Cash Flow and Waterfall | Sanjay Nair, CFA</title>
+  <link rel="canonical" href="https://sswnair.github.io/cases/private-equity-fund.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20260812-1">
+  <script src="../assets/js/projects.js?v=20260812-1" defer></script>
+  <script src="../assets/js/case-study.js?v=20260812-1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Sanjay Nair home">
+        <span class="brand-mark">SN</span>
+        <span>Sanjay Nair, CFA</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>Menu</button>
+      <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
+        <a href="../index.html#work">Case studies</a>
+        <a href="../index.html#approach">Modeling approach</a>
+        <a href="../index.html#about">Experience</a>
+        <a class="nav-contact" href="mailto:sswnair@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" data-case-root data-project-id="private-equity-fund">
+    <section class="case-hero">
+      <div class="container">
+        <a class="breadcrumb" href="../index.html#work">← Back to selected work</a>
+        <div class="case-title-grid">
+          <div>
+            <p class="case-eyebrow">Private equity fund modeling · Illustrative $750m fund</p>
+            <h1>Private Equity Fund Cash Flow and Waterfall</h1>
+            <p class="case-summary">A fund model covering commitments, investments, exits, management fees, carried interest and LP cash flows.</p>
+            <p class="case-context"><span>Illustrative case</span><span>Modeled fund life and cash-flow schedule</span></p>
+          </div>
+          <aside class="decision-card" aria-label="Decision question">
+            <span>Decision question</span>
+            <p>Do the call, distribution, fee and carry assumptions produce an acceptable outcome for limited partners?</p>
+          </aside>
+        </div>
+        <div class="case-metrics">
+    <div class="case-metric">
+      <strong>$750m</strong>
+      <span>Fund size</span>
+      <em>Committed capital</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>9.6%</strong>
+      <span>Net IRR</span>
+      <em>Base case</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>1.96x</strong>
+      <span>Gross MOIC</span>
+      <em>Base case</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>13.3%</strong>
+      <span>Gross IRR</span>
+      <em>Base case</em>
+    </div>
+  </div>
+      </div>
+    </section>
+
+    <div class="case-body">
+      <div class="container case-layout">
+        <article class="case-main">
+          <section class="verdict-box">
+            <span class="verdict-label caution">Model view · Base-case LP returns are modest</span>
+            <h2>Conclusion</h2>
+            <p>The illustrative fund produces a 1.96x gross MOIC and 13.3% gross IRR. After modeled fees and carry, net IRR is 9.6%.</p><p>The workbook's downside and upside scenario outputs are not populated, so the portfolio does not publish scenario returns. Exit multiple and timing remain the central variables for a completed sensitivity analysis.</p>
+          </section>
+
+          <section>
+            <p class="section-kicker">Model design</p>
+            <h2>Model structure</h2>
+            <div class="two-col-lists">
+              <div><h3>Architecture</h3><ul class="clean-list"><li>Commitment schedule</li><li>Investment pace</li><li>Exit proceeds</li><li>Management fees</li><li>Capital calls</li><li>Distribution waterfall</li><li>LP cash flows</li><li>IRR and TVPI sensitivity</li></ul></div>
+              <div><h3>Questions tested</h3><ul class="clean-list"><li>Exit timing</li><li>Exit multiple</li><li>Fee drag</li><li>Downside and upside cases</li></ul></div>
+            </div>
+          </section>
+
+          <section>
+            <p class="section-kicker">Selected outputs</p>
+            <h2>Selected workbook views</h2>
+            <p>The workbook remains private. These images show the outputs cited in this case.</p>
+            <div class="gallery">
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-pe-fund-dashboard.png" data-lightbox-alt="Fund dashboard and LP cash flows">
+      <img src="../assets/models/verified-pe-fund-dashboard.png" alt="Fund dashboard and LP cash flows" loading="eager">
+      <span>01 &nbsp; Fund dashboard and LP cash flows. View full size</span>
+    </button>
+
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-pe-fund-metrics.png" data-lightbox-alt="Net IRR and TVPI sensitivities">
+      <img src="../assets/models/verified-pe-fund-metrics.png" alt="Net IRR and TVPI sensitivities" loading="lazy">
+      <span>02 &nbsp; Net IRR and TVPI sensitivities. View full size</span>
+    </button>
+
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-pe-fund-sensitivity.png" data-lightbox-alt="LP cash flow sensitivities">
+      <img src="../assets/models/verified-pe-fund-sensitivity.png" alt="LP cash flow sensitivities" loading="lazy">
+      <span>03 &nbsp; LP cash flow sensitivities. View full size</span>
+    </button>
+  </div>
+          </section>
+
+          <section>
+            <p class="section-kicker">What could change the answer</p>
+            <h2>Risks and limitations</h2>
+            <ul class="clean-list"><li>The fund and portfolio companies are illustrative.</li><li>Exit proceeds are assumption-driven.</li><li>Tax and legal terms are simplified.</li><li>Past fund structures do not guarantee future outcomes.</li></ul>
+          </section>
+
+          <section class="case-actions">
+            <a class="button" href="mailto:sswnair@gmail.com?subject=Private%20Equity%20Fund%20Cash%20Flow%20and%20Waterfall%20discussion">Email about this case</a>
+            <a class="button secondary" href="../index.html#work">View another case</a>
+          </section>
+        </article>
+
+        <aside class="case-sidebar" aria-label="Case resources">
+          <div class="sidebar-inner">
+            <div class="side-card"><h3>Sources</h3><ul class="source-list">
+    <li><a href="https://ilpa.org/wp-content/uploads/2019/06/ILPA-Principles-3.0_2019.pdf" target="_blank" rel="noopener noreferrer">ILPA Principles 3.0</a></li>
+
+    <li><a href="https://ilpa.org/resources-tools/private-equity-101/private-equity-glossary/" target="_blank" rel="noopener noreferrer">ILPA private equity glossary</a></li>
+
+    <li><a href="https://www.duanemorris.com/site/static/private_equity_fund_distribution_waterfalls.pdf" target="_blank" rel="noopener noreferrer">Distribution waterfall reference</a></li>
+  </ul></div>
+            <div class="side-card"><h3>Workbook access</h3><p>The complete Excel model is maintained privately. A live walkthrough can be provided during an interview.</p></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Full-size model output" hidden data-lightbox>
+      <div class="lightbox-content">
+        <button class="lightbox-close" type="button" data-lightbox-close>Close ×</button>
+        <img src="../assets/models/verified-pe-fund-dashboard.png" alt="" data-lightbox-image>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <span>© <span data-year></span> Sanjay Nair. Finance portfolio.</span>
+      <span><a href="https://www.linkedin.com/in/sanjaynair10/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · Selected public sources linked</span>
+    </div>
+  </footer>
+</body>
+</html>
