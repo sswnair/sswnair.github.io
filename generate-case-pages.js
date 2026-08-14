@@ -81,8 +81,8 @@ function renderProject(project) {
 
           <section>
             <p class="section-kicker">Selected outputs</p>
-            <h2>Selected workbook views</h2>
-            <p>The workbook remains private. These images show the outputs cited in this case.</p>
+            <h2>${escapeHtml(project.outputsTitle || "Selected workbook views")}</h2>
+            <p>${escapeHtml(project.outputsIntro || "The workbook remains private. These images show the outputs cited in this case.")}</p>
             <div class="gallery">${gallery}</div>
           </section>
 
@@ -101,7 +101,7 @@ function renderProject(project) {
         <aside class="case-sidebar" aria-label="Case resources">
           <div class="sidebar-inner">
             <div class="side-card"><h3>Sources</h3><ul class="source-list">${sources}</ul></div>
-            <div class="side-card"><h3>Workbook access</h3><p>The complete Excel model is maintained privately. A live walkthrough can be provided during an interview.</p></div>
+            <div class="side-card"><h3>${escapeHtml(project.accessTitle || "Workbook access")}</h3><p>${escapeHtml(project.accessNote || "The complete Excel model is maintained privately. A live walkthrough can be provided during an interview.")}</p></div>
           </div>
         </aside>
       </div>

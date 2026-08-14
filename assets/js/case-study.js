@@ -118,8 +118,8 @@
 
           <section>
             <p class="section-kicker">Selected outputs</p>
-            <h2>Selected workbook views</h2>
-            <p>The workbook remains private. These images show the outputs cited in this case.</p>
+            <h2>${project.outputsTitle || "Selected workbook views"}</h2>
+            <p>${project.outputsIntro || "The workbook remains private. These images show the outputs cited in this case."}</p>
             <div class="gallery">${gallery}</div>
           </section>
 
@@ -142,8 +142,8 @@
               <ul class="source-list">${sources}</ul>
             </div>
             <div class="side-card">
-              <h3>Workbook access</h3>
-              <p>The complete Excel model is maintained privately. A live walkthrough can be provided during an interview.</p>
+              <h3>${project.accessTitle || "Workbook access"}</h3>
+              <p>${project.accessNote || "The complete Excel model is maintained privately. A live walkthrough can be provided during an interview."}</p>
             </div>
           </div>
         </aside>

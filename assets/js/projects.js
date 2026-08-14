@@ -17,7 +17,7 @@ window.portfolioGroups = [
   {
     id: "private-markets",
     title: "Private Equity, Venture Capital and Private Markets",
-    description: "LBO returns, fund cash flows, waterfalls, venture financing and ownership."
+    description: "Listed private equity research, LBO returns, fund cash flows, venture financing and ownership."
   },
   {
     id: "credit-treasury",
@@ -192,10 +192,10 @@ const projectContext = {
   "leveraged-buyout": ["Self-directed public-data case study", "Historical case using 2025E to 2029E assumptions"],
   "private-equity-fund": ["Illustrative case", "Modeled fund life and cash-flow schedule"],
   "startup-venture-capital": ["Illustrative case using public SaaS benchmarks", "Forecast through 2031"],
+  "listed-private-equity-dissertation": ["MSc Finance dissertation", "Submitted July 2026"],
   "european-defence-ma": ["Academic transaction case study", "Case assumptions based on FY2025 reporting"],
   "credit-analysis": ["Self-directed public-data case study", "Forecast from 2025A through 2030E"],
   "rolls-royce-credit-treasury": ["Self-directed public-data case study", "FY2025 base with 2026 scenarios"],
-  "real-estate-underwriting": ["Illustrative case", "Representative seven-year logistics underwriting"],
   "portfolio-management": ["Self-directed public-data case study", "Monthly data from January 2021 through June 2026"],
   "sustainable-finance": ["Illustrative case using public capital-market assumptions", "Long-term allocation and ALM scenario case"],
   "multifamily-acquisition-the-louisa": ["Self-directed public-source case study", "Prepared through Q1 2026"],
@@ -521,6 +521,50 @@ window.portfolioProjects = [
     ]
   },
   {
+    id: "listed-private-equity-dissertation",
+    group: "private-markets",
+    title: "Private Market Liquidity in Public View",
+    eyebrow: "MSc Finance dissertation",
+    company: "Trinity College Dublin",
+    decision: "Are UK interest-rate changes associated with wider listed private equity discounts, and do public prices lead later NAV marks?",
+    short: "Interest-rate shocks and NAV discounts in listed private equity vehicles, tested across a hand-built 25-fund panel.",
+    outputsTitle: "Selected research outputs",
+    outputsIntro: "The dissertation, regression workbook and licensed data remain private. These derived visuals show the sample and results cited in this case.",
+    accessTitle: "Dissertation access",
+    accessNote: "The dissertation, regression workbook, analysis script and source dataset are maintained privately. A live walkthrough can be provided during an interview.",
+    featured: true,
+    verdict: "Discounts carry information about later NAV marks",
+    verdictTone: "neutral",
+    conclusion: [
+      "In a fund fixed-effects panel, a one percentage point rise in the 10-year gilt yield is associated with a price-to-NAV discount 6.1 percentage points wider. The estimate is significant under Driscoll-Kraay inference (p = 0.033) and marginal under fund-and-quarter clustering (p = 0.076), so it is treated as associational rather than causal.",
+      "The central result is that current discounts forecast next-quarter NAV returns. The deepest-discount quintile averages −1.0%, versus +4.2% for the narrowest, a 5.2 percentage point endpoint spread. The predicted market-frictions amplification is not supported."
+    ],
+    metrics: [
+      ["Vehicles", "25", "London-listed private equity vehicles"],
+      ["Fund-quarters", "970", "2015Q2 to 2025Q4"],
+      ["NAV-return spread", "5.2 pp", "Deepest to narrowest discount quintile"],
+      ["Rate association", "−6.1 pp", "Per 1 pp rise in the 10-year gilt yield"]
+    ],
+    architecture: ["Daily market-data cleaning", "Currency conversion and NAV normalization", "Fund-quarter panel construction", "Fund fixed effects", "Robust inference ladder", "Rate-channel decomposition", "Market-frictions tests", "Price-leads-NAV predictive test"],
+    tested: ["10-year gilt and discount association", "Tightening regime and short-rate proxies", "Policy-path and term-premium channels", "Size, liquidity, stress and NAV age", "Current discount and next-quarter NAV return"],
+    risks: ["The design estimates associations rather than a causal effect.", "The panel is unbalanced and contains 25 London-listed vehicles, so inference is sensitive to the treatment of common quarterly shocks.", "NAV dates may differ from publication dates, and NAV age captures only mechanical staleness.", "Liquidity and dividend yield may be endogenous; the credit-spread control is a euro high-yield proxy; and the OIS series starts later than the main panel.", "Listed private equity does not map directly onto unlisted private equity.", "Morningstar and Refinitiv extracts are licensed and are not redistributed."],
+    sources: [
+      ["Trinity MSc Finance", "https://www.tcd.ie/business/programmes/masters-programmes/msc-in-finance/"],
+      ["Bank of England database", "https://www.bankofengland.co.uk/boeapps/database/"],
+      ["UK DMO gilt market data", "https://www.dmo.gov.uk/data/gilt-market/"],
+      ["FTSE UK Index Series", "https://www.lseg.com/en/ftse-russell/indices/uk"],
+      ["FTSE Implied Volatility Index Series", "https://www.lseg.com/en/ftse-russell/indices/implied-vol"],
+      ["ICE fixed-income indices", "https://www.ice.com/fixed-income-data-services/index-solutions/fixed-income-indices"],
+      ["ECB reference exchange rates", "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"],
+      ["Morningstar UK investment trusts", "https://www.morningstar.co.uk/uk/investmenttrusts/default.aspx"]
+    ],
+    images: [
+      ["assets/models/dissertation-panel-overview.png", "Dissertation sample and quarterly panel overview"],
+      ["assets/models/dissertation-inference.png", "Baseline association under alternative inference methods"],
+      ["assets/models/dissertation-price-discovery.png", "Discount quintiles and next-quarter NAV returns"]
+    ]
+  },
+  {
     id: "leveraged-buyout",
     group: "private-markets",
     title: "Academy Sports LBO",
@@ -729,41 +773,6 @@ window.portfolioProjects = [
       ["assets/models/rolls-royce-credit-treasury-scenarios.png", "2026 credit scenarios and treasury action"],
       ["assets/models/rolls-royce-credit-treasury-03.png", "Free-cash-flow and net-cash recovery"],
       ["assets/models/rolls-royce-credit-treasury-04.png", "Credit thesis and monitoring points"]
-    ]
-  },
-  {
-    id: "real-estate-underwriting",
-    group: "real-estate",
-    title: "Illustrative Logistics Acquisition Underwriting",
-    eyebrow: "Real estate private equity",
-    company: "Dallas-Fort Worth logistics asset",
-    decision: "Can a $31.7m acquisition support the proposed debt and equity return requirements?",
-    short: "Property underwriting from rent roll and NOI to debt service, exit value and equity returns.",
-    featured: true,
-    verdict: "The modeled return clears the case hurdle",
-    verdictTone: "neutral",
-    conclusion: [
-      "The base case produces a 12.9% levered IRR and 2.19x equity multiple, with minimum DSCR of 1.53x. These are illustrative outputs for a representative asset, not an actual marketed opportunity.",
-      "Any real acquisition decision would require verified rent, lease expirations, tenant credit and property-level capital needs."
-    ],
-    metrics: [
-      ["Levered IRR", "12.9%", "Seven-year hold"],
-      ["Equity multiple", "2.19x", "$12.7m initial equity"],
-      ["Minimum DSCR", "1.53x", "Model period"],
-      ["Exit value", "$41.9m", "$168 per square foot"]
-    ],
-    architecture: ["Acquisition assumptions", "Tenant rent roll", "Revenue and expenses", "NOI and leasing costs", "Debt amortization", "Levered cash flow", "Exit analysis", "Sensitivity and checks"],
-    tested: ["Exit cap rate and rent growth", "Loan-to-cost", "Debt service coverage", "Rollover and capital reserves"],
-    risks: ["The asset is representative rather than a marketed property.", "Executed lease abstracts and broker comps are required.", "Exit value is sensitive to cap-rate expansion.", "Environmental, title and physical diligence are outside the case."],
-    sources: [
-      ["Prologis FY2025 results", "https://www.prologis.com/insights-news/press-releases/prologis-reports-fourth-quarter-and-full-year-2025-results"],
-      ["Prologis Q2 2025 deployment data", "https://www.prologis.com/insights-news/press-releases/prologis-reports-second-quarter-2025-results"],
-      ["Prologis 2025 Form 10-K", "https://ir.prologis.com/financials/sec-filings/content/0001193125-26-051453/pld-20251231.htm"]
-    ],
-    images: [
-      ["assets/models/verified-real-estate-dashboard.png", "Property underwriting dashboard"],
-      ["assets/models/verified-real-estate-sensitivity.png", "Return sensitivities"],
-      ["assets/models/verified-real-estate-controls.png", "Underwriting controls"]
     ]
   },
   {
