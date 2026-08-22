@@ -1,10 +1,18 @@
 # Sanjay Nair Finance Portfolio
 
-This repository hosts 22 finance case studies across corporate finance, equity research, investment banking, private markets, credit, real estate and portfolio management.
+This repository hosts a recruiter-first investment analysis portfolio. Seven selected analyses are shown by default; the full 22-project archive remains available through the filters.
 
 Each case presents its origin and model period alongside the question, structure, selected outputs, conclusion, public sources and limitations. The work is labeled as academic, dissertation, self-directed or illustrative. Excel workbooks are kept private and are not included in this repository.
 
-Run `node generate-case-pages.js` after editing `assets/js/projects.js` to refresh the homepage directory, crawlable case pages and their metadata.
+After editing `assets/js/projects.js`, run:
+
+```sh
+node generate-case-pages.js
+node generate-social-cards.js
+node validate-site.mjs
+```
+
+These commands rebuild the homepage directory, crawlable case pages, project-specific social cards, metadata and sitemap, then validate the generated site.
 
 ## Portfolio coverage
 

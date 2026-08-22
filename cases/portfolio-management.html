@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-IE">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Monthly performance, drawdown, beta, tracking error, correlations, risk contribution and allocation scenarios.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="An illustrative monthly index demonstrating performance, drawdown, beta, tracking error, correlations and risk contribution.">
   <meta name="theme-color" content="#0b1f33">
   <meta property="og:title" content="Multi-Asset Portfolio and Risk | Sanjay Nair, CFA">
-  <meta property="og:description" content="Monthly performance, drawdown, beta, tracking error, correlations, risk contribution and allocation scenarios.">
+  <meta property="og:description" content="An illustrative monthly index demonstrating performance, drawdown, beta, tracking error, correlations and risk contribution.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://sswnair.github.io/cases/portfolio-management.html">
-  <meta property="og:image" content="https://sswnair.github.io/assets/social-card.png">
+  <meta property="og:image" content="https://sswnair.github.io/assets/social/portfolio-management.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Sanjay Nair, CFA finance portfolio">
+  <meta property="og:image:alt" content="Multi-Asset Portfolio and Risk by Sanjay Nair, CFA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Multi-Asset Portfolio and Risk | Sanjay Nair, CFA">
-  <meta name="twitter:description" content="Monthly performance, drawdown, beta, tracking error, correlations, risk contribution and allocation scenarios.">
-  <meta name="twitter:image" content="https://sswnair.github.io/assets/social-card.png">
+  <meta name="twitter:description" content="An illustrative monthly index demonstrating performance, drawdown, beta, tracking error, correlations and risk contribution.">
+  <meta name="twitter:image" content="https://sswnair.github.io/assets/social/portfolio-management.png">
+  <meta name="twitter:image:alt" content="Multi-Asset Portfolio and Risk by Sanjay Nair, CFA">
   <title>Multi-Asset Portfolio and Risk | Sanjay Nair, CFA</title>
   <link rel="canonical" href="https://sswnair.github.io/cases/portfolio-management.html">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20260814-1">
-  <script src="../assets/js/projects.js?v=20260814-1" defer></script>
-  <script src="../assets/js/case-study.js?v=20260814-1" defer></script>
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20260822-2">
+  <script src="../assets/js/case-study.js?v=20260822-2" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Multi-Asset Portfolio and Risk","description":"An illustrative monthly index demonstrating performance, drawdown, beta, tracking error, correlations and risk contribution.","url":"https://sswnair.github.io/cases/portfolio-management.html","author":{"@type":"Person","name":"Sanjay Nair","honorificSuffix":"CFA"},"about":"Six-ETF policy portfolio","keywords":["Portfolio management","portfolio-risk","Illustrative portfolio-mechanics case"],"isBasedOn":["https://finance.yahoo.com/","https://stooq.com/q/d/?s=spy.us","https://www.ssga.com/us/en/intermediary/etfs/funds/spdr-sp-500-etf-trust-spy","https://investor.vanguard.com/investment-products/etfs/profile/vnq"],"dateModified":"2026-08-22"}</script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -36,8 +39,8 @@
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>Menu</button>
       <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
-        <a href="../index.html#work">Case studies</a>
-        <a href="../index.html#approach">Modeling approach</a>
+        <a href="../index.html#work">Selected work</a>
+        <a href="../index.html#approach">Modelling approach</a>
         <a href="../index.html#about">Experience</a>
         <a class="nav-contact" href="mailto:sswnair@gmail.com">Contact</a>
       </nav>
@@ -52,29 +55,29 @@
           <div>
             <p class="case-eyebrow">Portfolio management · Six-ETF policy portfolio</p>
             <h1>Multi-Asset Portfolio and Risk</h1>
-            <p class="case-summary">Monthly performance, drawdown, beta, tracking error, correlations, risk contribution and allocation scenarios.</p>
-            <p class="case-context"><span>Self-directed public-data case study</span><span>Monthly data from January 2021 through June 2026</span></p>
+            <p class="case-summary">An illustrative monthly index demonstrating performance, drawdown, beta, tracking error, correlations and risk contribution.</p>
+            <p class="case-context"><span>Illustrative portfolio-mechanics case</span><span>Synthetic monthly index from January 2021 through June 2026; not ETF price history</span></p>
           </div>
-          <aside class="decision-card" aria-label="Decision question">
-            <span>Decision question</span>
+          <aside class="decision-card" aria-label="Allocation question">
+            <span>Allocation question</span>
             <p>What contributes to return, volatility and downside, and does the portfolio beat its benchmark after tracking risk?</p>
           </aside>
         </div>
         <div class="case-metrics">
     <div class="case-metric">
       <strong>12.8%</strong>
-      <span>Annualized return</span>
-      <em>Historical sample</em>
+      <span>Annualised return</span>
+      <em>Illustrative index</em>
     </div>
 
     <div class="case-metric">
       <strong>7.3%</strong>
-      <span>Annualized volatility</span>
-      <em>Monthly returns</em>
+      <span>Annualised volatility</span>
+      <em>Illustrative monthly returns</em>
     </div>
 
     <div class="case-metric">
-      <strong>1.21</strong>
+      <strong>1.22</strong>
       <span>Sharpe ratio</span>
       <em>Risk-free adjusted</em>
     </div>
@@ -90,40 +93,40 @@
 
     <div class="case-body">
       <div class="container case-layout">
-        <article class="case-main">
+        <article class="case-main" aria-label="Multi-Asset Portfolio and Risk analysis">
           <section class="verdict-box">
-            <span class="verdict-label neutral">Model view · Diversified in sample, but not benchmark-beating</span>
+            <span class="verdict-label neutral">Portfolio view · Diversified in sample, but not benchmark-beating</span>
             <h2>Conclusion</h2>
-            <p>The portfolio records 12.8% annualized return, 7.3% volatility, a 1.21 Sharpe ratio and 0.50 beta to SPY. Maximum drawdown in the sample is 4.4%.</p><p>The information ratio is negative 1.42. The allocation reduced market exposure but did not earn enough excess return relative to its tracking error.</p>
+            <p>The illustrative index records 12.8% annualised return, 7.3% volatility, a 1.22 Sharpe ratio and 0.50 beta to the modelled SPY benchmark. Peak-to-trough drawdown is 4.4% for the portfolio and 13.2% for the modelled QQQ series.</p><p>The information ratio is negative 1.42. These outputs demonstrate portfolio mechanics only: the supplied prices are synthetic index levels and must not be read as historical ETF performance.</p>
           </section>
 
           <section>
-            <p class="section-kicker">Model design</p>
-            <h2>Model structure</h2>
+            <p class="section-kicker">Analytical design</p>
+            <h2>Portfolio design</h2>
             <div class="two-col-lists">
-              <div><h3>Architecture</h3><ul class="clean-list"><li>ETF universe</li><li>Policy weights</li><li>Price history</li><li>Return calculations</li><li>Performance metrics</li><li>Drawdown and risk</li><li>Scenarios and Monte Carlo</li><li>Allocation screen and checks</li></ul></div>
-              <div><h3>Questions tested</h3><ul class="clean-list"><li>Equity sell-off</li><li>Rate shock</li><li>Inflation surprise</li><li>Growth rally and dollar weakness</li></ul></div>
+              <div><h3>Analytical structure</h3><ul class="clean-list"><li>ETF universe</li><li>Policy weights</li><li>Price history</li><li>Return calculations</li><li>Performance metrics</li><li>Drawdown and risk</li><li>Scenarios and Monte Carlo</li><li>Allocation screen and checks</li></ul></div>
+              <div><h3>Risk and scenario tests</h3><ul class="clean-list"><li>Equity sell-off</li><li>Rate shock</li><li>Inflation surprise</li><li>Growth rally and dollar weakness</li></ul></div>
             </div>
           </section>
 
           <section>
             <p class="section-kicker">Selected outputs</p>
             <h2>Selected workbook views</h2>
-            <p>The workbook remains private. These images show the outputs cited in this case.</p>
+            <p>These selected views from Six-ETF policy portfolio show the data construction, risk calculations and scenario outputs cited in this case.</p>
             <div class="gallery">
-    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-portfolio-dashboard.png" data-lightbox-alt="Portfolio dashboard">
-      <img src="../assets/models/verified-portfolio-dashboard.png" alt="Portfolio dashboard" loading="eager">
-      <span>01 &nbsp; Portfolio dashboard. View full size</span>
+    <button class="gallery-button" type="button" aria-label="View full-size output: Illustrative portfolio dashboard and drawdown series" data-lightbox-src="../assets/models/multi-asset-portfolio-dashboard.png" data-lightbox-alt="Illustrative portfolio dashboard and drawdown series">
+      <img src="../assets/models/multi-asset-portfolio-dashboard.png" alt="" loading="lazy" decoding="async">
+      <span aria-hidden="true">01 &nbsp; Illustrative portfolio dashboard and drawdown series. View full size</span>
     </button>
 
-    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-portfolio-risk.png" data-lightbox-alt="Risk metrics">
-      <img src="../assets/models/verified-portfolio-risk.png" alt="Risk metrics" loading="lazy">
-      <span>02 &nbsp; Risk metrics. View full size</span>
+    <button class="gallery-button" type="button" aria-label="View full-size output: Asset risk, return and peak-to-trough drawdown" data-lightbox-src="../assets/models/multi-asset-portfolio-risk.png" data-lightbox-alt="Asset risk, return and peak-to-trough drawdown">
+      <img src="../assets/models/multi-asset-portfolio-risk.png" alt="" loading="lazy" decoding="async">
+      <span aria-hidden="true">02 &nbsp; Asset risk, return and peak-to-trough drawdown. View full size</span>
     </button>
 
-    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-portfolio-contribution.png" data-lightbox-alt="Allocation and contribution screen">
-      <img src="../assets/models/verified-portfolio-contribution.png" alt="Allocation and contribution screen" loading="lazy">
-      <span>03 &nbsp; Allocation and contribution screen. View full size</span>
+    <button class="gallery-button gallery-wide" type="button" aria-label="View full-size output: Performance summary and data limitation" data-lightbox-src="../assets/models/multi-asset-portfolio-summary.png" data-lightbox-alt="Performance summary and data limitation">
+      <img src="../assets/models/multi-asset-portfolio-summary.png" alt="" loading="lazy" decoding="async">
+      <span aria-hidden="true">03 &nbsp; Performance summary and data limitation. View full size</span>
     </button>
   </div>
           </section>
@@ -131,27 +134,28 @@
           <section>
             <p class="section-kicker">What could change the answer</p>
             <h2>Risks and limitations</h2>
-            <ul class="clean-list"><li>The workbook uses a static public-data sample.</li><li>Results require refreshing before investment use.</li><li>Monte Carlo output is a distribution exercise, not a forecast.</li><li>A short sample can understate drawdown and regime risk.</li></ul>
+            <ul class="clean-list"><li>The supplied price levels are illustrative rather than sourced ETF quotations.</li><li>Replace the series with dated, sourced prices before presenting the output as historical performance.</li><li>Monte Carlo output is a distribution exercise, not a forecast.</li><li>The synthetic sample can understate drawdown and regime risk.</li></ul>
           </section>
 
-          <section class="case-actions">
+          <div class="case-actions">
             <a class="button" href="mailto:sswnair@gmail.com?subject=Multi-Asset%20Portfolio%20and%20Risk%20discussion">Email about this case</a>
             <a class="button secondary" href="../index.html#work">View another case</a>
-          </section>
+          </div>
         </article>
 
         <aside class="case-sidebar" aria-label="Case resources">
           <div class="sidebar-inner">
             <div class="side-card"><h3>Sources</h3><ul class="source-list">
-    <li><a href="https://finance.yahoo.com/" target="_blank" rel="noopener noreferrer">Yahoo Finance</a></li>
+    <li><a href="https://finance.yahoo.com/" target="_blank" rel="noopener noreferrer">Replacement-data reference: Yahoo Finance</a></li>
 
-    <li><a href="https://stooq.com/q/d/?s=spy.us" target="_blank" rel="noopener noreferrer">Stooq historical prices</a></li>
+    <li><a href="https://stooq.com/q/d/?s=spy.us" target="_blank" rel="noopener noreferrer">Replacement-data reference: Stooq</a></li>
 
-    <li><a href="https://www.ssga.com/us/en/intermediary/etfs/funds/spdr-sp-500-etf-trust-spy" target="_blank" rel="noopener noreferrer">State Street SPY</a></li>
+    <li><a href="https://www.ssga.com/us/en/intermediary/etfs/funds/spdr-sp-500-etf-trust-spy" target="_blank" rel="noopener noreferrer">Instrument reference: State Street SPY</a></li>
 
-    <li><a href="https://investor.vanguard.com/investment-products/etfs/profile/vnq" target="_blank" rel="noopener noreferrer">Vanguard VNQ</a></li>
+    <li><a href="https://investor.vanguard.com/investment-products/etfs/profile/vnq" target="_blank" rel="noopener noreferrer">Instrument reference: Vanguard VNQ</a></li>
   </ul></div>
-            <div class="side-card"><h3>Workbook access</h3><p>The complete Excel model is maintained privately. A live walkthrough can be provided during an interview.</p></div>
+
+            <div class="side-card"><h3>Workbook access</h3><p>Multi-Asset Portfolio and Risk is maintained as a private workbook. I can walk through its data construction, risk calculations and scenario outputs in an interview.</p></div>
           </div>
         </aside>
       </div>
@@ -160,7 +164,7 @@
     <div class="lightbox" role="dialog" aria-modal="true" aria-label="Full-size model output" hidden data-lightbox>
       <div class="lightbox-content">
         <button class="lightbox-close" type="button" data-lightbox-close>Close ×</button>
-        <img src="../assets/models/verified-portfolio-dashboard.png" alt="" data-lightbox-image>
+        <img src="../assets/models/multi-asset-portfolio-dashboard.png" alt="" data-lightbox-image>
       </div>
     </div>
   </main>

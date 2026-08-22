@@ -1,77 +1,61 @@
 (function () {
-  const projects = window.portfolioProjects || [];
-  const projectGroups = window.portfolioGroups || [];
-  const grid = document.querySelector("[data-project-grid]");
-  const filters = document.querySelectorAll("[data-filter]");
+  const filters = Array.from(document.querySelectorAll("[data-filter]"));
+  const cards = Array.from(document.querySelectorAll(".project-card"));
+  const sections = Array.from(document.querySelectorAll("[data-project-section]"));
   const menuButton = document.querySelector("[data-menu-button]");
   const nav = document.querySelector("[data-site-nav]");
   const filterStatus = document.querySelector("[data-filter-status]");
 
-  function card(project) {
-    const metrics = project.metrics.slice(0, 3).map(([label, value]) => `
-      <div class="card-metric">
-        <strong>${value}</strong>
-        <span>${label}</span>
-      </div>
-    `).join("");
-
-    return `
-      <article class="project-card" data-group="${project.group}">
-        <div class="project-topline">
-          <span class="project-category">${project.eyebrow}</span>
-          <span class="verdict-pill ${project.verdictTone}">${project.verdict}</span>
-        </div>
-        <h4><a href="cases/${project.id}.html">${project.title}</a></h4>
-        <p class="project-context"><span>${project.basis}</span><span>${project.asOf}</span></p>
-        <p class="project-short">${project.short}</p>
-        <div class="card-metrics" role="group" aria-label="Selected model outputs">${metrics}</div>
-      </article>
-    `;
+  function labelFor(filter) {
+    const labels = {
+      featured: "selected projects",
+      all: "analyses",
+      "corporate-finance": "corporate finance analyses",
+      "equity-research": "equity research and valuation analyses",
+      "investment-banking": "investment banking and M&A analyses",
+      "private-markets": "private markets analyses",
+      "credit-treasury": "credit and treasury analyses",
+      "real-estate": "real estate analyses",
+      "portfolio-risk": "portfolio and risk analyses"
+    };
+    return labels[filter] || "analyses";
   }
 
-  function projectGroup(group) {
-    const groupProjects = projects.filter((project) => project.group === group.id);
-    if (!groupProjects.length) return "";
-    return `
-      <section class="project-group" data-project-section="${group.id}">
-        <div class="project-group-head">
-          <div>
-            <p class="section-kicker">${String(projectGroups.indexOf(group) + 1).padStart(2, "0")}</p>
-            <h3>${group.title}</h3>
-          </div>
-          <p>${group.description}</p>
-        </div>
-        <div class="projects-grid">${groupProjects.map(card).join("")}</div>
-      </section>
-    `;
-  }
+  function applyFilter(selected) {
+    filters.forEach((button) => {
+      const active = button.dataset.filter === selected;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
 
-  if (grid) {
-    grid.innerHTML = projectGroups.map(projectGroup).join("");
+    cards.forEach((card) => {
+      const visible = selected === "all"
+        || (selected === "featured" && card.dataset.featured === "true")
+        || card.dataset.group === selected;
+      card.hidden = !visible;
+    });
+
+    sections.forEach((section) => {
+      section.hidden = !Array.from(section.querySelectorAll(".project-card")).some((card) => !card.hidden);
+    });
+
+    sections.filter((section) => !section.hidden).forEach((section, index) => {
+      const kicker = section.querySelector(".project-group-head .section-kicker");
+      if (kicker) kicker.textContent = String(index + 1).padStart(2, "0");
+    });
+
+    const count = cards.filter((card) => !card.hidden).length;
+    if (filterStatus) {
+      filterStatus.textContent = `Showing ${count} ${labelFor(selected)}.`;
+    }
   }
 
   filters.forEach((button) => {
-    button.addEventListener("click", () => {
-      const selected = button.dataset.filter;
-      filters.forEach((item) => {
-        const active = item === button;
-        item.classList.toggle("active", active);
-        item.setAttribute("aria-pressed", String(active));
-      });
-      document.querySelectorAll(".project-card").forEach((item) => {
-        item.hidden = selected !== "all" && item.dataset.group !== selected;
-      });
-      document.querySelectorAll("[data-project-section]").forEach((section) => {
-        section.hidden = selected !== "all" && section.dataset.projectSection !== selected;
-      });
-      if (filterStatus) {
-        const count = selected === "all" ? projects.length : projects.filter((project) => project.group === selected).length;
-        filterStatus.textContent = `Showing ${count} ${count === 1 ? "case study" : "case studies"}.`;
-      }
-    });
+    button.addEventListener("click", () => applyFilter(button.dataset.filter));
   });
 
   if (menuButton && nav) {
+    document.documentElement.classList.add("enhanced-nav");
     menuButton.addEventListener("click", () => {
       const open = nav.classList.toggle("open");
       menuButton.setAttribute("aria-expanded", String(open));
@@ -85,4 +69,41 @@
   document.querySelectorAll("[data-year]").forEach((item) => {
     item.textContent = new Date().getFullYear();
   });
+
+  const progress = document.createElement("div");
+  progress.className = "scroll-progress";
+  progress.setAttribute("aria-hidden", "true");
+  document.body.append(progress);
+  let ticking = false;
+  function updateProgress() {
+    const available = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = available > 0 ? Math.min(1, window.scrollY / available) : 0;
+    progress.style.transform = `scaleX(${ratio})`;
+    ticking = false;
+  }
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  }, { passive: true });
+  updateProgress();
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+    const revealItems = document.querySelectorAll(".project-card, .principle, .timeline-item, .profile-panel");
+    revealItems.forEach((item) => item.classList.add("reveal"));
+    document.documentElement.classList.add("motion-ready");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
+    revealItems.forEach((item) => observer.observe(item));
+  }
+
+  const initial = filters.find((button) => button.getAttribute("aria-pressed") === "true")?.dataset.filter || "featured";
+  applyFilter(initial);
 })();

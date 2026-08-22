@@ -1,12 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Sanjay Nair, CFA finance portfolio">
-  <rect width="1200" height="630" fill="#0b1f33"/>
-  <circle cx="1070" cy="110" r="210" fill="none" stroke="#c5a363" stroke-opacity=".28" stroke-width="2"/>
-  <circle cx="1130" cy="570" r="310" fill="none" stroke="#2f7772" stroke-opacity=".32" stroke-width="2"/>
-  <rect x="84" y="76" width="72" height="72" rx="36" fill="#c5a363"/>
-  <text x="120" y="122" fill="#0b1f33" font-family="Georgia, serif" font-size="25" font-weight="700" text-anchor="middle">SN</text>
-  <text x="84" y="248" fill="#f5f3ed" font-family="Georgia, serif" font-size="72">Sanjay Nair, CFA</text>
-  <text x="84" y="330" fill="#f5f3ed" font-family="Georgia, serif" font-size="52">Finance work that ends</text>
-  <text x="84" y="392" fill="#f5f3ed" font-family="Georgia, serif" font-size="52">in a decision.</text>
-  <text x="84" y="480" fill="#b9c5c9" font-family="Arial, sans-serif" font-size="24">22 dated case studies · 7 areas of finance</text>
-  <text x="84" y="525" fill="#d7b56d" font-family="Arial, sans-serif" font-size="20">CFA charterholder · MSc Finance graduate · Dublin, Ireland</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Sanjay Nair, CFA</title>
+  <desc id="desc">Auditable models. Explicit downside. Clear decisions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071827"/>
+      <stop offset="1" stop-color="#123B45"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.16" r="0.58">
+      <stop offset="0" stop-color="#C7A767" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#C7A767" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <path d="M930 -60C1080 24 1180 138 1242 282" fill="none" stroke="#77A9A5" stroke-opacity="0.22" stroke-width="2"/>
+  <path d="M892 -30C1048 58 1148 180 1218 330" fill="none" stroke="#77A9A5" stroke-opacity="0.12" stroke-width="2"/>
+  <rect x="0" y="0" width="16" height="630" fill="#C7A767"/>
+  <text x="92" y="94" fill="#C7A767" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">INVESTMENT ANALYSIS PORTFOLIO</text>
+  <line x1="92" y1="126" x2="1108" y2="126" stroke="#FFFFFF" stroke-opacity="0.18"/>
+  <text x="92" y="216" fill="#F7F4EC" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" letter-spacing="-1.5">Sanjay Nair, CFA</text>
+  <text x="92" y="322" fill="#C9D6D8" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400">Auditable models. Explicit downside. Clear decisions.</text>
+
+  <text x="92" y="558" fill="#F7F4EC" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">CFA charterholder · MSc Finance</text>
+  <text x="92" y="590" fill="#94A9AD" font-family="Arial, Helvetica, sans-serif" font-size="16">Dublin · Trinity College Dublin</text>
 </svg>

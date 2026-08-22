@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-IE">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A monthly budget with actual-versus-plan tracking, variance commentary and a rolling cash forecast.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="An illustrative monthly budget with operating drivers, scenarios and a rolling cash forecast. No actual results are loaded.">
   <meta name="theme-color" content="#0b1f33">
-  <meta property="og:title" content="Walmart Budget, Variance and Cash Forecast | Sanjay Nair, CFA">
-  <meta property="og:description" content="A monthly budget with actual-versus-plan tracking, variance commentary and a rolling cash forecast.">
+  <meta property="og:title" content="Walmart Budget, Scenario and Cash Forecast | Sanjay Nair, CFA">
+  <meta property="og:description" content="An illustrative monthly budget with operating drivers, scenarios and a rolling cash forecast. No actual results are loaded.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://sswnair.github.io/cases/budgeting-fpa.html">
-  <meta property="og:image" content="https://sswnair.github.io/assets/social-card.png">
+  <meta property="og:image" content="https://sswnair.github.io/assets/social/budgeting-fpa.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Sanjay Nair, CFA finance portfolio">
+  <meta property="og:image:alt" content="Walmart Budget, Scenario and Cash Forecast by Sanjay Nair, CFA">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Walmart Budget, Variance and Cash Forecast | Sanjay Nair, CFA">
-  <meta name="twitter:description" content="A monthly budget with actual-versus-plan tracking, variance commentary and a rolling cash forecast.">
-  <meta name="twitter:image" content="https://sswnair.github.io/assets/social-card.png">
-  <title>Walmart Budget, Variance and Cash Forecast | Sanjay Nair, CFA</title>
+  <meta name="twitter:title" content="Walmart Budget, Scenario and Cash Forecast | Sanjay Nair, CFA">
+  <meta name="twitter:description" content="An illustrative monthly budget with operating drivers, scenarios and a rolling cash forecast. No actual results are loaded.">
+  <meta name="twitter:image" content="https://sswnair.github.io/assets/social/budgeting-fpa.png">
+  <meta name="twitter:image:alt" content="Walmart Budget, Scenario and Cash Forecast by Sanjay Nair, CFA">
+  <title>Walmart Budget, Scenario and Cash Forecast | Sanjay Nair, CFA</title>
   <link rel="canonical" href="https://sswnair.github.io/cases/budgeting-fpa.html">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20260814-1">
-  <script src="../assets/js/projects.js?v=20260814-1" defer></script>
-  <script src="../assets/js/case-study.js?v=20260814-1" defer></script>
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20260822-2">
+  <script src="../assets/js/case-study.js?v=20260822-2" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Walmart Budget, Scenario and Cash Forecast","description":"An illustrative monthly budget with operating drivers, scenarios and a rolling cash forecast. No actual results are loaded.","url":"https://sswnair.github.io/cases/budgeting-fpa.html","author":{"@type":"Person","name":"Sanjay Nair","honorificSuffix":"CFA"},"about":"Walmart benchmark case","keywords":["Budgeting and FP&A","corporate-finance","Illustrative case using public Walmart anchors"],"isBasedOn":["https://www.sec.gov/Archives/edgar/data/104169/000010416925000021/wmt-20250131.htm","https://stock.walmart.com/sec-filings/all-sec-filings","https://stock.walmart.com/financial-information/annual-reports"],"dateModified":"2026-08-22"}</script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -36,8 +39,8 @@
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>Menu</button>
       <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
-        <a href="../index.html#work">Case studies</a>
-        <a href="../index.html#approach">Modeling approach</a>
+        <a href="../index.html#work">Selected work</a>
+        <a href="../index.html#approach">Modelling approach</a>
         <a href="../index.html#about">Experience</a>
         <a class="nav-contact" href="mailto:sswnair@gmail.com">Contact</a>
       </nav>
@@ -51,13 +54,13 @@
         <div class="case-title-grid">
           <div>
             <p class="case-eyebrow">Budgeting and FP&amp;A · Walmart benchmark case</p>
-            <h1>Walmart Budget, Variance and Cash Forecast</h1>
-            <p class="case-summary">A monthly budget with actual-versus-plan tracking, variance commentary and a rolling cash forecast.</p>
-            <p class="case-context"><span>Illustrative case using public Walmart anchors</span><span>Annual plan with first-half variance review</span></p>
+            <h1>Walmart Budget, Scenario and Cash Forecast</h1>
+            <p class="case-summary">An illustrative monthly budget with operating drivers, scenarios and a rolling cash forecast. No actual results are loaded.</p>
+            <p class="case-context"><span>Illustrative case using public Walmart anchors</span><span>FY2027 scenario budget; no actual results loaded</span></p>
           </div>
-          <aside class="decision-card" aria-label="Decision question">
-            <span>Decision question</span>
-            <p>Does the annual plan fund operations and maintain liquidity after working-capital movements and capital expenditure?</p>
+          <aside class="decision-card" aria-label="Management question">
+            <span>Management question</span>
+            <p>Does the FY2027 scenario budget maintain liquidity after working-capital movements and capital expenditure?</p>
           </aside>
         </div>
         <div class="case-metrics">
@@ -68,21 +71,21 @@
     </div>
 
     <div class="case-metric">
-      <strong>$35.4bn</strong>
+      <strong>$29.4bn</strong>
       <span>Budget EBITDA</span>
       <em>Illustrative annual plan</em>
     </div>
 
     <div class="case-metric">
-      <strong>$3.7bn</strong>
+      <strong>($3.9bn)</strong>
       <span>Free cash flow</span>
       <em>Illustrative annual plan</em>
     </div>
 
     <div class="case-metric">
-      <strong>$13.6bn</strong>
+      <strong>$6.0bn</strong>
       <span>Ending cash</span>
-      <em>Modeled close</em>
+      <em>Modelled close</em>
     </div>
   </div>
       </div>
@@ -90,40 +93,40 @@
 
     <div class="case-body">
       <div class="container case-layout">
-        <article class="case-main">
+        <article class="case-main" aria-label="Walmart Budget, Scenario and Cash Forecast analysis">
           <section class="verdict-box">
-            <span class="verdict-label positive">Model view · The plan remains funded and ending cash rises</span>
+            <span class="verdict-label neutral">Finance view · The base budget stays liquid despite negative free cash flow</span>
             <h2>Conclusion</h2>
-            <p>The illustrative annual budget produces $734.7bn of revenue, $35.4bn of EBITDA and $3.7bn of free cash flow. Modeled ending cash is $13.6bn.</p><p>The workbook compares the first six months with the plan. Revenue delivery, working capital and monthly capital expenditure remain the main controls; none of these estimates is Walmart guidance.</p>
+            <p>The illustrative FY2027 budget produces $734.7bn of revenue and $29.4bn of EBITDA. Free cash flow is negative $3.9bn, but modelled ending cash remains positive at $6.0bn.</p><p>No actual results are loaded, so the workbook now presents budget-versus-scenario analysis only. Revenue delivery, working capital and capital expenditure remain the main controls; none of these estimates is Walmart guidance.</p>
           </section>
 
           <section>
-            <p class="section-kicker">Model design</p>
-            <h2>Model structure</h2>
+            <p class="section-kicker">Analytical design</p>
+            <h2>Model and controls</h2>
             <div class="two-col-lists">
-              <div><h3>Architecture</h3><ul class="clean-list"><li>Annual operating budget</li><li>Monthly revenue and margin drivers</li><li>Budget versus actual</li><li>Variance analysis</li><li>Working-capital assumptions</li><li>Capital expenditure</li><li>Cash-flow forecast</li><li>Checks and source notes</li></ul></div>
-              <div><h3>Questions tested</h3><ul class="clean-list"><li>Monthly revenue variance</li><li>EBITDA variance</li><li>Working-capital swings</li><li>Ending liquidity</li></ul></div>
+              <div><h3>Model architecture</h3><ul class="clean-list"><li>Annual operating budget</li><li>Monthly revenue and margin drivers</li><li>Budget-versus-scenario comparison</li><li>Scenario analysis</li><li>Working-capital assumptions</li><li>Capital expenditure</li><li>Cash-flow forecast</li><li>Checks and source notes</li></ul></div>
+              <div><h3>Operating and control tests</h3><ul class="clean-list"><li>Downside and upside revenue</li><li>EBITDA margin</li><li>Working-capital swings</li><li>Ending liquidity</li></ul></div>
             </div>
           </section>
 
           <section>
             <p class="section-kicker">Selected outputs</p>
             <h2>Selected workbook views</h2>
-            <p>The workbook remains private. These images show the outputs cited in this case.</p>
+            <p>These selected views from Walmart benchmark case show the forecast build, operating drivers and control checks cited in this case.</p>
             <div class="gallery">
-    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-budgeting-dashboard.png" data-lightbox-alt="Verified budget and ending-cash dashboard">
-      <img src="../assets/models/verified-budgeting-dashboard.png" alt="Verified budget and ending-cash dashboard" loading="eager">
-      <span>01 &nbsp; Verified budget and ending-cash dashboard. View full size</span>
+    <button class="gallery-button" type="button" aria-label="View full-size output: FY2027 budget and ending-cash dashboard" data-lightbox-src="../assets/models/walmart-fpa-dashboard.png" data-lightbox-alt="FY2027 budget and ending-cash dashboard">
+      <img src="../assets/models/walmart-fpa-dashboard.png" alt="" loading="lazy" decoding="async">
+      <span aria-hidden="true">01 &nbsp; FY2027 budget and ending-cash dashboard. View full size</span>
     </button>
 
-    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-budgeting-variance.png" data-lightbox-alt="Budget versus actual results">
-      <img src="../assets/models/verified-budgeting-variance.png" alt="Budget versus actual results" loading="lazy">
-      <span>02 &nbsp; Budget versus actual results. View full size</span>
+    <button class="gallery-button gallery-wide" type="button" aria-label="View full-size output: Budget-versus-scenario comparison; no actuals loaded" data-lightbox-src="../assets/models/walmart-fpa-scenario-comparison.png" data-lightbox-alt="Budget-versus-scenario comparison; no actuals loaded">
+      <img src="../assets/models/walmart-fpa-scenario-comparison.png" alt="" loading="lazy" decoding="async">
+      <span aria-hidden="true">02 &nbsp; Budget-versus-scenario comparison; no actuals loaded. View full size</span>
     </button>
 
-    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-budgeting-cash-flow.png" data-lightbox-alt="Rolling cash-flow forecast">
-      <img src="../assets/models/verified-budgeting-cash-flow.png" alt="Rolling cash-flow forecast" loading="lazy">
-      <span>03 &nbsp; Rolling cash-flow forecast. View full size</span>
+    <button class="gallery-button gallery-wide" type="button" aria-label="View full-size output: Downside, base and upside budget cases" data-lightbox-src="../assets/models/walmart-fpa-scenarios.png" data-lightbox-alt="Downside, base and upside budget cases">
+      <img src="../assets/models/walmart-fpa-scenarios.png" alt="" loading="lazy" decoding="async">
+      <span aria-hidden="true">03 &nbsp; Downside, base and upside budget cases. View full size</span>
     </button>
   </div>
           </section>
@@ -131,13 +134,13 @@
           <section>
             <p class="section-kicker">What could change the answer</p>
             <h2>Risks and limitations</h2>
-            <ul class="clean-list"><li>The budget is an illustrative corporate-planning case.</li><li>Actual results cover only the first part of the plan year.</li><li>Working-capital assumptions can move monthly cash materially.</li><li>The model is not company guidance.</li></ul>
+            <ul class="clean-list"><li>The budget is an illustrative corporate-planning case.</li><li>No actual results are loaded, so no actual-versus-plan conclusion is made.</li><li>Working-capital assumptions can move monthly cash materially.</li><li>The model is not company guidance.</li></ul>
           </section>
 
-          <section class="case-actions">
-            <a class="button" href="mailto:sswnair@gmail.com?subject=Walmart%20Budget%2C%20Variance%20and%20Cash%20Forecast%20discussion">Email about this case</a>
+          <div class="case-actions">
+            <a class="button" href="mailto:sswnair@gmail.com?subject=Walmart%20Budget%2C%20Scenario%20and%20Cash%20Forecast%20discussion">Email about this case</a>
             <a class="button secondary" href="../index.html#work">View another case</a>
-          </section>
+          </div>
         </article>
 
         <aside class="case-sidebar" aria-label="Case resources">
@@ -149,7 +152,8 @@
 
     <li><a href="https://stock.walmart.com/financial-information/annual-reports" target="_blank" rel="noopener noreferrer">Walmart annual reports</a></li>
   </ul></div>
-            <div class="side-card"><h3>Workbook access</h3><p>The complete Excel model is maintained privately. A live walkthrough can be provided during an interview.</p></div>
+
+            <div class="side-card"><h3>Workbook access</h3><p>Walmart Budget, Scenario and Cash Forecast is maintained as a private workbook. I can walk through its forecast build, operating drivers and control checks in an interview.</p></div>
           </div>
         </aside>
       </div>
@@ -158,7 +162,7 @@
     <div class="lightbox" role="dialog" aria-modal="true" aria-label="Full-size model output" hidden data-lightbox>
       <div class="lightbox-content">
         <button class="lightbox-close" type="button" data-lightbox-close>Close ×</button>
-        <img src="../assets/models/verified-budgeting-dashboard.png" alt="" data-lightbox-image>
+        <img src="../assets/models/walmart-fpa-dashboard.png" alt="" data-lightbox-image>
       </div>
     </div>
   </main>
