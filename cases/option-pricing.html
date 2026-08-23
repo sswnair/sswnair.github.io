@@ -1,32 +1,29 @@
 <!DOCTYPE html>
-<html lang="en-IE">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content="A Black-Scholes model with put-call parity, Greeks, payoff profiles and stock-price and volatility sensitivities.">
   <meta name="theme-color" content="#0b1f33">
   <meta property="og:title" content="Apple Option Pricing and Greeks | Sanjay Nair, CFA">
   <meta property="og:description" content="A Black-Scholes model with put-call parity, Greeks, payoff profiles and stock-price and volatility sensitivities.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://sswnair.github.io/cases/option-pricing.html">
-  <meta property="og:image" content="https://sswnair.github.io/assets/social/option-pricing.png">
+  <meta property="og:image" content="https://sswnair.github.io/assets/social-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Apple Option Pricing and Greeks by Sanjay Nair, CFA">
+  <meta property="og:image:alt" content="Sanjay Nair, CFA finance portfolio">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Apple Option Pricing and Greeks | Sanjay Nair, CFA">
   <meta name="twitter:description" content="A Black-Scholes model with put-call parity, Greeks, payoff profiles and stock-price and volatility sensitivities.">
-  <meta name="twitter:image" content="https://sswnair.github.io/assets/social/option-pricing.png">
-  <meta name="twitter:image:alt" content="Apple Option Pricing and Greeks by Sanjay Nair, CFA">
+  <meta name="twitter:image" content="https://sswnair.github.io/assets/social-card.png">
   <title>Apple Option Pricing and Greeks | Sanjay Nair, CFA</title>
   <link rel="canonical" href="https://sswnair.github.io/cases/option-pricing.html">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20260822-2">
-  <script src="../assets/js/case-study.js?v=20260822-2" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Apple Option Pricing and Greeks","description":"A Black-Scholes model with put-call parity, Greeks, payoff profiles and stock-price and volatility sensitivities.","url":"https://sswnair.github.io/cases/option-pricing.html","author":{"@type":"Person","name":"Sanjay Nair","honorificSuffix":"CFA"},"about":"Apple option case","keywords":["Derivatives valuation","equity-research","Self-directed public-data case study"],"isBasedOn":["https://finance.yahoo.com/quote/AAPL/","https://www.federalreserve.gov/releases/h15/","https://www.nasdaq.com/market-activity/stocks/aapl/option-chain"],"dateModified":"2026-08-22"}</script>
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20260814-1">
+  <script src="../assets/js/projects.js?v=20260814-1" defer></script>
+  <script src="../assets/js/case-study.js?v=20260814-1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -39,8 +36,8 @@
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>Menu</button>
       <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
-        <a href="../index.html#work">Selected work</a>
-        <a href="../index.html#approach">Modelling approach</a>
+        <a href="../index.html#work">Case studies</a>
+        <a href="../index.html#approach">Modeling approach</a>
         <a href="../index.html#about">Experience</a>
         <a class="nav-contact" href="mailto:sswnair@gmail.com">Contact</a>
       </nav>
@@ -56,10 +53,10 @@
             <p class="case-eyebrow">Derivatives valuation · Apple option case</p>
             <h1>Apple Option Pricing and Greeks</h1>
             <p class="case-summary">A Black-Scholes model with put-call parity, Greeks, payoff profiles and stock-price and volatility sensitivities.</p>
-            <p class="case-context"><span>Self-directed public-data case study</span><span>Model snapshot: 28 July 2026; time of day not archived</span></p>
+            <p class="case-context"><span>Self-directed public-data case study</span><span>Model date: July 28, 2026; spot price: July 27 close</span></p>
           </div>
-          <aside class="decision-card" aria-label="Valuation question">
-            <span>Valuation question</span>
+          <aside class="decision-card" aria-label="Decision question">
+            <span>Decision question</span>
             <p>What are the Black-Scholes values and risk exposures for the selected Apple call and put assumptions?</p>
           </aside>
         </div>
@@ -84,8 +81,8 @@
 
     <div class="case-metric">
       <strong>27.68%</strong>
-      <span>Selected volatility</span>
-      <em>Analyst reference input</em>
+      <span>Implied volatility</span>
+      <em>Solver table output</em>
     </div>
   </div>
       </div>
@@ -93,40 +90,40 @@
 
     <div class="case-body">
       <div class="container case-layout">
-        <article class="case-main" aria-label="Apple Option Pricing and Greeks analysis">
+        <article class="case-main">
           <section class="verdict-box">
-            <span class="verdict-label neutral">Valuation view · Internally consistent, but not market-calibrated</span>
+            <span class="verdict-label neutral">Model view · The model prices the options consistently and passes parity checks</span>
             <h2>Conclusion</h2>
-            <p>At the model's 28 July 2026 snapshot, a $336.91 spot price, $335 strike, 18 December 2026 expiry and 27.68% selected volatility produce Black-Scholes values of $26.47 for the call and $19.82 for the put. The illustrative contract uses 100 shares per contract, and put-call parity reconciles within rounding.</p><p>Call delta is 0.58. No observed option quote, quote timestamp or bid-ask convention was retained, so the volatility and values are theoretical model outputs, not a market calibration or evidence of historical mispricing.</p>
+            <p>At a $336.91 spot price, $335 strike and 27.68% volatility, the model values the call at $26.47 and the put at $19.82. Put-call parity reconciles within rounding.</p><p>Call delta is 0.58. The pricing volatility is also the closest solver-table value for the reference call premium over the selected term to December 18, 2026.</p>
           </section>
 
           <section>
-            <p class="section-kicker">Analytical design</p>
-            <h2>Valuation build</h2>
+            <p class="section-kicker">Model design</p>
+            <h2>Model structure</h2>
             <div class="two-col-lists">
-              <div><h3>Analytical structure</h3><ul class="clean-list"><li>Market inputs</li><li>Black-Scholes calculation</li><li>Put-call parity</li><li>Call and put values</li><li>Greeks</li><li>Payoff profiles</li><li>Selected-volatility sensitivity</li><li>Sensitivity and checks</li></ul></div>
-              <div><h3>Valuation tests</h3><ul class="clean-list"><li>Stock price</li><li>Selected volatility</li><li>Time decay</li><li>Put-call parity</li></ul></div>
+              <div><h3>Architecture</h3><ul class="clean-list"><li>Market inputs</li><li>Black-Scholes calculation</li><li>Put-call parity</li><li>Call and put values</li><li>Greeks</li><li>Payoff profiles</li><li>Implied-volatility table</li><li>Sensitivity and checks</li></ul></div>
+              <div><h3>Questions tested</h3><ul class="clean-list"><li>Stock price</li><li>Volatility</li><li>Time decay</li><li>Put-call parity</li></ul></div>
             </div>
           </section>
 
           <section>
             <p class="section-kicker">Selected outputs</p>
             <h2>Selected workbook views</h2>
-            <p>These selected views from Apple option case show the contract assumptions, Black-Scholes and binomial outputs, Greeks and sensitivities cited in this case.</p>
+            <p>The workbook remains private. These images show the outputs cited in this case.</p>
             <div class="gallery">
-    <button class="gallery-button" type="button" aria-label="View full-size output: Theoretical valuation dashboard and quote limitation" data-lightbox-src="../assets/models/apple-option-dashboard.png" data-lightbox-alt="Theoretical valuation dashboard and quote limitation">
-      <img src="../assets/models/apple-option-dashboard.png" alt="" loading="lazy" decoding="async">
-      <span aria-hidden="true">01 &nbsp; Theoretical valuation dashboard and quote limitation. View full size</span>
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-option-dashboard.png" data-lightbox-alt="Option valuation dashboard">
+      <img src="../assets/models/verified-option-dashboard.png" alt="Option valuation dashboard" loading="eager">
+      <span>01 &nbsp; Option valuation dashboard. View full size</span>
     </button>
 
-    <button class="gallery-button" type="button" aria-label="View full-size output: Call and put sensitivity to spot price and volatility" data-lightbox-src="../assets/models/apple-option-sensitivity.png" data-lightbox-alt="Call and put sensitivity to spot price and volatility">
-      <img src="../assets/models/apple-option-sensitivity.png" alt="" loading="lazy" decoding="async">
-      <span aria-hidden="true">02 &nbsp; Call and put sensitivity to spot price and volatility. View full size</span>
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-option-black-scholes.png" data-lightbox-alt="Black-Scholes calculation and parity check">
+      <img src="../assets/models/verified-option-black-scholes.png" alt="Black-Scholes calculation and parity check" loading="lazy">
+      <span>02 &nbsp; Black-Scholes calculation and parity check. View full size</span>
     </button>
 
-    <button class="gallery-button" type="button" aria-label="View full-size output: Selected-volatility sensitivity; not market-IV calibration" data-lightbox-src="../assets/models/apple-option-volatility-sensitivity.png" data-lightbox-alt="Selected-volatility sensitivity; not market-IV calibration">
-      <img src="../assets/models/apple-option-volatility-sensitivity.png" alt="" loading="lazy" decoding="async">
-      <span aria-hidden="true">03 &nbsp; Selected-volatility sensitivity; not market-IV calibration. View full size</span>
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-option-volatility.png" data-lightbox-alt="Implied-volatility calibration">
+      <img src="../assets/models/verified-option-volatility.png" alt="Implied-volatility calibration" loading="lazy">
+      <span>03 &nbsp; Implied-volatility calibration. View full size</span>
     </button>
   </div>
           </section>
@@ -134,13 +131,13 @@
           <section>
             <p class="section-kicker">What could change the answer</p>
             <h2>Risks and limitations</h2>
-            <ul class="clean-list"><li>No observed quote, captured premium, exchange snapshot, quote timestamp or bid-ask convention was retained; no market calibration is claimed.</li><li>Black-Scholes assumes continuous trading and lognormal returns.</li><li>The model does not capture volatility skew or discrete jump risk.</li><li>The output is a theoretical valuation exercise, not a trading recommendation.</li></ul>
+            <ul class="clean-list"><li>The option inputs are a dated market snapshot.</li><li>Black-Scholes assumes continuous trading and lognormal returns.</li><li>The model does not capture volatility skew or discrete jump risk.</li><li>The output is a valuation exercise, not a trading recommendation.</li></ul>
           </section>
 
-          <div class="case-actions">
+          <section class="case-actions">
             <a class="button" href="mailto:sswnair@gmail.com?subject=Apple%20Option%20Pricing%20and%20Greeks%20discussion">Email about this case</a>
             <a class="button secondary" href="../index.html#work">View another case</a>
-          </div>
+          </section>
         </article>
 
         <aside class="case-sidebar" aria-label="Case resources">
@@ -152,8 +149,7 @@
 
     <li><a href="https://www.nasdaq.com/market-activity/stocks/aapl/option-chain" target="_blank" rel="noopener noreferrer">Nasdaq Apple option chain</a></li>
   </ul></div>
-
-            <div class="side-card"><h3>Workbook access</h3><p>Apple Option Pricing and Greeks is maintained as a private workbook. I can walk through its contract assumptions, Black-Scholes and binomial outputs, Greeks and sensitivities in an interview.</p></div>
+            <div class="side-card"><h3>Workbook access</h3><p>The complete Excel model is maintained privately. A live walkthrough can be provided during an interview.</p></div>
           </div>
         </aside>
       </div>
@@ -162,7 +158,7 @@
     <div class="lightbox" role="dialog" aria-modal="true" aria-label="Full-size model output" hidden data-lightbox>
       <div class="lightbox-content">
         <button class="lightbox-close" type="button" data-lightbox-close>Close ×</button>
-        <img src="../assets/models/apple-option-dashboard.png" alt="" data-lightbox-image>
+        <img src="../assets/models/verified-option-dashboard.png" alt="" data-lightbox-image>
       </div>
     </div>
   </main>
