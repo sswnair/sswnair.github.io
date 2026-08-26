@@ -1,54 +1,11 @@
 (function () {
-  const projects = window.portfolioProjects || [];
-  const projectGroups = window.portfolioGroups || [];
-  const grid = document.querySelector("[data-project-grid]");
-  const filters = document.querySelectorAll("[data-filter]");
+  document.documentElement.classList.add("reveal-ready");
+  const filters = Array.from(document.querySelectorAll("[data-filter]"));
   const menuButton = document.querySelector("[data-menu-button]");
   const nav = document.querySelector("[data-site-nav]");
   const filterStatus = document.querySelector("[data-filter-status]");
-
-  function card(project) {
-    const metrics = project.metrics.slice(0, 3).map(([label, value]) => `
-      <div class="card-metric">
-        <strong>${value}</strong>
-        <span>${label}</span>
-      </div>
-    `).join("");
-
-    return `
-      <article class="project-card" data-group="${project.group}">
-        <div class="project-topline">
-          <span class="project-category">${project.eyebrow}</span>
-          <span class="verdict-pill ${project.verdictTone}">${project.verdict}</span>
-        </div>
-        <h4><a href="cases/${project.id}.html">${project.title}</a></h4>
-        <p class="project-context"><span>${project.basis}</span><span>${project.asOf}</span></p>
-        <p class="project-short">${project.short}</p>
-        <div class="card-metrics" role="group" aria-label="Selected model outputs">${metrics}</div>
-      </article>
-    `;
-  }
-
-  function projectGroup(group) {
-    const groupProjects = projects.filter((project) => project.group === group.id);
-    if (!groupProjects.length) return "";
-    return `
-      <section class="project-group" data-project-section="${group.id}">
-        <div class="project-group-head">
-          <div>
-            <p class="section-kicker">${String(projectGroups.indexOf(group) + 1).padStart(2, "0")}</p>
-            <h3>${group.title}</h3>
-          </div>
-          <p>${group.description}</p>
-        </div>
-        <div class="projects-grid">${groupProjects.map(card).join("")}</div>
-      </section>
-    `;
-  }
-
-  if (grid) {
-    grid.innerHTML = projectGroups.map(projectGroup).join("");
-  }
+  const cards = Array.from(document.querySelectorAll(".project-card"));
+  const sections = Array.from(document.querySelectorAll("[data-project-section]"));
 
   filters.forEach((button) => {
     button.addEventListener("click", () => {
@@ -58,14 +15,16 @@
         item.classList.toggle("active", active);
         item.setAttribute("aria-pressed", String(active));
       });
-      document.querySelectorAll(".project-card").forEach((item) => {
-        item.hidden = selected !== "all" && item.dataset.group !== selected;
+
+      cards.forEach((card) => {
+        card.hidden = selected !== "all" && card.dataset.group !== selected;
       });
-      document.querySelectorAll("[data-project-section]").forEach((section) => {
+      sections.forEach((section) => {
         section.hidden = selected !== "all" && section.dataset.projectSection !== selected;
       });
+
       if (filterStatus) {
-        const count = selected === "all" ? projects.length : projects.filter((project) => project.group === selected).length;
+        const count = cards.filter((card) => selected === "all" || card.dataset.group === selected).length;
         filterStatus.textContent = `Showing ${count} ${count === 1 ? "case study" : "case studies"}.`;
       }
     });
@@ -80,9 +39,30 @@
       nav.classList.remove("open");
       menuButton.setAttribute("aria-expanded", "false");
     }));
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || !nav.classList.contains("open")) return;
+      nav.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.focus();
+    });
   }
 
   document.querySelectorAll("[data-year]").forEach((item) => {
     item.textContent = new Date().getFullYear();
   });
+
+  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll("[data-reveal]").forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
+
+  document.querySelectorAll("[data-reveal]").forEach((item) => observer.observe(item));
 })();

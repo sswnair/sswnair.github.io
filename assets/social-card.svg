@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Sanjay Nair, CFA finance portfolio">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Sanjay Nair, CFA private-markets and real-estate finance portfolio">
   <rect width="1200" height="630" fill="#0b1f33"/>
-  <circle cx="1070" cy="110" r="210" fill="none" stroke="#c5a363" stroke-opacity=".28" stroke-width="2"/>
-  <circle cx="1130" cy="570" r="310" fill="none" stroke="#2f7772" stroke-opacity=".32" stroke-width="2"/>
-  <rect x="84" y="76" width="72" height="72" rx="36" fill="#c5a363"/>
-  <text x="120" y="122" fill="#0b1f33" font-family="Georgia, serif" font-size="25" font-weight="700" text-anchor="middle">SN</text>
-  <text x="84" y="248" fill="#f5f3ed" font-family="Georgia, serif" font-size="72">Sanjay Nair, CFA</text>
-  <text x="84" y="330" fill="#f5f3ed" font-family="Georgia, serif" font-size="52">Finance work that ends</text>
-  <text x="84" y="392" fill="#f5f3ed" font-family="Georgia, serif" font-size="52">in a decision.</text>
-  <text x="84" y="480" fill="#b9c5c9" font-family="Arial, sans-serif" font-size="24">22 dated case studies · 7 areas of finance</text>
-  <text x="84" y="525" fill="#d7b56d" font-family="Arial, sans-serif" font-size="20">CFA charterholder · MSc Finance graduate · Dublin, Ireland</text>
+  <circle cx="1065" cy="105" r="205" fill="none" stroke="#b79558" stroke-width="2" opacity="0.38"/>
+  <circle cx="1135" cy="575" r="315" fill="none" stroke="#2d7776" stroke-width="2" opacity="0.42"/>
+  <circle cx="120" cy="112" r="36" fill="#d2aa63"/>
+  <text x="120" y="122" text-anchor="middle" font-family="Georgia, serif" font-size="29" font-weight="700" fill="#0b1f33">SN</text>
+  <text x="84" y="246" font-family="Georgia, serif" font-size="76" fill="#f7f2e8">Sanjay Nair, CFA</text>
+  <text x="84" y="329" font-family="Georgia, serif" font-size="54" fill="#f7f2e8">Private markets and</text>
+  <text x="84" y="391" font-family="Georgia, serif" font-size="54" fill="#f7f2e8">real estate finance.</text>
+  <text x="84" y="485" font-family="Arial, sans-serif" font-size="27" fill="#c7d1da">Asset management experience · 22 case studies</text>
+  <text x="84" y="531" font-family="Arial, sans-serif" font-size="22" fill="#d8ad5f">CFA charterholder · MSc Finance · Dublin, Ireland</text>
 </svg>

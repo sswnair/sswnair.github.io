@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="An unlevered DCF with a five-year forecast, WACC, two terminal methods, an equity bridge and sensitivities.">
+  <meta name="description" content="I valued Apple from forecast unlevered cash flow using Gordon-growth and exit-multiple terminal values, then reconciled enterprise value to equity value.">
   <meta name="theme-color" content="#0b1f33">
   <meta property="og:title" content="Apple DCF Valuation | Sanjay Nair, CFA">
-  <meta property="og:description" content="An unlevered DCF with a five-year forecast, WACC, two terminal methods, an equity bridge and sensitivities.">
+  <meta property="og:description" content="I valued Apple from forecast unlevered cash flow using Gordon-growth and exit-multiple terminal values, then reconciled enterprise value to equity value.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://sswnair.github.io/cases/dcf-valuation.html">
   <meta property="og:image" content="https://sswnair.github.io/assets/social-card.png">
@@ -15,15 +15,15 @@
   <meta property="og:image:alt" content="Sanjay Nair, CFA finance portfolio">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Apple DCF Valuation | Sanjay Nair, CFA">
-  <meta name="twitter:description" content="An unlevered DCF with a five-year forecast, WACC, two terminal methods, an equity bridge and sensitivities.">
+  <meta name="twitter:description" content="I valued Apple from forecast unlevered cash flow using Gordon-growth and exit-multiple terminal values, then reconciled enterprise value to equity value.">
   <meta name="twitter:image" content="https://sswnair.github.io/assets/social-card.png">
   <title>Apple DCF Valuation | Sanjay Nair, CFA</title>
   <link rel="canonical" href="https://sswnair.github.io/cases/dcf-valuation.html">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=20260814-1">
-  <script src="../assets/js/projects.js?v=20260814-1" defer></script>
-  <script src="../assets/js/case-study.js?v=20260814-1" defer></script>
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20260826-1">
+  <script src="../assets/js/case-study.js?v=20260826-1" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Apple DCF Valuation","description":"I valued Apple from forecast unlevered cash flow using Gordon-growth and exit-multiple terminal values, then reconciled enterprise value to equity value.","author":{"@type":"Person","name":"Sanjay Nair","honorificSuffix":"CFA"},"url":"https://sswnair.github.io/cases/dcf-valuation.html","about":"Apple","isPartOf":{"@type":"WebSite","name":"Sanjay Nair Finance Portfolio","url":"https://sswnair.github.io/"}}</script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -36,9 +36,9 @@
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>Menu</button>
       <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
-        <a href="../index.html#work">Case studies</a>
-        <a href="../index.html#approach">Modeling approach</a>
         <a href="../index.html#about">Experience</a>
+        <a href="../index.html#work">Case studies</a>
+        <a href="../index.html#approach">How I work</a>
         <a class="nav-contact" href="mailto:sswnair@gmail.com">Contact</a>
       </nav>
     </div>
@@ -47,41 +47,41 @@
   <main id="main-content" data-case-root data-project-id="dcf-valuation">
     <section class="case-hero">
       <div class="container">
-        <a class="breadcrumb" href="../index.html#work">← Back to selected work</a>
+        <a class="breadcrumb" href="../index.html#work">← Back to all case studies</a>
         <div class="case-title-grid">
           <div>
             <p class="case-eyebrow">Equity valuation · Apple</p>
             <h1>Apple DCF Valuation</h1>
-            <p class="case-summary">An unlevered DCF with a five-year forecast, WACC, two terminal methods, an equity bridge and sensitivities.</p>
-            <p class="case-context"><span>Self-directed public-data case study</span><span>Market-price input: June 26, 2026</span></p>
+            <p class="case-summary">I valued Apple from forecast unlevered cash flow using Gordon-growth and exit-multiple terminal values, then reconciled enterprise value to equity value.</p>
+            <p class="case-context"><span>Self-directed public-data case study</span><span>FY2025 financial base; July 27, 2026 share price</span></p>
           </div>
-          <aside class="decision-card" aria-label="Decision question">
-            <span>Decision question</span>
+          <aside class="decision-card" aria-label="Valuation question">
+            <span>Valuation question</span>
             <p>What share value is supported by the model's cash-flow forecast and terminal assumptions?</p>
           </aside>
         </div>
         <div class="case-metrics">
     <div class="case-metric">
-      <strong>$155.55</strong>
+      <strong>$127.64</strong>
       <span>Implied share price</span>
-      <em>Blended terminal methods</em>
+      <em>Selected terminal methods</em>
     </div>
 
     <div class="case-metric">
-      <strong>$283.78</strong>
-      <span>Model market price</span>
-      <em>June 26, 2026 input</em>
+      <strong>$336.91</strong>
+      <span>Market price</span>
+      <em>July 27, 2026 close</em>
     </div>
 
     <div class="case-metric">
-      <strong>8.9%</strong>
+      <strong>62.1%</strong>
+      <span>Discount to market</span>
+      <em>Base DCF</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>8.91%</strong>
       <span>WACC</span>
-      <em>Base case</em>
-    </div>
-
-    <div class="case-metric">
-      <strong>2.5%</strong>
-      <span>Terminal growth</span>
       <em>Base case</em>
     </div>
   </div>
@@ -92,46 +92,43 @@
       <div class="container case-layout">
         <article class="case-main">
           <section class="verdict-box">
-            <span class="verdict-label caution">Model view · The base DCF does not support the model market price</span>
-            <h2>Conclusion</h2>
-            <p>At an 8.9% WACC and 2.5% terminal growth rate, the blended DCF produces $155.55 per share. The market price used in the model is $283.78, leaving a 45.2% gap.</p><p>The sensitivity tables show what must change to close that gap. The result is most exposed to WACC, terminal growth, exit multiple and long-run operating margins.</p>
+            <span class="verdict-label caution">The DCF supports $127.64 per share, well below the July market price</span>
+            <h2>Valuation result</h2>
+            <p>At an 8.91% WACC, the selected terminal methods produce $1.88tn of enterprise value, $1.92tn of equity value and $127.64 per share. That is 62.1% below the $336.91 price used in the case.</p><p>The Gordon-growth cases range from $90.14 to $171.82 per share. Every displayed case remains below the market input, and the result moves sharply with WACC, terminal growth and long-run margin assumptions.</p>
           </section>
 
+
+
           <section>
-            <p class="section-kicker">Model design</p>
-            <h2>Model structure</h2>
+            <p class="section-kicker">Work completed</p>
+            <h2>How I moved from operations to value</h2>
             <div class="two-col-lists">
-              <div><h3>Architecture</h3><ul class="clean-list"><li>Historical financials</li><li>Five-year operating forecast</li><li>Unlevered free cash flow</li><li>Cost of capital</li><li>WACC</li><li>Gordon growth and exit multiple</li><li>Enterprise-to-equity bridge</li><li>Scenario, sensitivity and checks</li></ul></div>
-              <div><h3>Questions tested</h3><ul class="clean-list"><li>WACC and terminal growth</li><li>WACC and exit multiple</li><li>Revenue growth and EBITDA margin</li><li>Terminal-method dispersion</li></ul></div>
+              <div><h3>Valuation build</h3><ul class="clean-list"><li>Historical financials</li><li>Five-year operating forecast</li><li>Unlevered free cash flow</li><li>Cost of capital</li><li>Two terminal-value methods</li><li>Enterprise-to-equity bridge</li></ul></div>
+              <div><h3>Sensitivity work</h3><ul class="clean-list"><li>WACC and terminal growth</li><li>WACC and exit multiple</li><li>Revenue growth and EBITDA margin</li></ul></div>
             </div>
           </section>
 
           <section>
-            <p class="section-kicker">Selected outputs</p>
-            <h2>Selected workbook views</h2>
-            <p>The workbook remains private. These images show the outputs cited in this case.</p>
+            <p class="section-kicker">Valuation views</p>
+            <h2>Cash flow, bridge and sensitivity</h2>
+            <p>Forecast cash flow and the equity bridge sit beside the terminal assumptions that drive the valuation range.</p>
             <div class="gallery">
-    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-dcf-dashboard.png" data-lightbox-alt="Verified DCF summary and equity-value bridge">
-      <img src="../assets/models/verified-dcf-dashboard.png" alt="Verified DCF summary and equity-value bridge" loading="eager">
-      <span>01 &nbsp; Verified DCF summary and equity-value bridge. View full size</span>
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/dcf-valuation-dashboard.png?v=20260826-1" data-lightbox-alt="Valuation, market-price comparison and equity bridge">
+      <img src="../assets/models/dcf-valuation-dashboard.png?v=20260826-1" alt="Valuation, market-price comparison and equity bridge" loading="lazy">
+      <span>01 &nbsp; Valuation, market-price comparison and equity bridge. View full size</span>
     </button>
 
-    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-dcf-sensitivity.png" data-lightbox-alt="DCF sensitivity tables">
-      <img src="../assets/models/verified-dcf-sensitivity.png" alt="DCF sensitivity tables" loading="lazy">
-      <span>02 &nbsp; DCF sensitivity tables. View full size</span>
-    </button>
-
-    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/verified-dcf-free-cash-flow.png" data-lightbox-alt="Forecast free-cash-flow build">
-      <img src="../assets/models/verified-dcf-free-cash-flow.png" alt="Forecast free-cash-flow build" loading="lazy">
-      <span>03 &nbsp; Forecast free-cash-flow build. View full size</span>
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/models/dcf-valuation-controls.png?v=20260826-1" data-lightbox-alt="Debt, equity value and scenario checks">
+      <img src="../assets/models/dcf-valuation-controls.png?v=20260826-1" alt="Debt, equity value and scenario checks" loading="lazy">
+      <span>02 &nbsp; Debt, equity value and scenario checks. View full size</span>
     </button>
   </div>
           </section>
 
           <section>
-            <p class="section-kicker">What could change the answer</p>
-            <h2>Risks and limitations</h2>
-            <ul class="clean-list"><li>Small changes in terminal assumptions move value materially.</li><li>Forecasts are analyst estimates.</li><li>The model does not assign a separate value to future strategic options.</li><li>The DCF should be read with trading comps and business-quality analysis.</li></ul>
+            <p class="section-kicker">Valuation limits</p>
+            <h2>What could change the valuation</h2>
+            <ul class="clean-list"><li>Forecasts are my assumptions and are not Apple guidance.</li><li>Terminal value is highly sensitive to WACC, terminal growth and margin assumptions.</li><li>The market price and risk inputs remain fixed at their stated July 2026 dates.</li></ul>
           </section>
 
           <section class="case-actions">
@@ -151,7 +148,7 @@
 
     <li><a href="https://investor.apple.com/stock-price/" target="_blank" rel="noopener noreferrer">Apple stock price history</a></li>
   </ul></div>
-            <div class="side-card"><h3>Workbook access</h3><p>The complete Excel model is maintained privately. A live walkthrough can be provided during an interview.</p></div>
+
           </div>
         </aside>
       </div>
@@ -159,8 +156,13 @@
 
     <div class="lightbox" role="dialog" aria-modal="true" aria-label="Full-size model output" hidden data-lightbox>
       <div class="lightbox-content">
-        <button class="lightbox-close" type="button" data-lightbox-close>Close ×</button>
-        <img src="../assets/models/verified-dcf-dashboard.png" alt="" data-lightbox-image>
+        <div class="lightbox-controls">
+          <button class="lightbox-zoom" type="button" aria-pressed="false" data-lightbox-zoom>View actual size</button>
+          <button class="lightbox-close" type="button" data-lightbox-close>Close</button>
+        </div>
+        <div class="lightbox-viewport" tabindex="0" data-lightbox-viewport>
+          <img src="../assets/models/dcf-valuation-dashboard.png?v=20260826-1" alt="" data-lightbox-image>
+        </div>
       </div>
     </div>
   </main>
