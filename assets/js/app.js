@@ -51,6 +51,41 @@
     item.textContent = new Date().getFullYear();
   });
 
+  const rail = document.querySelector("[data-rail]");
+  const railStops = Array.from(document.querySelectorAll("[data-rail-stop]"));
+  const staged = Array.from(document.querySelectorAll("[data-stage]"));
+
+  if (rail && railStops.length && staged.length) {
+    const setStage = (stage) => {
+      railStops.forEach((stop) => stop.classList.toggle("active", Number(stop.dataset.railStop) <= stage));
+      const ratio = railStops.length > 1 ? (stage - 1) / (railStops.length - 1) : 1;
+      rail.style.setProperty("--rail-progress", `${Math.max(0, Math.min(1, ratio)) * 100}%`);
+    };
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setStage(railStops.length);
+    } else {
+      let ticking = false;
+      const syncStage = () => {
+        ticking = false;
+        const line = window.innerHeight * 0.42;
+        let current = 1;
+        staged.forEach((item) => {
+          if (item.getBoundingClientRect().top <= line) current = Number(item.dataset.stage);
+        });
+        setStage(current);
+      };
+      const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(syncStage);
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
+      syncStage();
+    }
+  }
+
   if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.querySelectorAll("[data-reveal]").forEach((item) => item.classList.add("is-visible"));
     return;
