@@ -92,3 +92,29 @@
     controls[nextIndex].focus();
   });
 })();
+
+(function () {
+  const strip = document.querySelector("[data-slide-strip]");
+  const prev = document.querySelector("[data-slide-prev]");
+  const next = document.querySelector("[data-slide-next]");
+  if (!strip || !prev || !next) return;
+
+  const step = () => {
+    const item = strip.querySelector(".slide-item");
+    const gap = parseFloat(getComputedStyle(strip).columnGap) || 0;
+    const per = item ? item.getBoundingClientRect().width + gap : strip.clientWidth;
+    return Math.max(per, Math.floor(strip.clientWidth / per) * per);
+  };
+
+  const update = () => {
+    const max = strip.scrollWidth - strip.clientWidth - 2;
+    prev.disabled = strip.scrollLeft <= 2;
+    next.disabled = strip.scrollLeft >= max;
+  };
+
+  prev.addEventListener("click", () => strip.scrollBy({ left: -step() }));
+  next.addEventListener("click", () => strip.scrollBy({ left: step() }));
+  strip.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update, { passive: true });
+  update();
+})();

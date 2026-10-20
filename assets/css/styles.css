@@ -1210,3 +1210,95 @@ h4 { font-size: 25px; }
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
   .reveal-ready [data-reveal] { opacity: 1; transform: none; }
 }
+
+/* Dissertation carousel strip */
+
+.carousel-section > p:not(.section-kicker) { max-width: 62ch; }
+
+.slide-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 2 * 14px) / 3.2);
+  gap: 14px;
+  margin: 22px 0 0;
+  padding: 4px 2px 16px;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+.slide-strip:focus-visible { outline: 3px solid #2a7772; outline-offset: 4px; border-radius: 8px; }
+
+.slide-item { scroll-snap-align: start; }
+
+.slide-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  cursor: zoom-in;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.slide-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+}
+
+.slide-button:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+
+.slide-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.slide-nav {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--navy);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.slide-nav:hover:not(:disabled) { background: var(--navy); color: var(--white); }
+.slide-nav:disabled { opacity: 0.35; cursor: default; }
+
+.slide-download {
+  margin-left: auto;
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .slide-strip { grid-auto-columns: calc((100% - 14px) / 2.2); }
+}
+
+@media (max-width: 560px) {
+  .slide-strip { grid-auto-columns: 80%; }
+  .slide-nav { display: none; }
+  .slide-download { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-strip { scroll-behavior: auto; }
+  .slide-button, .slide-nav { transition: none; }
+  .slide-button:hover { transform: none; }
+}
