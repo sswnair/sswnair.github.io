@@ -1,0 +1,119 @@
+/* Code section on the home page and the project pages */
+
+.code-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.code-card {
+  position: relative;
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fbfaf7;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.code-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(31, 97, 93, 0.42);
+  box-shadow: var(--shadow);
+}
+
+.code-card:focus-within {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(31, 97, 93, 0.16), var(--shadow);
+}
+
+.code-card::after {
+  content: "";
+  position: absolute;
+  right: -45px;
+  top: -45px;
+  width: 160px;
+  height: 160px;
+  border: 1px solid rgba(31, 97, 93, 0.13);
+  border-radius: 50%;
+}
+
+.code-card h3 { margin-bottom: 12px; font-size: 25px; }
+.code-card h3 a { text-decoration: none; }
+.code-card h3 a::after { content: ""; position: absolute; inset: 0; }
+
+.code-card .card-metrics { margin-top: auto; }
+
+.code-link {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  margin-top: 18px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.case-sidebar,
+.sidebar-inner,
+.side-card { min-width: 0; }
+
+.run-block {
+  max-width: 100%;
+  margin: 0;
+  padding: 14px 16px;
+  overflow-x: auto;
+  border-radius: 10px;
+  background: var(--navy);
+  color: #e6ebef;
+  font: 12px/1.65 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre;
+}
+
+.module-list {
+  margin: 0;
+  padding: 0;
+}
+
+.module-list div {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 18px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.module-list dt {
+  color: var(--navy);
+  font: 600 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.module-list dd {
+  margin: 0;
+  color: #43515a;
+  font-size: 14px;
+}
+
+.report-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--teal);
+  font-weight: 800;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .code-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .code-grid { grid-template-columns: 1fr; }
+  .code-card { min-height: 370px; padding: 24px; }
+  .module-list div { grid-template-columns: 1fr; gap: 2px; }
+}

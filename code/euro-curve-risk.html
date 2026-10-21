@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I built a Python tool that rebuilds the ECB&#x27;s euro government yield curve, prices a bond portfolio off it, and measures DV01, key-rate risk and the six Basel rate shocks.">
+  <meta name="theme-color" content="#0b1f33">
+  <meta property="og:title" content="Euro Curve and Rate Risk | Sanjay Nair, CFA">
+  <meta property="og:description" content="I built a Python tool that rebuilds the ECB&#x27;s euro government yield curve, prices a bond portfolio off it, and measures DV01, key-rate risk and the six Basel rate shocks.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sswnair.github.io/code/euro-curve-risk.html">
+  <meta property="og:image" content="https://sswnair.github.io/assets/social-card.jpg?v=3">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sanjay Nair, CFA finance portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Euro Curve and Rate Risk | Sanjay Nair, CFA">
+  <meta name="twitter:description" content="I built a Python tool that rebuilds the ECB&#x27;s euro government yield curve, prices a bond portfolio off it, and measures DV01, key-rate risk and the six Basel rate shocks.">
+  <meta name="twitter:image" content="https://sswnair.github.io/assets/social-card.jpg?v=3">
+  <title>Euro Curve and Rate Risk | Sanjay Nair, CFA</title>
+  <link rel="canonical" href="https://sswnair.github.io/code/euro-curve-risk.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261019-1">
+  <link rel="stylesheet" href="../assets/css/code.css?v=20261020-1">
+  <script src="../assets/js/case-study.js?v=20261019-1" defer></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Euro Curve and Rate Risk", "description": "I built a Python tool that rebuilds the ECB's euro government yield curve, prices a bond portfolio off it, and measures DV01, key-rate risk and the six Basel rate shocks.", "programmingLanguage": "Python", "codeRepository": "https://github.com/sswnair/euro-curve-risk", "author": {"@type": "Person", "name": "Sanjay Nair", "honorificSuffix": "CFA"}, "url": "https://sswnair.github.io/code/euro-curve-risk.html", "isPartOf": {"@type": "WebSite", "name": "Sanjay Nair Finance Portfolio", "url": "https://sswnair.github.io/"}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Sanjay Nair home">
+        <span class="brand-mark">SN</span>
+        <span>Sanjay Nair, CFA</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>Menu</button>
+      <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#work">Case studies</a>
+        <a href="../index.html#code">Code</a>
+        <a href="../index.html#approach">How I work</a>
+        <a class="nav-contact" href="mailto:sswnair@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="case-hero">
+      <div class="container">
+        <a class="breadcrumb" href="../index.html#code">← Back to the code projects</a>
+        <div class="case-title-grid">
+          <div>
+            <p class="case-eyebrow">Python project · Fixed income and rate risk</p>
+            <h1>Euro Curve and Rate Risk</h1>
+            <p class="case-summary">Rebuilds the euro area government yield curve from the six numbers the ECB publishes for it every business day, prices a bond portfolio off that curve, and measures its interest rate risk: DV01, key-rate DV01s and the six standard Basel rate shocks.</p>
+            <p class="case-context"><span>Self-directed Python project</span><span>225 tests</span><span>Valuation date September 30, 2026</span></p>
+          </div>
+          <aside class="decision-card" aria-label="The question">
+            <span>The question</span>
+            <p>How much does this portfolio lose when rates move, and where on the curve does the risk sit?</p>
+          </aside>
+        </div>
+        <div class="case-metrics">
+    <div class="case-metric">
+      <strong>€238.98m</strong>
+      <span>Market value</span>
+      <em>10 bonds, €250m nominal</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>€203,163</strong>
+      <span>DV01</span>
+      <em>Per basis point</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>8.50</strong>
+      <span>Duration</span>
+      <em>Years, on the zero curve</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>(16.4%)</strong>
+      <span>Rates up 225bp</span>
+      <em>Worst of the six shocks</em>
+    </div>
+  </div>
+      </div>
+    </section>
+
+    <div class="case-body">
+      <div class="container case-layout">
+        <article class="case-main">
+          <section class="verdict-box">
+            <span class="verdict-label caution">A 225bp rise costs €39.17m</span>
+            <h2>What the sample run shows</h2>
+            <p>Ten made-up euro government bonds, maturing between 2027 and 2056, priced off a made-up year of daily curves in the ECB&#x27;s format. On September 30, 2026 the portfolio is worth €238.98m, yields 2.90% on average and has a DV01 of €203,163.</p><p>A 225bp fall in rates gains €15.36m more than the same rise loses. That&#x27;s convexity, and the first-order estimate from the key-rate DV01s, which comes out the same size both ways, misses it. The steepener loses money even though it cuts short rates, because it only cuts them out to about three years, and over 90% of the portfolio&#x27;s DV01 sits at five years and beyond.</p>
+          </section>
+
+          <section>
+            <p class="section-kicker">Work completed</p>
+            <h2>From the curve to the risk</h2>
+            <div class="two-col-lists"><div><h3>The curve</h3><ul class="clean-list"><li>Zero, forward and par rates from the Svensson parameters</li><li>A check against the ECB&#x27;s published zero rates</li><li>A fresh fit to those rates on a grid of taus</li><li>Gaps in the history and one-day moves over 15bp</li></ul></div><div><h3>The bonds and the risk</h3><ul class="clean-list"><li>Actual/actual (ICMA) accrued interest and yields</li><li>Macaulay and modified duration, convexity</li><li>DV01 for a parallel move in the zero curve</li><li>Key-rate DV01s at nine tenors</li><li>The six Basel shocks, every bond repriced in full</li><li>A key-rate estimate next to each result</li></ul></div></div>
+          </section>
+
+          <section>
+            <p class="section-kicker">Output</p>
+            <h2>The report</h2>
+            <p>Each run writes one self-contained HTML page and CSV files of the bonds, key rates, shocks and curve. The sample report below is the real output, charts and tooltips included.</p>
+            <div class="gallery">
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/code/euro-curve-risk-report.png?v=20261020-1" data-lightbox-alt="Zero and forward rates on the valuation date">
+      <img src="../assets/code/euro-curve-risk-report.png?v=20261020-1" alt="Zero and forward rates on the valuation date" loading="lazy">
+      <span>01 &nbsp; Zero and forward rates on the valuation date. View full size</span>
+    </button>
+
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/code/euro-curve-risk-shocks.png?v=20261020-1" data-lightbox-alt="The six rate shocks, full revaluation against the key-rate estimate">
+      <img src="../assets/code/euro-curve-risk-shocks.png?v=20261020-1" alt="The six rate shocks, full revaluation against the key-rate estimate" loading="lazy">
+      <span>02 &nbsp; The six rate shocks, full revaluation against the key-rate estimate. View full size</span>
+    </button>
+  </div>
+            <a class="report-link" href="reports/euro-curve-risk.html" target="_blank" rel="noopener">Open the sample report</a>
+          </section>
+
+          <section>
+            <p class="section-kicker">Code</p>
+            <h2>How the code is organized</h2>
+            <dl class="module-list"><div><dt>ecb.py</dt><dd>Downloads the ECB&#x27;s curve data and reads its CSV format</dd></div><div><dt>svensson.py</dt><dd>Zero and forward rates, discount factors and par yields; fitting the curve</dd></div><div><dt>curve.py</dt><dd>One day&#x27;s curve, and shifted copies of it for bumps and shocks</dd></div><div><dt>bonds.py</dt><dd>Coupon dates, accrued interest, prices, yields, duration and convexity</dd></div><div><dt>risk.py</dt><dd>DV01 and key-rate DV01s</dd></div><div><dt>scenarios.py</dt><dd>The six rate shocks, full revaluation and the key-rate estimate</dd></div><div><dt>portfolio.py</dt><dd>The analysis for one valuation date</dd></div><div><dt>checks.py</dt><dd>The curve against the published rates, the refit, gaps and big moves</dd></div></dl>
+          </section>
+
+          <section>
+            <p class="section-kicker">Limits</p>
+            <h2>What it leaves out</h2>
+            <ul class="clean-list"><li>Every bond is priced off one curve with no spread, so a bond that trades rich or cheap to the curve gets a model price.</li><li>Prices are for settlement on the curve date rather than two business days later.</li><li>Annual coupons only, with no odd first or last periods.</li><li>Shocked rates have no floor, and the shocks are instantaneous, with no carry or roll-down.</li></ul>
+          </section>
+
+          <section class="case-actions">
+            <a class="button" href="https://github.com/sswnair/euro-curve-risk" target="_blank" rel="noopener noreferrer">View the code on GitHub</a>
+            <a class="button secondary" href="mailto:sswnair@gmail.com?subject=Euro%20Curve%20and%20Rate%20Risk%20discussion">Email about this project</a>
+          </section>
+        </article>
+
+        <aside class="case-sidebar" aria-label="Project resources">
+          <div class="sidebar-inner">
+            <div class="side-card"><h3>Code</h3><ul class="source-list">
+    <li><a href="https://github.com/sswnair/euro-curve-risk" target="_blank" rel="noopener noreferrer">github.com/sswnair/euro-curve-risk</a></li>
+    <li><a href="reports/euro-curve-risk.html" target="_blank" rel="noopener">Sample report</a></li>
+  </ul></div>
+            <div class="side-card"><h3>Run it</h3><pre class="run-block">eurocurve run --sample
+eurocurve download --start 2025-09-30 --end 2026-09-30 --out ecb-curve.csv
+eurocurve run --sample --curve ecb-curve.csv</pre></div>
+            <div class="side-card"><h3>Rules and data</h3><ul class="source-list">
+    <li><a href="https://data.ecb.europa.eu/methodology/yield-curves" target="_blank" rel="noopener noreferrer">ECB euro area yield curves</a></li>
+    <li><a href="https://www.bis.org/bcbs/publ/d368.htm" target="_blank" rel="noopener noreferrer">Basel IRRBB standards (BCBS 368)</a></li>
+    <li><a href="https://www.bis.org/bcbs/publ/d578.htm" target="_blank" rel="noopener noreferrer">Recalibrated IRRBB shocks, July 2024</a></li>
+  </ul></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Full-size report" hidden data-lightbox>
+      <div class="lightbox-content">
+        <div class="lightbox-controls">
+          <button class="lightbox-zoom" type="button" aria-pressed="false" data-lightbox-zoom>View actual size</button>
+          <button class="lightbox-close" type="button" data-lightbox-close>Close</button>
+        </div>
+        <div class="lightbox-viewport" tabindex="0" data-lightbox-viewport>
+          <img src="../assets/code/euro-curve-risk-report.png?v=20261020-1" alt="" data-lightbox-image>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <span>© <span data-year></span> Sanjay Nair. Finance portfolio.</span>
+      <span><a href="https://www.linkedin.com/in/sanjaynair10/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · Selected public sources linked</span>
+    </div>
+  </footer>
+</body>
+</html>

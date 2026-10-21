@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I built a Python tool that checks a UCITS fund&#x27;s holdings against the diversification limits, measures global exposure with VaR and backtests the VaR model.">
+  <meta name="theme-color" content="#0b1f33">
+  <meta property="og:title" content="UCITS Limit Monitor | Sanjay Nair, CFA">
+  <meta property="og:description" content="I built a Python tool that checks a UCITS fund&#x27;s holdings against the diversification limits, measures global exposure with VaR and backtests the VaR model.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sswnair.github.io/code/ucits-limit-monitor.html">
+  <meta property="og:image" content="https://sswnair.github.io/assets/social-card.jpg?v=3">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sanjay Nair, CFA finance portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="UCITS Limit Monitor | Sanjay Nair, CFA">
+  <meta name="twitter:description" content="I built a Python tool that checks a UCITS fund&#x27;s holdings against the diversification limits, measures global exposure with VaR and backtests the VaR model.">
+  <meta name="twitter:image" content="https://sswnair.github.io/assets/social-card.jpg?v=3">
+  <title>UCITS Limit Monitor | Sanjay Nair, CFA</title>
+  <link rel="canonical" href="https://sswnair.github.io/code/ucits-limit-monitor.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261019-1">
+  <link rel="stylesheet" href="../assets/css/code.css?v=20261020-1">
+  <script src="../assets/js/case-study.js?v=20261019-1" defer></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "UCITS Limit Monitor", "description": "I built a Python tool that checks a UCITS fund's holdings against the diversification limits, measures global exposure with VaR and backtests the VaR model.", "programmingLanguage": "Python", "codeRepository": "https://github.com/sswnair/ucits-limit-monitor", "author": {"@type": "Person", "name": "Sanjay Nair", "honorificSuffix": "CFA"}, "url": "https://sswnair.github.io/code/ucits-limit-monitor.html", "isPartOf": {"@type": "WebSite", "name": "Sanjay Nair Finance Portfolio", "url": "https://sswnair.github.io/"}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Sanjay Nair home">
+        <span class="brand-mark">SN</span>
+        <span>Sanjay Nair, CFA</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>Menu</button>
+      <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#work">Case studies</a>
+        <a href="../index.html#code">Code</a>
+        <a href="../index.html#approach">How I work</a>
+        <a class="nav-contact" href="mailto:sswnair@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="case-hero">
+      <div class="container">
+        <a class="breadcrumb" href="../index.html#code">← Back to the code projects</a>
+        <div class="case-title-grid">
+          <div>
+            <p class="case-eyebrow">Python project · Fund compliance</p>
+            <h1>UCITS Limit Monitor</h1>
+            <p class="case-summary">Checks a UCITS fund against its investment limits using public data. Issuer concentration, the 5/10/40 rule, deposits, OTC counterparties and combined exposure, then global exposure with VaR and a backtest of the VaR model itself.</p>
+            <p class="case-context"><span>Self-directed Python project</span><span>153 tests</span><span>Sample data as of October 16, 2026</span></p>
+          </div>
+          <aside class="decision-card" aria-label="The question">
+            <span>The question</span>
+            <p>Would this fund pass its UCITS limit checks this morning, and can its VaR model be trusted?</p>
+          </aside>
+        </div>
+        <div class="case-metrics">
+    <div class="case-metric">
+      <strong>41.9%</strong>
+      <span>5/10/40 total</span>
+      <em>Cap 40%</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>20.5%</strong>
+      <span>One bank, combined</span>
+      <em>Cap 20%</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>1.05x</strong>
+      <span>Relative VaR</span>
+      <em>Limit 2.0x</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>7</strong>
+      <span>VaR exceptions</span>
+      <em>250 days, yellow zone</em>
+    </div>
+  </div>
+      </div>
+    </section>
+
+    <div class="case-body">
+      <div class="container case-layout">
+        <article class="case-main">
+          <section class="verdict-box">
+            <span class="verdict-label caution">The sample fund breaches three limits</span>
+            <h2>What the sample run shows</h2>
+            <p>No single issuer is above 10%, but six of them sit above 5% and add up to 41.9%, so as a standard UCITS the fund fails the 5/10/40 rule. The same holdings pass as an index tracker, which is the room Article 53 gives concentrated index funds. Northwind Markets, which is not a bank, breaches the 5% OTC counterparty limit on its own. Corrib Bank is inside each limit separately, with 18.5% of NAV on deposit and 2% as an OTC counterparty, but the two come to 20.5%, over the 20% cap for a single body.</p><p>The VaR model was beaten 7 times in 250 days against about 2.5 expected. That is the Basel yellow zone, and over the 4 that have to be reported. Six of the seven fall in one volatile stretch in the spring, three of them on consecutive days. A normal-distribution VaR does worse on the same returns, with 10 exceptions and a red zone, because the returns have fatter tails than a normal curve allows.</p>
+          </section>
+
+          <section>
+            <p class="section-kicker">Work completed</p>
+            <h2>What it checks</h2>
+            <div class="two-col-lists"><div><h3>Diversification</h3><ul class="clean-list"><li>Single issuer: 10% of NAV, or 20% and 35% for index trackers</li><li>The 5/10/40 rule</li><li>Deposits: 20% with any one bank</li><li>OTC counterparties: 10% for banks, 5% for anyone else</li><li>Combined exposure to one body: 20%</li><li>Share classes of one issuer counted together</li></ul></div><div><h3>Global exposure and backtesting</h3><ul class="clean-list"><li>Historical VaR at 99%, 20 days, from 250 daily returns</li><li>Absolute VaR: 20% of NAV</li><li>Relative VaR: twice the reference portfolio</li><li>Rolling one-day forecasts with no look-ahead</li><li>Kupiec and Christoffersen tests</li><li>Basel traffic-light zones and the reporting trigger</li></ul></div></div>
+          </section>
+
+          <section>
+            <p class="section-kicker">Output</p>
+            <h2>The report</h2>
+            <p>Each run writes one self-contained HTML page, a findings CSV and a running breach log. The sample report below is the real output, charts and tooltips included.</p>
+            <div class="gallery">
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/code/ucits-limit-monitor-summary.png?v=20261020-1" data-lightbox-alt="Limit checks and findings for the sample fund">
+      <img src="../assets/code/ucits-limit-monitor-summary.png?v=20261020-1" alt="Limit checks and findings for the sample fund" loading="lazy">
+      <span>01 &nbsp; Limit checks and findings for the sample fund. View full size</span>
+    </button>
+
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/code/ucits-limit-monitor-backtest.png?v=20261020-1" data-lightbox-alt="VaR backtest: daily returns against the forecast">
+      <img src="../assets/code/ucits-limit-monitor-backtest.png?v=20261020-1" alt="VaR backtest: daily returns against the forecast" loading="lazy">
+      <span>02 &nbsp; VaR backtest: daily returns against the forecast. View full size</span>
+    </button>
+  </div>
+            <a class="report-link" href="reports/ucits-limit-monitor.html" target="_blank" rel="noopener">Open the sample report</a>
+          </section>
+
+          <section>
+            <p class="section-kicker">Code</p>
+            <h2>How the code is organized</h2>
+            <dl class="module-list"><div><dt>data.py</dt><dd>Downloads and parses an ETF&#x27;s published holdings and daily prices, with a local cache</dd></div><div><dt>issuers.py</dt><dd>Turns security names into issuer keys and totals the weight per issuer</dd></div><div><dt>limits.py</dt><dd>The diversification checks</dd></div><div><dt>var.py</dt><dd>Historical and parametric VaR, scaling to 20 days, rolling forecasts</dd></div><div><dt>backtest.py</dt><dd>Kupiec, Christoffersen and conditional coverage tests, Basel zones</dd></div><div><dt>exposure.py</dt><dd>Absolute and relative VaR limits</dd></div><div><dt>engine.py</dt><dd>Runs the checks in order and collects the findings</dd></div><div><dt>report.py</dt><dd>The HTML report, findings CSV and breach log</dd></div></dl>
+          </section>
+
+          <section>
+            <p class="section-kicker">Limits</p>
+            <h2>What it leaves out</h2>
+            <ul class="clean-list"><li>Holdings come from the fund&#x27;s published file, which can lag the administrator&#x27;s books by a day.</li><li>Cash, FX and futures lines don&#x27;t count toward issuer limits, and derivatives are not looked through.</li><li>Companies in the same group are not yet treated as one body.</li><li>Most plain equity ETFs use the commitment approach, not VaR. The VaR checks run on them here to show the method.</li><li>National rules and a fund&#x27;s prospectus can be stricter than the directive.</li></ul>
+          </section>
+
+          <section class="case-actions">
+            <a class="button" href="https://github.com/sswnair/ucits-limit-monitor" target="_blank" rel="noopener noreferrer">View the code on GitHub</a>
+            <a class="button secondary" href="mailto:sswnair@gmail.com?subject=UCITS%20Limit%20Monitor%20discussion">Email about this project</a>
+          </section>
+        </article>
+
+        <aside class="case-sidebar" aria-label="Project resources">
+          <div class="sidebar-inner">
+            <div class="side-card"><h3>Code</h3><ul class="source-list">
+    <li><a href="https://github.com/sswnair/ucits-limit-monitor" target="_blank" rel="noopener noreferrer">github.com/sswnair/ucits-limit-monitor</a></li>
+    <li><a href="reports/ucits-limit-monitor.html" target="_blank" rel="noopener">Sample report</a></li>
+  </ul></div>
+            <div class="side-card"><h3>Run it</h3><pre class="run-block">ucits-monitor report --sample
+ucits-monitor report --fund CNDX
+ucits-monitor compare --sample
+ucits-monitor funds</pre></div>
+            <div class="side-card"><h3>Rules and data</h3><ul class="source-list">
+    <li><a href="https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32009L0065" target="_blank" rel="noopener noreferrer">UCITS Directive 2009/65/EC</a></li>
+    <li><a href="https://www.ishares.com/" target="_blank" rel="noopener noreferrer">iShares UCITS ETF holdings</a></li>
+    <li><a href="https://stooq.com" target="_blank" rel="noopener noreferrer">Stooq daily prices</a></li>
+  </ul></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Full-size report" hidden data-lightbox>
+      <div class="lightbox-content">
+        <div class="lightbox-controls">
+          <button class="lightbox-zoom" type="button" aria-pressed="false" data-lightbox-zoom>View actual size</button>
+          <button class="lightbox-close" type="button" data-lightbox-close>Close</button>
+        </div>
+        <div class="lightbox-viewport" tabindex="0" data-lightbox-viewport>
+          <img src="../assets/code/ucits-limit-monitor-summary.png?v=20261020-1" alt="" data-lightbox-image>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <span>© <span data-year></span> Sanjay Nair. Finance portfolio.</span>
+      <span><a href="https://www.linkedin.com/in/sanjaynair10/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · Selected public sources linked</span>
+    </div>
+  </footer>
+</body>
+</html>

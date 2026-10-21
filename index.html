@@ -22,6 +22,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/styles.css?v=20261019-1">
+  <link rel="stylesheet" href="assets/css/code.css?v=20261020-1">
   <script src="assets/js/app.js?v=20261019-1" defer></script>
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Person","name":"Sanjay Nair","honorificSuffix":"CFA","jobTitle":"Finance Analyst","url":"https://sswnair.github.io/","sameAs":["https://www.linkedin.com/in/sanjaynair10/"],"alumniOf":{"@type":"CollegeOrUniversity","name":"Trinity College Dublin"},"address":{"@type":"PostalAddress","addressLocality":"Dublin","addressCountry":"IE"}}
@@ -40,6 +41,7 @@
       <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
         <a href="#about">About</a>
         <a href="#work">Case studies</a>
+        <a href="#code">Code</a>
         <a href="#approach">How I work</a>
         <a class="nav-contact" href="mailto:sswnair@gmail.com">Contact</a>
       </nav>
@@ -526,6 +528,66 @@
       </div>
     </section>
           <!-- GENERATED_PROJECTS_END -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="code">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Code</p>
+            <h2>Three Python projects from fund operations and risk.</h2>
+          </div>
+          <p class="section-intro">The case studies are spreadsheet models. These three are code: each comes with sample data, tests that pin down the numbers, and a report it writes on every run.</p>
+        </div>
+
+        <div class="code-grid">
+          <article class="code-card" data-reveal>
+            <div class="project-topline">
+              <span class="project-category">Fund compliance</span>
+              <span class="verdict-pill caution">The sample fund breaches three limits</span>
+            </div>
+            <h3><a href="code/ucits-limit-monitor.html">UCITS Limit Monitor</a></h3>
+            <p class="project-context"><span>Self-directed Python project</span><span>153 tests</span></p>
+            <p class="project-short">Checks a fund's holdings against the UCITS diversification limits, measures global exposure with VaR and backtests the VaR model. The kind of check a depositary runs every morning.</p>
+            <div class="card-metrics" role="group" aria-label="Sample fund results">
+              <div class="card-metric"><strong>41.9%</strong><span>5/10/40 total, cap 40%</span></div>
+              <div class="card-metric"><strong>20.5%</strong><span>One bank, all exposures</span></div>
+              <div class="card-metric"><strong>7</strong><span>VaR exceptions in 250 days</span></div>
+            </div>
+            <a class="code-link" href="https://github.com/sswnair/ucits-limit-monitor" target="_blank" rel="noopener noreferrer">Code on GitHub</a>
+          </article>
+          <article class="code-card" data-reveal>
+            <div class="project-topline">
+              <span class="project-category">Fund accounting</span>
+              <span class="verdict-pill positive">The NAV proof ties on all 63 days</span>
+            </div>
+            <h3><a href="code/fund-nav-engine.html">Fund NAV Engine</a></h3>
+            <p class="project-context"><span>Self-directed Python project</span><span>163 tests</span></p>
+            <p class="project-short">A daily NAV for a three-class fund, with fee accruals, a performance fee and investor dealing, proved to the cent every day and reconciled to the custodian and the brokers.</p>
+            <div class="card-metrics" role="group" aria-label="Sample fund results">
+              <div class="card-metric"><strong>63</strong><span>Valuation days</span></div>
+              <div class="card-metric"><strong>11 of 11</strong><span>Planted breaks found</span></div>
+              <div class="card-metric"><strong>38</strong><span>Days, oldest open break</span></div>
+            </div>
+            <a class="code-link" href="https://github.com/sswnair/fund-nav-engine" target="_blank" rel="noopener noreferrer">Code on GitHub</a>
+          </article>
+          <article class="code-card" data-reveal>
+            <div class="project-topline">
+              <span class="project-category">Fixed income</span>
+              <span class="verdict-pill caution">A 225bp rise costs the portfolio 16.4%</span>
+            </div>
+            <h3><a href="code/euro-curve-risk.html">Euro Curve and Rate Risk</a></h3>
+            <p class="project-context"><span>Self-directed Python project</span><span>225 tests</span></p>
+            <p class="project-short">Rebuilds the euro government yield curve from the six numbers the ECB publishes each day, prices a bond portfolio off it, and measures DV01, key-rate risk and the six Basel rate shocks.</p>
+            <div class="card-metrics" role="group" aria-label="Sample portfolio results">
+              <div class="card-metric"><strong>€203k</strong><span>DV01 per basis point</span></div>
+              <div class="card-metric"><strong>8.50</strong><span>Duration, zero curve</span></div>
+              <div class="card-metric"><strong>(€39.2m)</strong><span>Rates up 225bp</span></div>
+            </div>
+            <a class="code-link" href="https://github.com/sswnair/euro-curve-risk" target="_blank" rel="noopener noreferrer">Code on GitHub</a>
+          </article>
         </div>
       </div>
     </section>

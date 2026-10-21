@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I built a Python NAV engine for a three-class fund: daily fee accruals, a performance fee, dealing, a NAV proof, and reconciliation to the custodian and brokers.">
+  <meta name="theme-color" content="#0b1f33">
+  <meta property="og:title" content="Fund NAV Engine | Sanjay Nair, CFA">
+  <meta property="og:description" content="I built a Python NAV engine for a three-class fund: daily fee accruals, a performance fee, dealing, a NAV proof, and reconciliation to the custodian and brokers.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sswnair.github.io/code/fund-nav-engine.html">
+  <meta property="og:image" content="https://sswnair.github.io/assets/social-card.jpg?v=3">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sanjay Nair, CFA finance portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fund NAV Engine | Sanjay Nair, CFA">
+  <meta name="twitter:description" content="I built a Python NAV engine for a three-class fund: daily fee accruals, a performance fee, dealing, a NAV proof, and reconciliation to the custodian and brokers.">
+  <meta name="twitter:image" content="https://sswnair.github.io/assets/social-card.jpg?v=3">
+  <title>Fund NAV Engine | Sanjay Nair, CFA</title>
+  <link rel="canonical" href="https://sswnair.github.io/code/fund-nav-engine.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=20261019-1">
+  <link rel="stylesheet" href="../assets/css/code.css?v=20261020-1">
+  <script src="../assets/js/case-study.js?v=20261019-1" defer></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Fund NAV Engine", "description": "I built a Python NAV engine for a three-class fund: daily fee accruals, a performance fee, dealing, a NAV proof, and reconciliation to the custodian and brokers.", "programmingLanguage": "Python", "codeRepository": "https://github.com/sswnair/fund-nav-engine", "author": {"@type": "Person", "name": "Sanjay Nair", "honorificSuffix": "CFA"}, "url": "https://sswnair.github.io/code/fund-nav-engine.html", "isPartOf": {"@type": "WebSite", "name": "Sanjay Nair Finance Portfolio", "url": "https://sswnair.github.io/"}}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="Sanjay Nair home">
+        <span class="brand-mark">SN</span>
+        <span>Sanjay Nair, CFA</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" data-menu-button>Menu</button>
+      <nav class="site-nav" id="site-navigation" aria-label="Primary navigation" data-site-nav>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#work">Case studies</a>
+        <a href="../index.html#code">Code</a>
+        <a href="../index.html#approach">How I work</a>
+        <a class="nav-contact" href="mailto:sswnair@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="case-hero">
+      <div class="container">
+        <a class="breadcrumb" href="../index.html#code">← Back to the code projects</a>
+        <div class="case-title-grid">
+          <div>
+            <p class="case-eyebrow">Python project · Fund accounting</p>
+            <h1>Fund NAV Engine</h1>
+            <p class="case-summary">Calculates a fund&#x27;s NAV every day for three share classes, then reconciles the books to the custodian and the brokers and ages every break. Fee accruals, a performance fee with a high-water mark, investor dealing and a daily NAV proof.</p>
+            <p class="case-context"><span>Self-directed Python project</span><span>163 tests</span><span>Sample quarter, Q4 2025</span></p>
+          </div>
+          <aside class="decision-card" aria-label="The question">
+            <span>The question</span>
+            <p>Does the NAV tie out to the cent every day, and does the reconciliation catch everything that is wrong?</p>
+          </aside>
+        </div>
+        <div class="case-metrics">
+    <div class="case-metric">
+      <strong>63</strong>
+      <span>Valuation days</span>
+      <em>Proof ties on all 63</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>113.6821</strong>
+      <span>A-EUR NAV per share</span>
+      <em>December 31, 2025</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>€460,299</strong>
+      <span>Performance fee</span>
+      <em>I-EUR, crystallized at year end</em>
+    </div>
+
+    <div class="case-metric">
+      <strong>11 of 11</strong>
+      <span>Planted breaks found</span>
+      <em>7 cleared, 4 open</em>
+    </div>
+  </div>
+      </div>
+    </section>
+
+    <div class="case-body">
+      <div class="container case-layout">
+        <article class="case-main">
+          <section class="verdict-box">
+            <span class="verdict-label positive">The NAV proof ties on all 63 days</span>
+            <h2>What the sample run shows</h2>
+            <p>A made-up global equity fund starts the fourth quarter of 2025 with €180m in 14 stocks across four currencies. Over 63 valuation days it books 26 trades, 13 subscriptions and redemptions and 6 dividends. Net assets from the balance sheet equal the sum of the class NAVs, to the cent, on every one of them.</p><p>The performance fees crystallize on December 31: €460,299.24 on I-EUR and $416,469.65 on I-USD. Two redemptions crystallize their share of the fee when they leave, so the fee on those units doesn&#x27;t drift back to the investors who stayed.</p><p>The custodian statements and broker confirmations carry 10 planted problems that produce 11 breaks, and the reconciliation finds all 11. Among them are a failed settlement, a custody charge the books never picked up, a dividend withheld at 30% instead of 15%, a mispriced confirm and a confirm for a trade the fund never made. Four are still open at year end, the oldest after 38 business days.</p>
+          </section>
+
+          <section>
+            <p class="section-kicker">Work completed</p>
+            <h2>What happens each day</h2>
+            <div class="two-col-lists"><div><h3>The NAV</h3><ul class="clean-list"><li>Trades on trade date, cash on settlement date</li><li>Holdings and cash valued in euros at the day&#x27;s FX</li><li>Administration, depositary and audit accruals</li><li>The day&#x27;s result split by prior class NAV</li><li>Management and performance fees per class</li><li>Forward-priced dealing at the day&#x27;s NAV per share</li><li>The NAV proof against the balance sheet</li></ul></div><div><h3>The reconciliation</h3><ul class="clean-list"><li>Settled positions against the custodian</li><li>Cash by currency, inside a tolerance</li><li>Trades against broker confirmations</li><li>A break register carried day to day</li><li>Ages in business days, bucketed</li><li>Stale price and large move checks</li></ul></div></div>
+          </section>
+
+          <section>
+            <p class="section-kicker">Output</p>
+            <h2>The report</h2>
+            <p>Each run writes a NAV pack, one self-contained HTML page, and CSV files of the NAV history, balance sheets, dealing, breaks and ledger. The sample pack below is the real output.</p>
+            <div class="gallery">
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/code/fund-nav-engine-nav-pack.png?v=20261020-1" data-lightbox-alt="NAV pack: share classes and NAV per share through the quarter">
+      <img src="../assets/code/fund-nav-engine-nav-pack.png?v=20261020-1" alt="NAV pack: share classes and NAV per share through the quarter" loading="lazy">
+      <span>01 &nbsp; NAV pack: share classes and NAV per share through the quarter. View full size</span>
+    </button>
+
+    <button class="gallery-button" type="button" data-lightbox-src="../assets/code/fund-nav-engine-reconciliation.png?v=20261020-1" data-lightbox-alt="Reconciliation: open breaks by age">
+      <img src="../assets/code/fund-nav-engine-reconciliation.png?v=20261020-1" alt="Reconciliation: open breaks by age" loading="lazy">
+      <span>02 &nbsp; Reconciliation: open breaks by age. View full size</span>
+    </button>
+  </div>
+            <a class="report-link" href="reports/fund-nav-engine.html" target="_blank" rel="noopener">Open the sample report</a>
+          </section>
+
+          <section>
+            <p class="section-kicker">Code</p>
+            <h2>How the code is organized</h2>
+            <dl class="module-list"><div><dt>data.py</dt><dd>Reads a fund&#x27;s input files and downloads ECB reference rates</dd></div><div><dt>ledger.py</dt><dd>The books: positions, cash, amounts due and accrued fees</dd></div><div><dt>valuation.py</dt><dd>Holdings and cash in base currency</dd></div><div><dt>accruals.py</dt><dd>Daily fee accruals</dd></div><div><dt>classes.py</dt><dd>Splitting the result between classes, class NAV and NAV per share</dd></div><div><dt>perf_fee.py</dt><dd>Performance fee accrual and crystallization</dd></div><div><dt>dealing.py</dt><dd>Units issued and proceeds paid</dd></div><div><dt>reconcile.py</dt><dd>Positions and cash against the custodian, trades against the brokers</dd></div><div><dt>aging.py</dt><dd>The break register and business-day ages</dd></div><div><dt>engine.py</dt><dd>The daily run and the NAV proof</dd></div></dl>
+          </section>
+
+          <section>
+            <p class="section-kicker">Limits</p>
+            <h2>What it leaves out</h2>
+            <ul class="clean-list"><li>No equalization: an investor who subscribes partway through the year bears the performance fee on gains made before they arrived.</li><li>Share classes are unhedged.</li><li>Income is cash dividends only. Splits, rights issues and other corporate actions are not booked.</li><li>Prices come from the pricing file as they are, with no fair value adjustments.</li></ul>
+          </section>
+
+          <section class="case-actions">
+            <a class="button" href="https://github.com/sswnair/fund-nav-engine" target="_blank" rel="noopener noreferrer">View the code on GitHub</a>
+            <a class="button secondary" href="mailto:sswnair@gmail.com?subject=Fund%20NAV%20Engine%20discussion">Email about this project</a>
+          </section>
+        </article>
+
+        <aside class="case-sidebar" aria-label="Project resources">
+          <div class="sidebar-inner">
+            <div class="side-card"><h3>Code</h3><ul class="source-list">
+    <li><a href="https://github.com/sswnair/fund-nav-engine" target="_blank" rel="noopener noreferrer">github.com/sswnair/fund-nav-engine</a></li>
+    <li><a href="reports/fund-nav-engine.html" target="_blank" rel="noopener">Sample report</a></li>
+  </ul></div>
+            <div class="side-card"><h3>Run it</h3><pre class="run-block">fundnav run --sample
+fundnav fx --start 2025-10-01 --end 2025-12-31</pre></div>
+            <div class="side-card"><h3>Rules and data</h3><ul class="source-list">
+    <li><a href="https://data.ecb.europa.eu/" target="_blank" rel="noopener noreferrer">ECB euro reference rates</a></li>
+  </ul></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Full-size report" hidden data-lightbox>
+      <div class="lightbox-content">
+        <div class="lightbox-controls">
+          <button class="lightbox-zoom" type="button" aria-pressed="false" data-lightbox-zoom>View actual size</button>
+          <button class="lightbox-close" type="button" data-lightbox-close>Close</button>
+        </div>
+        <div class="lightbox-viewport" tabindex="0" data-lightbox-viewport>
+          <img src="../assets/code/fund-nav-engine-nav-pack.png?v=20261020-1" alt="" data-lightbox-image>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <span>© <span data-year></span> Sanjay Nair. Finance portfolio.</span>
+      <span><a href="https://www.linkedin.com/in/sanjaynair10/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · Selected public sources linked</span>
+    </div>
+  </footer>
+</body>
+</html>
